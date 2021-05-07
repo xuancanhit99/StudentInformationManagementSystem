@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">StudentInformationManagementSystem</string>
+    <string name="register">STUDENT REGISTER</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="signup_login_hint">Already have an account? Sign In</string>
+    <string name="login_signup_hint">Don\'t have an account? Sign Up</string>
+    <string name="close">Close</string>
+    <string name="admin_login">ADMIN LOGIN</string>
+    <string name="student_login">STUDENT LOGIN</string>
+
+</resources>
