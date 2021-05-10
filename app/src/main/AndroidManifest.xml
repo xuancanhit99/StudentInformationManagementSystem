@@ -17,7 +17,11 @@
         android:theme="@style/Theme.StudentInformationManagementSystem"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".StudentRegisterActivity"></activity>
+        <activity android:name=".StudentUpdateActivity"></activity>
+        <activity android:name=".StudentMenuActivity" />
+        <activity android:name=".AdminForgotPassword" />
+        <activity android:name=".AdminChangePasswordActivity" />
+        <activity android:name=".StudentRegisterActivity" />
         <activity android:name=".StudentLoginActivity" />
         <activity android:name=".HomeMenuActivity" />
         <activity android:name=".AdminUpdateActivity" />

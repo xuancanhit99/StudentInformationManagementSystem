@@ -43,7 +43,7 @@ public class StudentRegisterActivity extends AppCompatActivity {
 
     String realPath = "";
     Uri imageUri;
-    String StudentName, StudentEmail, StudentPassword;
+    String studentName, studentEmail, studentPassword, studentAvatar;
 
     private EditText edtStuRegisterName, edtStuRegisterEmail, edtStuRegisterPassword;
     private Button btnStuRegister, btnStuRegisterTakePhoto, btnStuRegisterChoosePhoto;
@@ -55,7 +55,7 @@ public class StudentRegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_register);
 
-        //Anh xa
+        //Connect layout
         initUI();
 
         // Close
@@ -96,69 +96,72 @@ public class StudentRegisterActivity extends AppCompatActivity {
         btnStuRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                StudentName = edtStuRegisterName.getText().toString();
-                StudentEmail = edtStuRegisterEmail.getText().toString();
-                StudentPassword = edtStuRegisterPassword.getText().toString();
-
-                if(StudentName.length() > 0 && StudentEmail.length() > 0 && StudentPassword.length() > 0) {
-                    //Cre file from real path photo
-                    File file = new File(realPath);
-                    //Get file path to String
-                    String file_path = file.getAbsolutePath();
-                    //Log.d("Error", file_path);
-
-                    //Split name photo(Avoid the same name)
-                    String[] arrayNamePhoto = file_path.split("\\.");
-                    file_path = arrayNamePhoto[0] + "_" + System.currentTimeMillis() + "." + arrayNamePhoto[1];
-                    //Log.d("Error", file_path);
-
-                    //Confirm the file's data type - multipart/form-data
-                    RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"), file);
-                    //key - name(in file php: $file_path = $file_path.basename($_FILES['upload_file']['name']);)
-                    MultipartBody.Part body = MultipartBody.Part.createFormData("upload_file", file_path, requestBody);
-                    //Call retrofit: cre connect and return data
-                    DataClient dataClient = APIUtils.getData();
-                    // Take data from call
-                    retrofit2.Call<String> callback = dataClient.UploadPhoto(body);
-                    callback.enqueue(new Callback<String>() {
-                        @Override
-                        public void onResponse(Call<String> call, Response<String> response) {
-                            if(response != null) {
-                                String message = response.body();
-                                //Log.d("Error", message);
-                                if(message.length() > 0) {
-                                    DataClient insertData = APIUtils.getData();
-                                    Call<String> callback = insertData.InsertStudentData(StudentName, StudentEmail, StudentPassword, APIUtils.BASE_URL + "image/" + message);
-                                    //Upload
-                                    callback.enqueue(new Callback<String>() {
-                                        @Override
-                                        public void onResponse(Call<String> call, Response<String> response) {
-                                            String result = response.body();
-                                            Log.d("Retrofit response", result);
-                                            if(result.trim().equals("Success")) {
-                                                Toast.makeText(StudentRegisterActivity.this, "Insert Successfully", Toast.LENGTH_SHORT).show();
-                                                Intent intent = new Intent(StudentRegisterActivity.this, StudentLoginActivity.class);
-                                                startActivity(intent);
-                                                finish();
-                                            }
-                                        }
-                                        @Override
-                                        public void onFailure(Call<String> call, Throwable t) {
-                                            Log.d("Error Retrofit response", t.getMessage());
-                                        }
-                                    });
-                                }
-                            }
-                        }
-                        @Override
-                        public void onFailure(Call<String> call, Throwable t) {
-                            Log.d("Error", t.getMessage());
-                        }
-                    });
-                }
-                else {
+                studentName = edtStuRegisterName.getText().toString();
+                studentEmail = edtStuRegisterEmail.getText().toString();
+                studentPassword = edtStuRegisterPassword.getText().toString();
+                if (studentName.length() > 0 && studentEmail.length() > 0 && studentPassword.length() > 0) {
+                    if (!realPath.equals("")) {
+                        uploadInfoWithPhoto();
+                    } else {
+                        uploadInfo();
+                    }
+                } else {
                     Toast.makeText(StudentRegisterActivity.this, "Enter your email, name and password in the fields", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+    }
+
+    private void uploadInfo() {
+        DataClient insertData = APIUtils.getData();
+        Call<String> callback;
+        if (!realPath.equals("")) {
+            callback = insertData.InsertStudentData(studentName, studentEmail, studentPassword, APIUtils.BASE_URL + "images/" + studentAvatar);
+        } else {
+            callback = insertData.InsertStudentData(studentName, studentEmail, studentPassword, "NO_IMAGE_STUDENT_REGISTER");
+        }
+        callback.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                String result = response.body();
+                Log.d("Retrofit response", result);
+                if (result.trim().equals("STUDENT_INSERT_SUCCESSFUL")) {
+                    Toast.makeText(StudentRegisterActivity.this, "Student Account Registration Successful", Toast.LENGTH_SHORT).show();
+                    backToLogin();
+                }
+            }
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                Log.d("Error Stu Info", t.getMessage());
+            }
+        });
+
+    }
+
+    private void uploadInfoWithPhoto() {
+        File file = new File(realPath);
+        String file_path = file.getAbsolutePath();
+        String[] arrayNamePhoto = file_path.split("\\.");
+        file_path = arrayNamePhoto[0] + "_" + System.currentTimeMillis() + "." + arrayNamePhoto[1];
+        RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"), file);
+        MultipartBody.Part body = MultipartBody.Part.createFormData("upload_file", file_path, requestBody);
+        DataClient dataClient = APIUtils.getData();
+        retrofit2.Call<String> callback = dataClient.UploadStudentPhoto(body);
+        callback.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                if (response != null) {
+                    studentAvatar = response.body();
+                    uploadInfo();
+                    Intent intent = new Intent(StudentRegisterActivity.this, StudentLoginActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                Log.d("Error Updated Stu Photo", t.getMessage());
             }
         });
     }
@@ -166,7 +169,7 @@ public class StudentRegisterActivity extends AppCompatActivity {
 
     // Save image(from image view) when take photo
     private void saveToGallery() {
-        Bitmap bitmap = ((BitmapDrawable)ivStuRegisterAvt.getDrawable()).getBitmap();
+        Bitmap bitmap = ((BitmapDrawable) ivStuRegisterAvt.getDrawable()).getBitmap();
         ContentValues values = new ContentValues();
         values.put(MediaStore.Images.Media.TITLE, "Image From Take Photo");
         values.put(MediaStore.Images.Media.BUCKET_ID, "image");
@@ -178,24 +181,24 @@ public class StudentRegisterActivity extends AppCompatActivity {
             outstream = getContentResolver().openOutputStream(imageUri);
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outstream);
             outstream.close();
-            Toast.makeText(getApplicationContext(),"Success",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
             e.printStackTrace();
-            Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 
 
     private void initUI() {
-        edtStuRegisterName = (EditText)findViewById(R.id.edt_stu_register_name);
-        edtStuRegisterEmail = (EditText)findViewById(R.id.edt_stu_register_email);
-        edtStuRegisterPassword = (EditText)findViewById(R.id.edt_stu_register_password);
-        btnStuRegister =(Button)findViewById(R.id.btn_stu_register);
-        btnStuRegisterTakePhoto =(Button)findViewById(R.id.btn_stu_register_take_photo);
-        btnStuRegisterChoosePhoto =(Button)findViewById(R.id.btn_stu_register_choose_photo);
-        tvStuRegisterToLogin =(TextView) findViewById(R.id.tv_stu_register_to_login);
-        ivStuRegisterAvt = (ImageView)findViewById(R.id.iv_stu_register_avt);
-        ivStuRegisterClose = (ImageView)findViewById(R.id.iv_stu_register_close);
+        edtStuRegisterName = (EditText) findViewById(R.id.edt_stu_register_name);
+        edtStuRegisterEmail = (EditText) findViewById(R.id.edt_stu_register_email);
+        edtStuRegisterPassword = (EditText) findViewById(R.id.edt_stu_register_password);
+        btnStuRegister = (Button) findViewById(R.id.btn_stu_register);
+        btnStuRegisterTakePhoto = (Button) findViewById(R.id.btn_stu_register_take_photo);
+        btnStuRegisterChoosePhoto = (Button) findViewById(R.id.btn_stu_register_choose_photo);
+        tvStuRegisterToLogin = (TextView) findViewById(R.id.tv_stu_register_to_login);
+        ivStuRegisterAvt = (ImageView) findViewById(R.id.iv_stu_register_avt);
+        ivStuRegisterClose = (ImageView) findViewById(R.id.iv_stu_register_close);
     }
 
     private void takePhoto() {
@@ -233,9 +236,9 @@ public class StudentRegisterActivity extends AppCompatActivity {
     }
 
     // Get Real Path when upload photo(from uri - image/mame_image)
-    public String getRealPathFromURI (Uri contentUri) {
+    public String getRealPathFromURI(Uri contentUri) {
         String path = null;
-        String[] proj = { MediaStore.MediaColumns.DATA };
+        String[] proj = {MediaStore.MediaColumns.DATA};
         Cursor cursor = getContentResolver().query(contentUri, proj, null, null, null);
         if (cursor.moveToFirst()) {
             int column_index = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DATA);
@@ -243,5 +246,15 @@ public class StudentRegisterActivity extends AppCompatActivity {
         }
         cursor.close();
         return path;
+    }
+    @Override
+    public void onBackPressed() {
+        backToLogin();
+    }
+
+    private void backToLogin() {
+        Intent intent = new Intent(StudentRegisterActivity.this, StudentLoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.xuancanh.studentinformationmanagementsystem.model.Students;
+import com.xuancanh.studentinformationmanagementsystem.model.Student;
 import com.xuancanh.studentinformationmanagementsystem.retrofit.APIUtils;
 import com.xuancanh.studentinformationmanagementsystem.retrofit.DataClient;
 
@@ -30,14 +30,15 @@ public class StudentLoginActivity extends AppCompatActivity {
     private TextView tvStuLoginForgotPassword, tvStuLoginToLoginAdmin, tvStuLoginToRegister;
     private ImageView ivStuLoginClose;
 
-    String StudentEmail, StudentPassword;
+    ArrayList<Student> studentArr;
+    String studentEmail, studentPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_login);
 
-        //Anh xa
+        //Connect layout
         initUI();
 
         // Close
@@ -72,32 +73,28 @@ public class StudentLoginActivity extends AppCompatActivity {
         btnStuLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                StudentEmail = edtStuLoginEmail.getText().toString();
-                StudentPassword = edtStuLoginPassword.getText().toString();
-                if(StudentEmail.length() > 0 && StudentPassword.length() > 0) {
+                studentEmail = edtStuLoginEmail.getText().toString();
+                studentPassword = edtStuLoginPassword.getText().toString();
+                if(studentEmail.length() > 0 && studentPassword.length() > 0) {
                     DataClient dataClient = APIUtils.getData();
-                    retrofit2.Call<List<Students>> callback = dataClient.LoginStudentData(StudentEmail, StudentPassword);
-                    callback.enqueue(new Callback<List<Students>>() {
+                    retrofit2.Call<List<Student>> callback = dataClient.LoginStudentData(studentEmail, studentPassword);
+                    callback.enqueue(new Callback<List<Student>>() {
                         @Override
-                        public void onResponse(Call<List<Students>> call, Response<List<Students>> response) {
-                            ArrayList<Students> arrStudent = (ArrayList<Students>)response.body();
-                            if(arrStudent.size() > 0) {
-                                Log.d("Login", arrStudent.get(0).getStuEmail());
-                                Log.d("Login", arrStudent.get(0).getStuPassword());
-                                Log.d("Login", arrStudent.get(0).getStuAvatar());
-                                Log.d("Login", arrStudent.get(0).getStuName());
-                                Log.d("Login", arrStudent.get(0).getStuNo());
-                                Log.d("Login", arrStudent.get(0).getStuDOB());
-                                Log.d("Login", arrStudent.get(0).getStuClass());
-                                Log.d("Login", arrStudent.get(0).getStuPhone());
-                                Log.d("Login", arrStudent.get(0).getStuGender());
-                                Log.d("Login", arrStudent.get(0).getStuActive());
+                        public void onResponse(Call<List<Student>> call, Response<List<Student>> response) {
+                            studentArr = (ArrayList<Student>)response.body();
+                            if(studentArr.size() > 0) {
+                                //Send Data and finish
+                                Intent intent = new Intent(StudentLoginActivity.this, StudentMenuActivity.class);
+                                intent.putExtra("STUDENT_DATA_FROM_LOGIN_TO_MENU", studentArr);
+                                startActivity(intent);
+                                finish();
+                                Toast.makeText(StudentLoginActivity.this, "Welcome " + studentArr.get(0).getStuName(), Toast.LENGTH_LONG).show();
                             }
                         }
 
                         @Override
-                        public void onFailure(Call<List<Students>> call, Throwable t) {
-                            Toast.makeText(StudentLoginActivity.this, "Email doesn't exist", Toast.LENGTH_SHORT).show();
+                        public void onFailure(Call<List<Student>> call, Throwable t) {
+                            Toast.makeText(StudentLoginActivity.this, "Email or password is incorrect", Toast.LENGTH_SHORT).show();
                             //Log.d("Error", t.getMessage());
                         }
                     });

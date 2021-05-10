@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(MainActivity.this, AdminLoginActivity.class));
+                startActivity(new Intent(MainActivity.this, StudentLoginActivity.class));
                 finish();
             }
         }, splash_time);

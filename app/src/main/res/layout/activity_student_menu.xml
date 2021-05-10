@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
@@ -6,7 +7,7 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:background="@color/colorGrey"
 android:orientation="vertical"
-tools:context=".HomeMenuActivity">
+tools:context=".StudentMenuActivity">
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -31,9 +32,9 @@ tools:context=".HomeMenuActivity">
     android:orientation="horizontal"
     android:padding="5dp">
     <ImageView
-        android:id="@+id/iv_admin_avt"
+        android:id="@+id/iv_stu_avt"
         android:layout_width="150dp"
-        android:src="@drawable/admin"
+        android:src="@drawable/graduated"
         android:layout_margin="5dp"
         android:layout_height="match_parent"/>
     <LinearLayout
@@ -44,7 +45,7 @@ tools:context=".HomeMenuActivity">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:layout_marginLeft="15dp"
             android:orientation="horizontal"
             android:weightSum="10">
@@ -52,9 +53,9 @@ tools:context=".HomeMenuActivity">
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
-                android:text="Admin:" />
+                android:text="Name:" />
             <TextView
-                android:id="@+id/tv_admin_name"
+                android:id="@+id/tv_stu_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="7" />
@@ -70,20 +71,31 @@ tools:context=".HomeMenuActivity">
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
-                android:text="Email:" />
+                android:text="Student №:" />
             <TextView
-                android:id="@+id/tv_admin_email"
+                android:id="@+id/tv_stu_no"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="7" />
         </LinearLayout>
-        <Button
-            android:id="@+id/btn_admin_edit"
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Edit" />
-
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="Status:" />
+            <TextView
+                android:id="@+id/tv_stu_active"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="7" />
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>
@@ -100,39 +112,18 @@ tools:context=".HomeMenuActivity">
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical">
-
         <Button
-            android:id="@+id/btn_student_add"
-            android:layout_width="250dp"
-            android:layout_height="65dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/colorPrimaryDark2"
-            android:drawableStart="@drawable/ic_baseline_person_add_24"
-            android:drawableLeft="@drawable/ic_baseline_person_add_24"
-            android:drawablePadding="10dp"
-            android:drawableTint="@color/colorWhite"
-            android:paddingLeft="10dp"
-            android:text="Add Student"
-            android:textColor="@color/colorWhite"
-            android:textSize="18sp"
-            android:textStyle="bold">
-
-        </Button>
-
-        <Button
-            android:id="@+id/btn_student_view_all"
+            android:id="@+id/btn_stu_view_profile"
             android:layout_width="250dp"
             android:layout_height="65dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:background="@color/colorPrimaryDark2"
             android:drawableStart="@drawable/ic_baseline_format_list_bulleted_24"
-            android:drawableLeft="@drawable/ic_baseline_format_list_bulleted_24"
             android:drawablePadding="10dp"
             android:drawableTint="@color/colorWhite"
             android:paddingLeft="10dp"
-            android:text="View ALL"
+            android:text="View Profile"
             android:textColor="@color/colorWhite"
             android:textSize="18sp"
             android:textStyle="bold">
@@ -140,7 +131,42 @@ tools:context=".HomeMenuActivity">
         </Button>
 
         <Button
-            android:id="@+id/btn_home_menu_logout"
+            android:id="@+id/btn_stu_update_profile"
+            android:layout_width="250dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorPrimaryDark2"
+            android:drawableStart="@drawable/ic_baseline_edit_note_24"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/colorWhite"
+            android:paddingLeft="10dp"
+            android:text="UpDate Profile"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:textStyle="bold">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn_stu_change_password"
+            android:layout_width="250dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorPrimaryDark2"
+            android:drawableStart="@drawable/ic_baseline_password_24"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/colorWhite"
+            android:paddingLeft="10dp"
+            android:text="Change Password"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:textStyle="bold">
+        </Button>
+
+        <Button
+            android:id="@+id/btn_stu_logout"
             android:layout_width="250dp"
             android:layout_height="65dp"
             android:layout_marginTop="10dp"

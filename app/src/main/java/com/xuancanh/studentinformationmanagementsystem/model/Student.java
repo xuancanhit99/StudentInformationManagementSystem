@@ -1,106 +1,178 @@
 package com.xuancanh.studentinformationmanagementsystem.model;
 
-import java.io.Serializable;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class Student implements Serializable {
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
-    private String stu_name;//
-    private String stu_no;//
-    private String stu_email;//
-    private String stu_dob;//
-    private String stu_class;//
-    private String stu_phone;
+public class Student implements Parcelable {
 
+    @SerializedName("StuId")
+    @Expose
+    private String stuId;
+    @SerializedName("StuEmail")
+    @Expose
+    private String stuEmail;
+    @SerializedName("StuPassword")
+    @Expose
+    private String stuPassword;
+    @SerializedName("StuName")
+    @Expose
+    private String stuName;
+    @SerializedName("StuNo")
+    @Expose
+    private String stuNo;
+    @SerializedName("StuAvatar")
+    @Expose
+    private String stuAvatar;
+    @SerializedName("StuDOB")
+    @Expose
+    private String stuDOB;
+    @SerializedName("StuClass")
+    @Expose
+    private String stuClass;
+    @SerializedName("StuPhone")
+    @Expose
+    private String stuPhone;
+    @SerializedName("StuGender")
+    @Expose
+    private String stuGender;
+    @SerializedName("StuActive")
+    @Expose
+    private String stuActive;
 
-    private int stu_id;
-    private int stu_gender;
-    private byte[] stu_avt;
-
-    public Student() {
+    protected Student(Parcel in) {
+        stuId = in.readString();
+        stuEmail = in.readString();
+        stuPassword = in.readString();
+        stuName = in.readString();
+        stuNo = in.readString();
+        stuAvatar = in.readString();
+        stuDOB = in.readString();
+        stuClass = in.readString();
+        stuPhone = in.readString();
+        stuGender = in.readString();
+        stuActive = in.readString();
     }
 
-    public Student(int stu_id, String stu_name, String stu_no, String stu_email, int stu_gender,
-                   String stu_dob, String stu_class, byte[] stu_avt, String stu_phone) {
-        this.stu_id = stu_id;
-        this.stu_name = stu_name;
-        this.stu_no = stu_no;
-        this.stu_email = stu_email;
-        this.stu_gender = stu_gender;
-        this.stu_dob = stu_dob;
-        this.stu_class = stu_class;
-        this.stu_avt = stu_avt;
-        this.stu_phone = stu_phone;
+    public static final Creator<Student> CREATOR = new Creator<Student>() {
+        @Override
+        public Student createFromParcel(Parcel in) {
+            return new Student(in);
+        }
+
+        @Override
+        public Student[] newArray(int size) {
+            return new Student[size];
+        }
+    };
+
+    public String getStuId() {
+        return stuId;
     }
 
-    public int getStu_id() {
-        return stu_id;
+    public void setStuId(String stuId) {
+        this.stuId = stuId;
     }
 
-    public void setStu_id(int stu_id) {
-        this.stu_id = stu_id;
+    public String getStuEmail() {
+        return stuEmail;
     }
 
-    public String getStu_name() {
-        return stu_name;
+    public void setStuEmail(String stuEmail) {
+        this.stuEmail = stuEmail;
     }
 
-    public void setStu_name(String stu_name) {
-        this.stu_name = stu_name;
+    public String getStuPassword() {
+        return stuPassword;
     }
 
-    public String getStu_no() {
-        return stu_no;
+    public void setStuPassword(String stuPassword) {
+        this.stuPassword = stuPassword;
     }
 
-    public void setStu_no(String stu_no) {
-        this.stu_no = stu_no;
+    public String getStuName() {
+        return stuName;
     }
 
-    public String getStu_email() {
-        return stu_email;
+    public void setStuName(String stuName) {
+        this.stuName = stuName;
     }
 
-    public void setStu_email(String stu_email) {
-        this.stu_email = stu_email;
+    public String getStuNo() {
+        return stuNo;
     }
 
-    public int getStu_gender() {
-        return stu_gender;
+    public void setStuNo(String stuNo) {
+        this.stuNo = stuNo;
     }
 
-    public void setStu_gender(int stu_gender) {
-        this.stu_gender = stu_gender;
+    public String getStuAvatar() {
+        return stuAvatar;
     }
 
-    public String getStu_dob() {
-        return stu_dob;
+    public void setStuAvatar(String stuAvatar) {
+        this.stuAvatar = stuAvatar;
     }
 
-    public void setStu_dob(String stu_dob) {
-        this.stu_dob = stu_dob;
+    public String getStuDOB() {
+        return stuDOB;
     }
 
-    public String getStu_class() {
-        return stu_class;
+    public void setStuDOB(String stuDOB) {
+        this.stuDOB = stuDOB;
     }
 
-    public void setStu_class(String stu_class) {
-        this.stu_class = stu_class;
+    public String getStuClass() {
+        return stuClass;
     }
 
-    public byte[] getStu_avt() {
-        return stu_avt;
+    public void setStuClass(String stuClass) {
+        this.stuClass = stuClass;
     }
 
-    public void setStu_avt(byte[] stu_avt) {
-        this.stu_avt = stu_avt;
+    public String getStuPhone() {
+        return stuPhone;
     }
 
-    public String getStu_phone() {
-        return stu_phone;
+    public void setStuPhone(String stuPhone) {
+        this.stuPhone = stuPhone;
     }
 
-    public void setStu_phone(String stu_phone) {
-        this.stu_phone = stu_phone;
+    public String getStuGender() {
+        return stuGender;
+    }
+
+    public void setStuGender(String stuGender) {
+        this.stuGender = stuGender;
+    }
+
+    public String getStuActive() {
+        return stuActive;
+    }
+
+    public void setStuActive(String stuActive) {
+        this.stuActive = stuActive;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(stuId);
+        dest.writeString(stuEmail);
+        dest.writeString(stuPassword);
+        dest.writeString(stuName);
+        dest.writeString(stuNo);
+        dest.writeString(stuAvatar);
+        dest.writeString(stuDOB);
+        dest.writeString(stuClass);
+        dest.writeString(stuPhone);
+        dest.writeString(stuGender);
+        dest.writeString(stuActive);
     }
 }
