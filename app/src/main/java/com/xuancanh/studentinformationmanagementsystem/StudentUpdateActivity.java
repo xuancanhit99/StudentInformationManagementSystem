@@ -349,8 +349,8 @@ public class StudentUpdateActivity extends AppCompatActivity {
         if (!studentArr.get(0).getStuAvatar().equals("")) {
             Picasso.get()
                     .load(studentArr.get(0).getStuAvatar())
-//                    .placeholder(R.drawable.admin)
-//                    .error(R.drawable.admin)
+                    .placeholder(R.drawable.admin)
+                    .error(R.drawable.admin)
                     .into(ivStuUpdateAvatar);
         } else {
             if (!studentArr.get(0).getStuGender().equals("-1")) {

@@ -51,6 +51,10 @@ public interface DataClient {
     @GET("delete.php")
     Call<String> DeleteStudentData(@Query("StudentId") String StudentId, @Query("StudentAvatar") String StudentAvatar);
 
+    @FormUrlEncoded
+    @POST("changePassword.php")
+    Call<String> ChangePasswordStudentData(@Field("StudentId") String StudentId,
+                                         @Field("StudentNewPassword") String StudentNewPassword);
     //Admin
     @FormUrlEncoded
     @POST("admin/login.php")

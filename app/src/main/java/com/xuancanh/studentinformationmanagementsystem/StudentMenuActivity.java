@@ -20,6 +20,10 @@ import java.util.ArrayList;
 public class StudentMenuActivity extends AppCompatActivity {
     // Activity need back home menu
     public static final int STUDENT_UPDATE_ACTIVITY = 1;
+    public static final int STUDENT_CHANGE_PASSWORD_ACTIVITY = 2;
+    public static final int STUDENT_VIEW_PROFILE_ACTIVITY = 7;
+    public static final int RESULT_STUDENT_CHANGE_PASSWORD_OK = 10;
+    public static final int RESULT_STUDENT_VIEW_PROFILE_OK = 10;
 
     final String ACTIVE = "Active";
     final String NO_ACTIVE = "InActive";
@@ -62,7 +66,19 @@ public class StudentMenuActivity extends AppCompatActivity {
         btnStuChangePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(StudentMenuActivity.this, StudentChangePasswordActivity.class);
+                intent.putExtra("STUDENT_DATA_FROM_MENU_TO_CHANGE_PASSWORD", studentArr);
+                startActivityForResult(intent, STUDENT_CHANGE_PASSWORD_ACTIVITY);
+            }
+        });
 
+        //Button View Profile
+        btnStuViewProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(StudentMenuActivity.this, StudentViewProfileActivity.class);
+                intent.putExtra("STUDENT_DATA_FROM_MENU_TO_VIEW_PROFILE", studentArr);
+                startActivityForResult(intent, STUDENT_VIEW_PROFILE_ACTIVITY);
             }
         });
     }
@@ -101,8 +117,8 @@ public class StudentMenuActivity extends AppCompatActivity {
         if (!studentArr.get(0).getStuAvatar().equals("")) {
             Picasso.get()
                     .load(studentArr.get(0).getStuAvatar())
-//                    .placeholder(R.drawable.graduated)
-//                    .error(R.drawable.graduated)
+                    .placeholder(R.drawable.graduated)
+                    .error(R.drawable.graduated)
                     .into(ivStuAvatar);
         } else {
             if (!studentArr.get(0).getStuGender().equals("-1")) {
@@ -143,6 +159,19 @@ public class StudentMenuActivity extends AppCompatActivity {
         if (requestCode == STUDENT_UPDATE_ACTIVITY) {
             if (resultCode == RESULT_OK) {
                 studentArr = data.getParcelableArrayListExtra("STUDENT_DATA_FROM_UPDATE_TO_MENU");
+                initView();
+            }
+        }
+        //Change password
+        if(resultCode == RESULT_STUDENT_CHANGE_PASSWORD_OK) {
+            if (requestCode == STUDENT_CHANGE_PASSWORD_ACTIVITY){
+                studentArr = data.getParcelableArrayListExtra("STUDENT_DATA_FROM_CHANGE_PASSWORD_TO_MENU");
+            }
+        }
+        //View Profile(maybe don't need)
+        if(resultCode == RESULT_STUDENT_VIEW_PROFILE_OK) {
+            if (requestCode == STUDENT_VIEW_PROFILE_ACTIVITY){
+                studentArr = data.getParcelableArrayListExtra("STUDENT_DATA_FROM_VIEW_PROFILE_TO_MENU");
                 initView();
             }
         }
