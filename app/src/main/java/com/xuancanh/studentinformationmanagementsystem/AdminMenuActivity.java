@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -18,7 +17,7 @@ import com.xuancanh.studentinformationmanagementsystem.model.Admin;
 
 import java.util.ArrayList;
 
-public class HomeMenuActivity extends AppCompatActivity {
+public class AdminMenuActivity extends AppCompatActivity {
 
     Button addStudent, viewStudent, btnHomeMenuLogout, btnAdminEdit;
     ImageView ivAdminAvt;
@@ -53,23 +52,23 @@ public class HomeMenuActivity extends AppCompatActivity {
 //        viewStudent.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                startActivity(new Intent(HomeMenuActivity.this, ViewAllActivity.class));
+//                startActivity(new Intent(AdminMenuActivity.this, ViewAllActivity.class));
 //            }
 //        });
 //
-//        //Add Student Button
-//        addStudent.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(HomeMenuActivity.this, AddActivity.class));
-//            }
-//        });
+        //Add Student Button
+        addStudent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AdminMenuActivity.this, AdminStudentAddActivity.class));
+            }
+        });
 
         //Button Edit
         btnAdminEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeMenuActivity.this, AdminUpdateActivity.class);
+                Intent intent = new Intent(AdminMenuActivity.this, AdminUpdateActivity.class);
                 intent.putExtra("ADMIN_DATA_FROM_MENU_TO_UPDATE", adminArr);
                 startActivityForResult(intent, ADMIN_UPDATE_ACTIVITY);
             }
@@ -127,14 +126,14 @@ public class HomeMenuActivity extends AppCompatActivity {
     }
 
     private void logout() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(HomeMenuActivity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(AdminMenuActivity.this);
         builder.setIcon(R.drawable.ic_baseline_logout_24);
         builder.setTitle("Logout");
         builder.setMessage(adminArr.get(0).getAdName()+", are you sure want to logout?");
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Intent intent = new Intent(HomeMenuActivity.this, AdminLoginActivity.class);
+                Intent intent = new Intent(AdminMenuActivity.this, AdminLoginActivity.class);
                 startActivity(intent);
                 finish();
             }

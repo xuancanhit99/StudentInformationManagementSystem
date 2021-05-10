@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -90,7 +89,7 @@ public class AdminLoginActivity extends AppCompatActivity {
                 public void onResponse(Call<List<Admin>> call, Response<List<Admin>> response) {
                     adminArr = (ArrayList<Admin>) response.body();
                     if (adminArr.size() > 0) {
-                        Intent intent = new Intent(AdminLoginActivity.this, HomeMenuActivity.class);
+                        Intent intent = new Intent(AdminLoginActivity.this, AdminMenuActivity.class);
                         intent.putExtra("ADMIN_DATA_FROM_LOGIN_TO_MENU", adminArr);
                         startActivity(intent);
                         finish();

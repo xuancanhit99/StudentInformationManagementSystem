@@ -87,5 +87,17 @@ public interface DataClient {
     Call<String> ChangePasswordAdminData(@Field("AdminId") String AdminId,
                                          @Field("AdminNewPassword") String AdminNewPassword);
 
-
+    //Admin Add Student
+    @FormUrlEncoded
+    @POST("admin/addStudent.php")
+    Call<String> AdminAddStudentData(@Field("StudentNo") String StudentNo,
+                                     @Field("StudentName") String StudentName,
+                                     @Field("StudentDOB") String StudentDOB,
+                                     @Field("StudentClass") String StudentClass,
+                                     @Field("StudentGender") String StudentGender,
+                                     @Field("StudentPhone") String StudentPhone,
+                                     @Field("StudentEmail") String StudentEmail,
+                                     @Field("StudentPassword") String StudentPassword,
+                                     @Field("StudentActive") String StudentActive,
+                                     @Field("StudentAvatar") String StudentAvatar);
 }

@@ -367,7 +367,7 @@ public class AdminUpdateActivity extends AppCompatActivity {
     private void backToMenu() {
         Intent intent = getIntent();
         intent.putExtra("ADMIN_DATA_FROM_UPDATE_TO_MENU", adminArr);
-        setResult(HomeMenuActivity.RESULT_OK, intent);
+        setResult(AdminMenuActivity.RESULT_OK, intent);
         finish();
     }
 
