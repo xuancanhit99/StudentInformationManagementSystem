@@ -48,14 +48,14 @@ public class AdminMenuActivity extends AppCompatActivity {
             }
         });
 
-//        //View All Button
-//        viewStudent.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(AdminMenuActivity.this, ViewAllActivity.class));
-//            }
-//        });
-//
+        //View All Button
+        viewStudent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AdminMenuActivity.this, AdminStudentViewAllActivity.class));
+            }
+        });
+
         //Add Student Button
         addStudent.setOnClickListener(new View.OnClickListener() {
             @Override
