@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
@@ -25,6 +26,7 @@ public class AdminChangePasswordActivity extends AppCompatActivity {
 
     EditText edtAdminChangePasswordCurrentPassword, edtAdminChangePasswordNewPassword, edtAdminChangePasswordRetypeNewPassword;
     Button btnAdminChangePasswordSave, btnAdminChangePasswordExit;
+    ImageView ivAdminChangePasswordExit;
 
     ArrayList<Admin> adminArr;
     String currentPassword, newPassword, retypeNewPassword;
@@ -42,6 +44,14 @@ public class AdminChangePasswordActivity extends AppCompatActivity {
 
         //Button Exit
         btnAdminChangePasswordExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                backToUpdate();
+            }
+        });
+
+        //ImageView Back
+        ivAdminChangePasswordExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 backToUpdate();
@@ -112,6 +122,7 @@ public class AdminChangePasswordActivity extends AppCompatActivity {
         edtAdminChangePasswordRetypeNewPassword = findViewById(R.id.edt_admin_change_password_retype_new_password);
         btnAdminChangePasswordSave = findViewById(R.id.btn_admin_change_password_save);
         btnAdminChangePasswordExit = findViewById(R.id.btn_admin_change_password_exit);
+        ivAdminChangePasswordExit = findViewById(R.id.iv_admin_change_password_exit);
     }
 
     @Override

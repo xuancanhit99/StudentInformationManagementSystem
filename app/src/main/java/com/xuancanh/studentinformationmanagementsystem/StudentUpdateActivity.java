@@ -52,7 +52,7 @@ public class StudentUpdateActivity extends AppCompatActivity {
     final int REQUEST_TAKE_PHOTO = 123;
     final int REQUEST_CHOOSE_PHOTO = 321;
 
-    private ImageView ivStuUpdateAvatar;
+    private ImageView ivStuUpdateAvatar, ivStuUpdateExit;
     private EditText edtStuUpdateNo, edtStuUpdateName, edtStuUpdateDOB, edtStuUpdateClass, edtStuUpdatePhone, edtStuUpdateEmail;
     private Button btnStuUpdateSave, btnStuUpdateExit, btnStuUpdateDelete, btnStuUpdateTakePhoto, btnStuUpdateChoosePhoto, btnStuUpdateDelDOB;
     private RadioGroup rgStuUpdateGender;
@@ -124,6 +124,14 @@ public class StudentUpdateActivity extends AppCompatActivity {
         });
         //Button Exit
         btnStuUpdateExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                backToMenu();
+            }
+        });
+
+        //ImageView Exit
+        ivStuUpdateExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 backToMenu();
@@ -436,6 +444,7 @@ public class StudentUpdateActivity extends AppCompatActivity {
 
     private void initUI() {
         ivStuUpdateAvatar = findViewById(R.id.iv_stu_update_avt);
+        ivStuUpdateExit = findViewById(R.id.iv_stu_update_exit);
         edtStuUpdateName = (EditText) findViewById(R.id.edt_stu_update_name);
         edtStuUpdateNo = (EditText) findViewById(R.id.edt_stu_update_no);
         edtStuUpdateDOB = (EditText) findViewById(R.id.edt_stu_update_dob);

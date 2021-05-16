@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.xuancanh.studentinformationmanagementsystem.retrofit.APIUtils;
@@ -21,6 +22,7 @@ public class AdminForgotPassword extends AppCompatActivity {
     private EditText edtAdminForgotPasswordEmail, edtAdminForgotPasswordId, edtAdminForgotPasswordNewPassword, edtAdminForgotPasswordRetypeNewPassword;
     private Button btnAdminForgotPasswordSave, btnAdminForgotPasswordExit;
     private String adminEmail, adminId, adminNewPassword, adminRetypeNewPassword;
+    ImageView ivAdminForgotPasswordExit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,17 @@ public class AdminForgotPassword extends AppCompatActivity {
                 finish();
             }
         });
+
+        //ImageView Back
+        ivAdminForgotPasswordExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminForgotPassword.this, AdminLoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
         //Button Save
         btnAdminForgotPasswordSave.setOnClickListener(new View.OnClickListener() {
@@ -89,6 +102,7 @@ public class AdminForgotPassword extends AppCompatActivity {
         edtAdminForgotPasswordRetypeNewPassword = findViewById(R.id.edt_admin_forgot_password_retype_new_password);
         btnAdminForgotPasswordSave = findViewById(R.id.btn_admin_forgot_password_save);
         btnAdminForgotPasswordExit = findViewById(R.id.btn_admin_forgot_password_exit);
+        ivAdminForgotPasswordExit =findViewById(R.id.iv_admin_forgot_password_exit);
     }
 
     @Override

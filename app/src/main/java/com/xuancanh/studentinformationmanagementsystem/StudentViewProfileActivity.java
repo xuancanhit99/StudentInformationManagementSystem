@@ -30,7 +30,7 @@ public class StudentViewProfileActivity extends AppCompatActivity {
     public static final int STUDENT_UPDATE = 1;
     public static final int RESULT_UPDATE_OK = 2;
     
-    private ImageView ivStuViewProfileAvatar;
+    private ImageView ivStuViewProfileAvatar, ivStuViewProfileExit;
     private TextView tvStuViewProfileNo, tvStuViewProfileName, tvStuViewProfileDOB, tvStuViewProfileClass, tvStuViewProfilePhone, tvStuViewProfileEmail, tvStuViewProfileActive, tvStuViewProfileGender;
     private Button btnStuViewProfileUpdate, btnStuViewProfileExit;
     
@@ -52,6 +52,14 @@ public class StudentViewProfileActivity extends AppCompatActivity {
 
         //Button Exit
         btnStuViewProfileExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                backToMenu();
+            }
+        });
+
+        //ImageView Exit
+        ivStuViewProfileExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 backToMenu();
@@ -141,6 +149,7 @@ public class StudentViewProfileActivity extends AppCompatActivity {
 
     private void initUI() {
         ivStuViewProfileAvatar = findViewById(R.id.iv_stu_view_profile_avt);
+        ivStuViewProfileExit = findViewById(R.id.iv_stu_view_profile_exit);
         tvStuViewProfileName = findViewById(R.id.tv_stu_view_profile_name);
         tvStuViewProfileNo = findViewById(R.id.tv_stu_view_profile_no);
         tvStuViewProfileDOB = findViewById(R.id.tv_stu_view_profile_dob);

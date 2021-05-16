@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +24,7 @@ import retrofit2.Response;
 public class StudentChangePasswordActivity extends AppCompatActivity {
     EditText edtStuChangePasswordCurrentPassword, edtStuChangePasswordNewPassword, edtStuChangePasswordRetypeNewPassword;
     Button btnStuChangePasswordSave, btnStuChangePasswordExit;
+    ImageView ivStuChangePasswordExit;
 
     ArrayList<Student> studentArr;
     String currentPassword, newPassword, retypeNewPassword;
@@ -40,6 +42,14 @@ public class StudentChangePasswordActivity extends AppCompatActivity {
 
         //Button Exit
         btnStuChangePasswordExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                backToMenu();
+            }
+        });
+
+        //ImageView Exit
+        ivStuChangePasswordExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 backToMenu();
@@ -110,6 +120,7 @@ public class StudentChangePasswordActivity extends AppCompatActivity {
         edtStuChangePasswordRetypeNewPassword = findViewById(R.id.edt_stu_change_password_retype_new_password);
         btnStuChangePasswordSave = findViewById(R.id.btn_stu_change_password_save);
         btnStuChangePasswordExit = findViewById(R.id.btn_stu_change_password_exit);
+        ivStuChangePasswordExit = findViewById(R.id.iv_stu_change_password_exit);
     }
     @Override
     public void onBackPressed() {

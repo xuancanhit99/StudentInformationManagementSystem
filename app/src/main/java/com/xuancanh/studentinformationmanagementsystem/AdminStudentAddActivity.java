@@ -57,7 +57,7 @@ public class AdminStudentAddActivity extends AppCompatActivity {
 
     private EditText edtAdStuAddName, edtAdStuAddEmail, edtAdStuAddPassword, edtAdStuAddNo, edtAdStuAddDOB, edtAdStuAddClass, edtAdStuAddPhone;
     private Button btnAdStuAddSave, btnAdStuAddExit, btnAdStuAddTakePhoto, btnAdStuAddChoosePhoto, btnAdStuAddDelDOB;
-    private ImageView ivAdStuAddAvt;
+    private ImageView ivAdStuAddAvt, ivAdStuAddExit;
 
     private RadioGroup rgAdStuAddGender, rgAdStuAddStatus;
     private RadioButton rbAdStuAddMale, rbAdStuAddFemale, rbAdStuAddActive, rbAdStuAddInactive;
@@ -145,6 +145,14 @@ public class AdminStudentAddActivity extends AppCompatActivity {
 
         //Button Exit
         btnAdStuAddExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        //ImageView Exit
+        ivAdStuAddExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
@@ -305,7 +313,8 @@ public class AdminStudentAddActivity extends AppCompatActivity {
 
     private void initUI() {
         ivAdStuAddAvt = findViewById(R.id.iv_ad_stu_add_avt);
-        
+        ivAdStuAddExit = findViewById(R.id.iv_ad_stu_add_exit);
+
         edtAdStuAddName = findViewById(R.id.edt_ad_stu_add_name);
         edtAdStuAddNo = findViewById(R.id.edt_ad_stu_add_no);
         edtAdStuAddDOB = findViewById(R.id.edt_ad_stu_add_dob);

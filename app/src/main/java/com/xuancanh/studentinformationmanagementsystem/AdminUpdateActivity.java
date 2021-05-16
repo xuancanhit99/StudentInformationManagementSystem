@@ -51,7 +51,7 @@ public class AdminUpdateActivity extends AppCompatActivity {
 
     EditText edtAdminUpdateEmail, edtAdminUpdateName;
     Button btnAdminUpdateTakePhoto, btnAdminUpdateChoosePhoto, btnAdminUpdateSave, btnAdminUpdateDelete, btnAdminUpdateExit, btnAdminChangePassword;
-    ImageView ivAdminUpdateAvatar;
+    ImageView ivAdminUpdateAvatar, ivAdminUpdateExit;
 
     ArrayList<Admin> adminArr;
     String adminEmail, adminName, adminAvatar;
@@ -121,6 +121,14 @@ public class AdminUpdateActivity extends AppCompatActivity {
 
         //Button Exit
         btnAdminUpdateExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                backToMenu();
+            }
+        });
+
+        //ImageView Exit
+        ivAdminUpdateExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 backToMenu();
@@ -343,6 +351,7 @@ public class AdminUpdateActivity extends AppCompatActivity {
         btnAdminUpdateExit = findViewById(R.id.btn_admin_update_exit);
         btnAdminChangePassword = findViewById(R.id.btn_admin_update_change_password);
         ivAdminUpdateAvatar = findViewById(R.id.iv_admin_update_avt);
+        ivAdminUpdateExit = findViewById(R.id.iv_admin_update_exit);
     }
 
     // Get Real Path when upload photo(from uri - image/mame_image)

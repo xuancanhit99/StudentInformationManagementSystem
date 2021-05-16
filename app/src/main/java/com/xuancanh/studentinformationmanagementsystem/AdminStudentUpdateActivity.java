@@ -57,7 +57,7 @@ public class AdminStudentUpdateActivity extends AppCompatActivity {
 
     private EditText edtAdStuUpdateName, edtAdStuUpdateEmail, edtAdStuUpdatePassword, edtAdStuUpdateNo, edtAdStuUpdateDOB, edtAdStuUpdateClass, edtAdStuUpdatePhone;
     private Button btnAdStuUpdateSave, btnAdStuUpdateDelete, btnAdStuUpdateExit, btnAdStuUpdateTakePhoto, btnAdStuUpdateChoosePhoto, btnAdStuUpdateDelDOB;
-    private ImageView ivAdStuUpdateAvt;
+    private ImageView ivAdStuUpdateAvt, ivAdStuUpdateExit;
 
     private RadioGroup rgAdStuUpdateGender, rgAdStuUpdateStatus;
     private RadioButton rbAdStuUpdateMale, rbAdStuUpdateFemale, rbAdStuUpdateActive, rbAdStuUpdateInactive;
@@ -151,6 +151,15 @@ public class AdminStudentUpdateActivity extends AppCompatActivity {
 
         //Button Exit
         btnAdStuUpdateExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                backToMenu();
+                //Check xem co can gui data
+            }
+        });
+
+        //ImageView Exit
+        ivAdStuUpdateExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 backToMenu();
@@ -415,6 +424,7 @@ public class AdminStudentUpdateActivity extends AppCompatActivity {
 
     private void initUI() {
         ivAdStuUpdateAvt = findViewById(R.id.iv_ad_stu_update_avt);
+        ivAdStuUpdateExit =findViewById(R.id.iv_ad_stu_update_exit);
 
         edtAdStuUpdateName = findViewById(R.id.edt_ad_stu_update_name);
         edtAdStuUpdateNo = findViewById(R.id.edt_ad_stu_update_no);
