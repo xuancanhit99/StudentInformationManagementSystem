@@ -3,10 +3,14 @@ package com.xuancanh.studentinformationmanagementsystem;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -29,6 +33,8 @@ public class AdminLoginActivity extends AppCompatActivity {
     private Button btnAdminLogin;
     private TextView tvAdminLoginForgotPassword, tvAdminLoginToLoginStudent;
     private ImageView ivAdminLoginClose;
+    private CheckBox cbAdminLoginRememberMe;
+    private SharedPreferences.Editor loginPrefsEditor;
 
     ArrayList<Admin> adminArr;
     String AdminEmail, AdminPassword;
@@ -41,6 +47,29 @@ public class AdminLoginActivity extends AppCompatActivity {
         //Connect layout
         initUI();
 
+        //Login When Enter - Done
+        edtAdminLoginPassword.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if(actionId == EditorInfo.IME_ACTION_DONE){
+                    adminLogin();
+                    rememberMe();
+                }
+                return false;
+            }
+        });
+
+
+        //Remember Me
+        SharedPreferences loginPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
+        loginPrefsEditor = loginPreferences.edit();
+        boolean rememberMeCheck = loginPreferences.getBoolean("ADMIN_REMEMBER_ME", false);
+        if (rememberMeCheck) {
+            edtAdminLoginEmail.setText(loginPreferences.getString("ADMIN_EMAIL", ""));
+            edtAdminLoginPassword.setText(loginPreferences.getString("ADMIN_PASSWORD", ""));
+            cbAdminLoginRememberMe.setChecked(true);
+        }
+        
         // TView Forgot Password
         tvAdminLoginForgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,8 +104,20 @@ public class AdminLoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 adminLogin();
+                rememberMe();
             }
         });
+    }
+
+    private void rememberMe() {
+        if (cbAdminLoginRememberMe.isChecked()) {
+            loginPrefsEditor.putBoolean("ADMIN_REMEMBER_ME", true);
+            loginPrefsEditor.putString("ADMIN_EMAIL", AdminEmail);
+            loginPrefsEditor.putString("ADMIN_PASSWORD", AdminPassword);
+        } else {
+            loginPrefsEditor.clear();
+        }
+        loginPrefsEditor.apply();
     }
 
     private void adminLogin() {
@@ -116,11 +157,12 @@ public class AdminLoginActivity extends AppCompatActivity {
     }
 
     private void initUI() {
-        edtAdminLoginEmail = (EditText) findViewById(R.id.edt_admin_login_email);
-        edtAdminLoginPassword = (EditText) findViewById(R.id.edt_admin_login_password);
-        btnAdminLogin = (Button) findViewById(R.id.btn_admin_login);
-        tvAdminLoginForgotPassword = (TextView) findViewById(R.id.tv_admin_login_forgot_password);
-        tvAdminLoginToLoginStudent = (TextView) findViewById(R.id.tv_admin_login_to_login_student);
-        ivAdminLoginClose = (ImageView) findViewById(R.id.iv_admin_login_close);
+        edtAdminLoginEmail = findViewById(R.id.edt_admin_login_email);
+        edtAdminLoginPassword = findViewById(R.id.edt_admin_login_password);
+        btnAdminLogin = findViewById(R.id.btn_admin_login);
+        tvAdminLoginForgotPassword = findViewById(R.id.tv_admin_login_forgot_password);
+        tvAdminLoginToLoginStudent = findViewById(R.id.tv_admin_login_to_login_student);
+        ivAdminLoginClose = findViewById(R.id.iv_admin_login_close);
+        cbAdminLoginRememberMe = findViewById(R.id.cb_admin_login_remember_me);
     }
 }

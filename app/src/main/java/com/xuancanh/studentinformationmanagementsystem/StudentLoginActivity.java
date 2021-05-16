@@ -3,10 +3,14 @@ package com.xuancanh.studentinformationmanagementsystem;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -29,6 +33,8 @@ public class StudentLoginActivity extends AppCompatActivity {
     private Button btnStuLogin;
     private TextView tvStuLoginForgotPassword, tvStuLoginToLoginAdmin, tvStuLoginToRegister;
     private ImageView ivStuLoginClose;
+    private CheckBox cbStudentLoginRememberMe;
+    private SharedPreferences.Editor loginPrefsEditor;
 
     ArrayList<Student> studentArr;
     String studentEmail, studentPassword;
@@ -40,6 +46,28 @@ public class StudentLoginActivity extends AppCompatActivity {
 
         //Connect layout
         initUI();
+
+        //Login When Enter - Done
+        edtStuLoginPassword.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if(actionId == EditorInfo.IME_ACTION_DONE){
+                    studentLogin();
+                    rememberMe();
+                }
+                return false;
+            }
+        });
+
+        //Remember Me
+        SharedPreferences loginPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
+        loginPrefsEditor = loginPreferences.edit();
+        boolean rememberMeCheck = loginPreferences.getBoolean("STUDENT_REMEMBER_ME", false);
+        if (rememberMeCheck) {
+            edtStuLoginEmail.setText(loginPreferences.getString("STUDENT_EMAIL", ""));
+            edtStuLoginPassword.setText(loginPreferences.getString("STUDENT_PASSWORD", ""));
+            cbStudentLoginRememberMe.setChecked(true);
+        }
 
         // Close
         ivStuLoginClose.setOnClickListener(new View.OnClickListener() {
@@ -73,44 +101,61 @@ public class StudentLoginActivity extends AppCompatActivity {
         btnStuLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                studentEmail = edtStuLoginEmail.getText().toString();
-                studentPassword = edtStuLoginPassword.getText().toString();
-                if(studentEmail.length() > 0 && studentPassword.length() > 0) {
-                    DataClient dataClient = APIUtils.getData();
-                    retrofit2.Call<List<Student>> callback = dataClient.LoginStudentData(studentEmail, studentPassword);
-                    callback.enqueue(new Callback<List<Student>>() {
-                        @Override
-                        public void onResponse(Call<List<Student>> call, Response<List<Student>> response) {
-                            studentArr = (ArrayList<Student>)response.body();
-                            if(studentArr.size() > 0) {
-                                //Send Data and finish
-                                Intent intent = new Intent(StudentLoginActivity.this, StudentMenuActivity.class);
-                                intent.putExtra("STUDENT_DATA_FROM_LOGIN_TO_MENU", studentArr);
-                                startActivity(intent);
-                                finish();
-                                Toast.makeText(StudentLoginActivity.this, "Welcome " + studentArr.get(0).getStuName(), Toast.LENGTH_LONG).show();
-                            }
-                        }
-
-                        @Override
-                        public void onFailure(Call<List<Student>> call, Throwable t) {
-                            Toast.makeText(StudentLoginActivity.this, "Email or password is incorrect", Toast.LENGTH_SHORT).show();
-                            //Log.d("Error", t.getMessage());
-                        }
-                    });
-                }
+                studentLogin();
+                rememberMe();
             }
         });
 
     }
 
+    private void studentLogin() {
+        studentEmail = edtStuLoginEmail.getText().toString();
+        studentPassword = edtStuLoginPassword.getText().toString();
+        if(studentEmail.length() > 0 && studentPassword.length() > 0) {
+            DataClient dataClient = APIUtils.getData();
+            retrofit2.Call<List<Student>> callback = dataClient.LoginStudentData(studentEmail, studentPassword);
+            callback.enqueue(new Callback<List<Student>>() {
+                @Override
+                public void onResponse(Call<List<Student>> call, Response<List<Student>> response) {
+                    studentArr = (ArrayList<Student>)response.body();
+                    if(studentArr.size() > 0) {
+                        //Send Data and finish
+                        Intent intent = new Intent(StudentLoginActivity.this, StudentMenuActivity.class);
+                        intent.putExtra("STUDENT_DATA_FROM_LOGIN_TO_MENU", studentArr);
+                        startActivity(intent);
+                        finish();
+                        Toast.makeText(StudentLoginActivity.this, "Welcome " + studentArr.get(0).getStuName(), Toast.LENGTH_LONG).show();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<List<Student>> call, Throwable t) {
+                    Toast.makeText(StudentLoginActivity.this, "Email or password is incorrect", Toast.LENGTH_SHORT).show();
+                    //Log.d("Error", t.getMessage());
+                }
+            });
+        }
+    }
+
+    private void rememberMe() {
+        if (cbStudentLoginRememberMe.isChecked()) {
+            loginPrefsEditor.putBoolean("STUDENT_REMEMBER_ME", true);
+            loginPrefsEditor.putString("STUDENT_EMAIL", studentEmail);
+            loginPrefsEditor.putString("STUDENT_PASSWORD", studentPassword);
+        } else {
+            loginPrefsEditor.clear();
+        }
+        loginPrefsEditor.apply();
+    }
+
     private void initUI() {
-        edtStuLoginEmail = (EditText) findViewById(R.id.edt_stu_login_email);
-        edtStuLoginPassword = (EditText) findViewById(R.id.edt_stu_login_password);
-        btnStuLogin = (Button) findViewById(R.id.btn_stu_login);
-        tvStuLoginForgotPassword = (TextView) findViewById(R.id.tv_stu_login_forgot_password);
-        tvStuLoginToLoginAdmin = (TextView) findViewById(R.id.tv_stu_login_to_login_admin);
-        tvStuLoginToRegister = (TextView) findViewById(R.id.tv_stu_login_to_register);
-        ivStuLoginClose = (ImageView) findViewById(R.id.iv_stu_login_close);
+        edtStuLoginEmail = findViewById(R.id.edt_stu_login_email);
+        edtStuLoginPassword = findViewById(R.id.edt_stu_login_password);
+        btnStuLogin = findViewById(R.id.btn_stu_login);
+        tvStuLoginForgotPassword = findViewById(R.id.tv_stu_login_forgot_password);
+        tvStuLoginToLoginAdmin = findViewById(R.id.tv_stu_login_to_login_admin);
+        tvStuLoginToRegister = findViewById(R.id.tv_stu_login_to_register);
+        ivStuLoginClose = findViewById(R.id.iv_stu_login_close);
+        cbStudentLoginRememberMe = findViewById(R.id.cb_stu_login_remember_me);
     }
 }
