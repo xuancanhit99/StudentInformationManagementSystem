@@ -42,12 +42,15 @@ tools:context=".AdminStudentUpdateActivity">
         android:layout_margin="5dp"
         android:gravity="center"
         android:orientation="horizontal"
-        android:padding="5dp">
+        android:paddingTop="20dp">
 
         <ImageView
             android:id="@+id/iv_ad_stu_update_avt"
             android:layout_width="120dp"
             android:layout_height="120dp"
+            android:layout_marginStart="35dp"
+            android:padding="1dp"
+            android:background="@drawable/border_image_view"
             android:src="@drawable/graduated" />
 
         <LinearLayout
@@ -60,126 +63,159 @@ tools:context=".AdminStudentUpdateActivity">
                 android:id="@+id/btn_ad_stu_update_take_photo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:theme="@style/AppTheme.MyButton2"
+                android:drawableStart="@drawable/ic_baseline_photo_camera_24"
                 android:text="   Take Photo   " />
 
             <Button
                 android:id="@+id/btn_ad_stu_update_choose_photo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:theme="@style/AppTheme.MyButton6"
+                android:drawableStart="@drawable/ic_baseline_insert_photo_24"
                 android:text="Choose Photo" />
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:orientation="horizontal"
-        android:weightSum="10">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-
-            android:text="Student №  " />
-
-        <EditText
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/parent"
+        android:layout_marginTop="@dimen/loginViewsMargin">
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_ad_stu_update_no"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:hint="Student №" />
-    </LinearLayout>
+            style="@style/modifiedEditText"
+            android:drawableStart="@drawable/ic_baseline_confirmation_number_24"
+            android:drawableTint="?attr/colorControlNormal"
+            android:maxLines="1"
+            android:hint="Student №"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:orientation="horizontal"
-        android:weightSum="10">
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/parent"
+        android:layout_marginTop="@dimen/loginViewsMargin">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-
-            android:text="Full Name  " />
-
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_ad_stu_update_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:hint="Full Name" />
-    </LinearLayout>
+            style="@style/modifiedEditText"
+            android:drawableStart="@drawable/ic_baseline_person_pin_24"
+            android:drawableTint="?attr/colorControlNormal"
+            android:hint="Full Name"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <LinearLayout
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="10dp"
-        android:orientation="horizontal"
-        android:weightSum="10">
+        android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:text="Date of birth           " />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            style="@style/parent"
+            android:layout_marginTop="@dimen/loginViewsMargin">
 
-        <EditText
-            android:id="@+id/edt_ad_stu_update_dob"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="6"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_ad_stu_update_dob"
+                style="@style/modifiedEditText"
+                android:clickable="false"
 
-            android:clickable="false"
-            android:cursorVisible="false"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
+                android:cursorVisible="false"
+                android:drawableStart="@drawable/ic_baseline_date_range_24"
+                android:drawableTint="?attr/colorControlNormal"
+                android:focusable="false"
 
-            android:hint="Date of birth" />
+                android:focusableInTouchMode="false"
+                android:hint="Date of birth"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/btn_ad_stu_update_del_dob"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Del" />
-    </LinearLayout>
+        <ImageButton
+            android:id="@+id/im_btn_ad_stu_update_del_dob"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="3dp"
+            android:background="@null"
+            android:src="@drawable/ic_baseline_view_stream_24"
+            android:textAlignment="center" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:orientation="horizontal"
-        android:weightSum="10">
+    </RelativeLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:text="Class Name " />
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/parent"
+        android:layout_marginTop="@dimen/loginViewsMargin">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_ad_stu_update_class"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:hint="Class Name" />
-    </LinearLayout>
+            style="@style/modifiedEditText"
+            android:drawableStart="@drawable/ic_baseline_class_24"
+            android:drawableTint="?attr/colorControlNormal"
+            android:hint="Class Name"
+            android:maxLines="1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        style="@style/parent"
+        android:layout_marginTop="@dimen/loginViewsMargin">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_ad_stu_update_phone"
+            style="@style/modifiedEditText"
+            android:maxLines="1"
+            android:inputType="phone"
+            android:drawableStart="@drawable/ic_baseline_phone_iphone_24"
+            android:drawableTint="?attr/colorControlNormal"
+            android:hint="Phone Number"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/parent"
+        android:layout_marginTop="@dimen/loginViewsMargin">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_ad_stu_update_email"
+            style="@style/modifiedEditText"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:drawableStart="@drawable/round_mail_outline_24"
+            android:drawableTint="?attr/colorControlNormal"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/parent"
+        app:passwordToggleEnabled="true"
+        android:layout_marginTop="@dimen/loginViewsMargin">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_ad_stu_update_password"
+            style="@style/modifiedEditText"
+            android:maxLines="1"
+            android:inputType="textPassword"
+            android:drawableStart="@drawable/round_lock_24"
+            android:drawableTint="?attr/colorControlNormal"
+            android:hint="Password"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="10dp"
-        android:orientation="horizontal"
-        android:weightSum="10">
+        android:paddingTop="23dp"
+        android:layout_marginStart="4dp"
+        android:weightSum="10"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:layout_weight="3"
+            android:drawableStart="@drawable/ic_baseline_person_24"
+            android:drawableTint="?attr/colorControlNormal"
             android:text="Gender" />
 
         <RadioGroup
@@ -192,6 +228,7 @@ tools:context=".AdminStudentUpdateActivity">
             <RadioButton
                 android:id="@+id/rb_ad_stu_update_male"
                 android:layout_width="wrap_content"
+                android:layout_marginStart="15dp"
                 android:layout_height="wrap_content"
                 android:checked="true"
                 android:text="Male" />
@@ -199,6 +236,7 @@ tools:context=".AdminStudentUpdateActivity">
             <RadioButton
                 android:id="@+id/rb_ad_stu_update_female"
                 android:layout_width="wrap_content"
+                android:layout_marginLeft="50dp"
                 android:layout_height="wrap_content"
                 android:text="Female" />
 
@@ -208,6 +246,9 @@ tools:context=".AdminStudentUpdateActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:paddingTop="13dp"
+        android:paddingBottom="10dp"
         android:layout_marginVertical="10dp"
         android:orientation="horizontal"
         android:weightSum="10">
@@ -215,72 +256,9 @@ tools:context=".AdminStudentUpdateActivity">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:text="Phone Number" />
-
-        <EditText
-            android:id="@+id/edt_ad_stu_update_phone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:hint="Phone Number"
-            android:inputType="phone" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:orientation="horizontal"
-        android:weightSum="10">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:text="Email       " />
-
-        <EditText
-            android:id="@+id/edt_ad_stu_update_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:hint="Email"
-            android:inputType="textEmailAddress" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:orientation="horizontal"
-        android:weightSum="10">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:text="Password   " />
-
-        <EditText
-            android:id="@+id/edt_ad_stu_update_password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:hint="Password"
-            android:inputType="textPassword" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:orientation="horizontal"
-        android:weightSum="10">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:drawableStart="@drawable/ic_baseline_verified_user_24"
+            android:drawableTint="?attr/colorControlNormal"
             android:layout_weight="3"
             android:text="Status" />
 
@@ -294,6 +272,7 @@ tools:context=".AdminStudentUpdateActivity">
             <RadioButton
                 android:id="@+id/rb_ad_stu_update_inactive"
                 android:layout_width="wrap_content"
+                android:layout_marginStart="15dp"
                 android:layout_height="wrap_content"
                 android:checked="true"
                 android:text="InActive" />
@@ -301,6 +280,7 @@ tools:context=".AdminStudentUpdateActivity">
             <RadioButton
                 android:id="@+id/rb_ad_stu_update_active"
                 android:layout_width="wrap_content"
+                android:layout_marginLeft="50dp"
                 android:layout_height="wrap_content"
                 android:text="Active" />
 
@@ -314,24 +294,24 @@ tools:context=".AdminStudentUpdateActivity">
         android:gravity="center"
         android:orientation="horizontal">
 
-        <Button
+        <Button android:theme="@style/AppTheme.MyButton1"
             android:id="@+id/btn_ad_stu_update_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:text="Save" />
-        <Button
+        <Button android:theme="@style/AppTheme.MyButton7"
             android:id="@+id/btn_ad_stu_update_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:text="Delete" />
-        <Button
+        <Button android:theme="@style/AppTheme.MyButton3"
             android:id="@+id/btn_ad_stu_update_exit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:text="Exit" />
+            android:text="back" />
     </LinearLayout>
 </LinearLayout>
 </ScrollView>

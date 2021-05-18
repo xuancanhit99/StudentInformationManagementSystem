@@ -20,6 +20,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -56,7 +57,8 @@ public class AdminStudentUpdateActivity extends AppCompatActivity {
     String studentName, studentEmail, studentPassword, studentNo, studentDOB, studentClass, studentAvatar, studentPhone;
 
     private EditText edtAdStuUpdateName, edtAdStuUpdateEmail, edtAdStuUpdatePassword, edtAdStuUpdateNo, edtAdStuUpdateDOB, edtAdStuUpdateClass, edtAdStuUpdatePhone;
-    private Button btnAdStuUpdateSave, btnAdStuUpdateDelete, btnAdStuUpdateExit, btnAdStuUpdateTakePhoto, btnAdStuUpdateChoosePhoto, btnAdStuUpdateDelDOB;
+    private Button btnAdStuUpdateSave, btnAdStuUpdateDelete, btnAdStuUpdateExit, btnAdStuUpdateTakePhoto, btnAdStuUpdateChoosePhoto;
+    private ImageButton imBtnAdStuUpdateDelDOB;
     private ImageView ivAdStuUpdateAvt, ivAdStuUpdateExit;
 
     private RadioGroup rgAdStuUpdateGender, rgAdStuUpdateStatus;
@@ -83,7 +85,7 @@ public class AdminStudentUpdateActivity extends AppCompatActivity {
         initView();
 
         //Button Delete Date of birth
-        btnAdStuUpdateDelDOB.setOnClickListener(new View.OnClickListener() {
+        imBtnAdStuUpdateDelDOB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 edtAdStuUpdateDOB.setText("");
@@ -447,7 +449,7 @@ public class AdminStudentUpdateActivity extends AppCompatActivity {
         btnAdStuUpdateExit = findViewById(R.id.btn_ad_stu_update_exit);
         btnAdStuUpdateTakePhoto = findViewById(R.id.btn_ad_stu_update_take_photo);
         btnAdStuUpdateChoosePhoto = findViewById(R.id.btn_ad_stu_update_choose_photo);
-        btnAdStuUpdateDelDOB = findViewById(R.id.btn_ad_stu_update_del_dob);
+        imBtnAdStuUpdateDelDOB = findViewById(R.id.im_btn_ad_stu_update_del_dob);
     }
 
     private void initView() {

@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -56,7 +57,8 @@ public class AdminStudentAddActivity extends AppCompatActivity {
     String studentName, studentEmail, studentPassword, studentNo, studentDOB, studentClass, studentAvatar, studentPhone;
 
     private EditText edtAdStuAddName, edtAdStuAddEmail, edtAdStuAddPassword, edtAdStuAddNo, edtAdStuAddDOB, edtAdStuAddClass, edtAdStuAddPhone;
-    private Button btnAdStuAddSave, btnAdStuAddExit, btnAdStuAddTakePhoto, btnAdStuAddChoosePhoto, btnAdStuAddDelDOB;
+    private Button btnAdStuAddSave, btnAdStuAddExit, btnAdStuAddTakePhoto, btnAdStuAddChoosePhoto;
+    private ImageButton imBtnAdStuAddDelDOB;
     private ImageView ivAdStuAddAvt, ivAdStuAddExit;
 
     private RadioGroup rgAdStuAddGender, rgAdStuAddStatus;
@@ -77,7 +79,7 @@ public class AdminStudentAddActivity extends AppCompatActivity {
         initUI();
 
         //Button Delete Date of birth
-        btnAdStuAddDelDOB.setOnClickListener(new View.OnClickListener() {
+        imBtnAdStuAddDelDOB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 edtAdStuAddDOB.setText("");
@@ -335,6 +337,6 @@ public class AdminStudentAddActivity extends AppCompatActivity {
         btnAdStuAddExit = findViewById(R.id.btn_ad_stu_add_exit);
         btnAdStuAddTakePhoto = findViewById(R.id.btn_ad_stu_add_take_photo);
         btnAdStuAddChoosePhoto = findViewById(R.id.btn_ad_stu_add_choose_photo);
-        btnAdStuAddDelDOB = findViewById(R.id.btn_ad_stu_add_del_dob);
+        imBtnAdStuAddDelDOB = findViewById(R.id.im_btn_ad_stu_add_del_dob);
     }
 }

@@ -17,10 +17,21 @@
     <color name="colorLight">#d54c5c</color>
     <color name="colorGrey">#F8F9F9</color>
 
+
     <!--colors for modern ui-->
     <color name="whiteTextColor">#fff</color>
     <color name="primaryTextColor">#00a5ff</color>
     <color name="loginBkColor">#f0f0f0</color>
+    <color name="myColor1">#2196f3</color>
+    <color name="myColor2">#03DAC6</color>
+    <color name="myColor3">#018786</color>
+    <color name="myColor4">#B00020</color>
+    <color name="myColor5">#FFECB3</color>
+    <color name="myColor6">#9E9E9E</color>
+    <color name="myColor7">#4DD0E1</color>
+    <color name="myColor8">#00695C</color>
+    <color name="myColor9">#EEFF41</color>
+    <color name="myColor10">#FF9100</color>
 
     <!--colros for card-->
     <color name="whiteCardColor">#fff</color>

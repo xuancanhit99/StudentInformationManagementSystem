@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@drawable/background"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".MainActivity">
@@ -12,7 +12,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:gravity="center"
+        style="@style/AudioFileInfoOverlayText"
         android:text="Система Управления\nСтудентами"
         android:textSize="25dp" />
 
@@ -24,7 +26,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Copyright © Xuan Canh IKBO-07-19"
+        android:textColor="@color/white"
+        style="@style/AudioFileInfoOverlayText"
+        android:text="© Xuan Canh IKBO-07-19"
         android:textSize="13dp" />
 
 </LinearLayout>

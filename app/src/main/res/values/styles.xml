@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
+
+
 
     <!--designs for login and register-->
     <style name="parent">
@@ -18,7 +16,7 @@
     </style>
 
     <style name="headerText" parent="parent">
-        <item name="android:textSize">@dimen/headerTextSize</item>
+        <item name="android:textSize">25sp</item>
         <item name="android:textAlignment">center</item>
         <item name="android:textColor">@color/whiteTextColor</item>
         <item name="android:textStyle">bold</item>
@@ -34,11 +32,6 @@
         <item name="android:textColor">@color/primaryTextColor</item>
     </style>
 
-    <style name="modifiedEditText" parent="parent">
-        <item name="android:textSize">@dimen/newsMoreTextSize</item>
-        <item name="android:backgroundTint">@color/primaryTextColor</item>
-    </style>
-
     <style name="viewParent">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -49,4 +42,57 @@
         <item name="android:textColor">@color/whiteTextColor</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="AppTheme.MyButton1" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/myColor1</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="AppTheme.MyButton2" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/myColor2</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="AppTheme.MyButton3" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/myColor3</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="AppTheme.MyButton4" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/myColor4</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="AppTheme.MyButton5" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/myColor5</item>
+        <item name="android:textColor">?attr/colorControlNormal</item>
+    </style>
+    <style name="AppTheme.MyButton6" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/myColor6</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="AppTheme.MyButton7" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/myColor7</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="AppTheme.MyButton8" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/myColor8</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="AppTheme.MyButton9" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/myColor9</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="AppTheme.MyButton10" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/myColor10</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="AudioFileInfoOverlayText">
+        <item name="android:paddingLeft">4px</item>
+        <item name="android:paddingBottom">4px</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+
 </resources>

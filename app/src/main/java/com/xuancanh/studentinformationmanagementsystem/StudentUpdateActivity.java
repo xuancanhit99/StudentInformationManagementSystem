@@ -20,6 +20,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -54,7 +55,8 @@ public class StudentUpdateActivity extends AppCompatActivity {
 
     private ImageView ivStuUpdateAvatar, ivStuUpdateExit;
     private EditText edtStuUpdateNo, edtStuUpdateName, edtStuUpdateDOB, edtStuUpdateClass, edtStuUpdatePhone, edtStuUpdateEmail;
-    private Button btnStuUpdateSave, btnStuUpdateExit, btnStuUpdateDelete, btnStuUpdateTakePhoto, btnStuUpdateChoosePhoto, btnStuUpdateDelDOB;
+    private Button btnStuUpdateSave, btnStuUpdateExit, btnStuUpdateDelete, btnStuUpdateTakePhoto, btnStuUpdateChoosePhoto;
+    private ImageButton imBtnStuUpdateDelDOB;
     private RadioGroup rgStuUpdateGender;
     private RadioButton rbStuUpdateMale, rbStuUpdateFemale;
     String updateGender = "1";
@@ -139,7 +141,7 @@ public class StudentUpdateActivity extends AppCompatActivity {
         });
 
         //Button Delete Date of birth
-        btnStuUpdateDelDOB.setOnClickListener(new View.OnClickListener() {
+        imBtnStuUpdateDelDOB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 edtStuUpdateDOB.setText("");
@@ -445,21 +447,21 @@ public class StudentUpdateActivity extends AppCompatActivity {
     private void initUI() {
         ivStuUpdateAvatar = findViewById(R.id.iv_stu_update_avt);
         ivStuUpdateExit = findViewById(R.id.iv_stu_update_exit);
-        edtStuUpdateName = (EditText) findViewById(R.id.edt_stu_update_name);
-        edtStuUpdateNo = (EditText) findViewById(R.id.edt_stu_update_no);
-        edtStuUpdateDOB = (EditText) findViewById(R.id.edt_stu_update_dob);
-        edtStuUpdatePhone = (EditText) findViewById(R.id.edt_stu_update_phone);
-        edtStuUpdateEmail = (EditText) findViewById(R.id.edt_stu_update_email);
-        edtStuUpdateClass = (EditText) findViewById(R.id.edt_stu_update_class);
-        rgStuUpdateGender = (RadioGroup) findViewById(R.id.rg_stu_update_gender);
-        rbStuUpdateFemale = (RadioButton) findViewById(R.id.rb_stu_update_female);
-        rbStuUpdateMale = (RadioButton) findViewById(R.id.rb_stu_update_male);
-        btnStuUpdateSave = (Button) findViewById(R.id.btn_stu_update_save);
-        btnStuUpdateExit = (Button) findViewById(R.id.btn_stu_update_exit);
-        btnStuUpdateDelete = (Button) findViewById(R.id.btn_stu_update_delete);
-        btnStuUpdateTakePhoto = (Button) findViewById(R.id.btn_stu_update_take_photo);
-        btnStuUpdateChoosePhoto = (Button) findViewById(R.id.btn_stu_update_choose_photo);
-        btnStuUpdateDelDOB = (Button) findViewById(R.id.btn_stu_update_del_dob);
+        edtStuUpdateName = findViewById(R.id.edt_stu_update_name);
+        edtStuUpdateNo = findViewById(R.id.edt_stu_update_no);
+        edtStuUpdateDOB = findViewById(R.id.edt_stu_update_dob);
+        edtStuUpdatePhone = findViewById(R.id.edt_stu_update_phone);
+        edtStuUpdateEmail = findViewById(R.id.edt_stu_update_email);
+        edtStuUpdateClass = findViewById(R.id.edt_stu_update_class);
+        rgStuUpdateGender = findViewById(R.id.rg_stu_update_gender);
+        rbStuUpdateFemale = findViewById(R.id.rb_stu_update_female);
+        rbStuUpdateMale =  findViewById(R.id.rb_stu_update_male);
+        btnStuUpdateSave = findViewById(R.id.btn_stu_update_save);
+        btnStuUpdateExit = findViewById(R.id.btn_stu_update_exit);
+        btnStuUpdateDelete = findViewById(R.id.btn_stu_update_delete);
+        btnStuUpdateTakePhoto = findViewById(R.id.btn_stu_update_take_photo);
+        btnStuUpdateChoosePhoto = findViewById(R.id.btn_stu_update_choose_photo);
+        imBtnStuUpdateDelDOB = findViewById(R.id.im_btn_stu_update_del_dob);
     }
 
     @Override
