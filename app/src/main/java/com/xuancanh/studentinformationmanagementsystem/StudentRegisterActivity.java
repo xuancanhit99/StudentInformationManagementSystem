@@ -9,6 +9,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -28,6 +29,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -96,20 +99,50 @@ public class StudentRegisterActivity extends AppCompatActivity {
         btnStuRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                studentName = edtStuRegisterName.getText().toString();
-                studentEmail = edtStuRegisterEmail.getText().toString();
-                studentPassword = edtStuRegisterPassword.getText().toString();
-                if (studentName.length() > 0 && studentEmail.length() > 0 && studentPassword.length() > 0) {
-                    if (!realPath.equals("")) {
-                        uploadInfoWithPhoto();
-                    } else {
-                        uploadInfo();
+                if(isEmptyEditText(edtStuRegisterName)) {
+                    edtStuRegisterName.setError("Please enter student's name");
+                }
+                if(isEmptyEditText(edtStuRegisterPassword)) {
+                    edtStuRegisterPassword.setError("Please enter student's password");
+                }
+                if(isEmptyEditText(edtStuRegisterEmail)) {
+                    edtStuRegisterEmail.setError("Please enter student's email");
+                }
+
+                if(isEmailValid(edtStuRegisterEmail))  {
+                    studentName = edtStuRegisterName.getText().toString();
+                    studentEmail = edtStuRegisterEmail.getText().toString();
+                    studentPassword = edtStuRegisterPassword.getText().toString();
+                    if (studentName.length() > 0 && studentEmail.length() > 0 && studentPassword.length() > 0) {
+                        if (!realPath.equals("")) {
+                            uploadInfoWithPhoto();
+                        } else {
+                            uploadInfo();
+                        }
                     }
-                } else {
-                    Toast.makeText(StudentRegisterActivity.this, "Enter your email, name and password in the fields", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    edtStuRegisterEmail.setError("Email address not valid");
                 }
             }
         });
+    }
+
+    public static boolean isEmailValid(EditText editText) {
+        String email = editText.getText().toString();
+        if(email.equals("")) return true;
+        String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]+$";
+        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
+    private boolean isEmptyEditText(EditText editText) {
+        String str = editText.getText().toString();
+        if(TextUtils.isEmpty(str)) {
+            return true;
+        }
+        return false;
     }
 
     private void uploadInfo() {
@@ -126,7 +159,7 @@ public class StudentRegisterActivity extends AppCompatActivity {
                 String result = response.body();
                 Log.d("Retrofit response", result);
                 if (result.trim().equals("STUDENT_INSERT_SUCCESSFUL")) {
-                    Toast.makeText(StudentRegisterActivity.this, "Student Account Registration Successful", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(StudentRegisterActivity.this, "Student Account " + studentName + " Registration Successful", Toast.LENGTH_SHORT).show();
                     backToLogin();
                 }
             }

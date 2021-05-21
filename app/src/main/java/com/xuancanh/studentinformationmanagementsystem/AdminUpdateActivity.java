@@ -14,6 +14,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -32,6 +33,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -105,17 +108,28 @@ public class AdminUpdateActivity extends AppCompatActivity {
         btnAdminUpdateSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                adminName = edtAdminUpdateName.getText().toString();
-                adminEmail = edtAdminUpdateEmail.getText().toString();
-                if (adminName.length() > 0 && adminEmail.length() > 0) {
-                    if (!realPath.equals("")) {
-                        uploadInfoWithPhoto();
-                    } else {
-                        uploadInfo();
-                    }
-                } else {
-                    Toast.makeText(AdminUpdateActivity.this, "Name or Email cannot be empty", Toast.LENGTH_SHORT).show();
+                if(isEmptyEditText(edtAdminUpdateName)) {
+                    edtAdminUpdateName.setError("Please enter student's name");
                 }
+                if(isEmptyEditText(edtAdminUpdateEmail)) {
+                    edtAdminUpdateEmail.setError("Please enter student's email");
+                }
+
+                if(isEmailValid(edtAdminUpdateEmail))  {
+                    adminName = edtAdminUpdateName.getText().toString();
+                    adminEmail = edtAdminUpdateEmail.getText().toString();
+                    if (adminName.length() > 0 && adminEmail.length() > 0) {
+                        if (!realPath.equals("")) {
+                            uploadInfoWithPhoto();
+                        } else {
+                            uploadInfo();
+                        }
+                    }
+                    else {
+                        edtAdminUpdateEmail.setError("Email address not valid");
+                    }
+                }
+
             }
         });
 
@@ -151,6 +165,23 @@ public class AdminUpdateActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public static boolean isEmailValid(EditText editText) {
+        String email = editText.getText().toString();
+        if(email.equals("")) return true;
+        String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]+$";
+        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
+    private boolean isEmptyEditText(EditText editText) {
+        String str = editText.getText().toString();
+        if(TextUtils.isEmpty(str)) {
+            return true;
+        }
+        return false;
     }
 
     private void deleteAccAdmin() {

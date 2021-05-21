@@ -22,6 +22,8 @@ import com.xuancanh.studentinformationmanagementsystem.retrofit.DataClient;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -103,10 +105,24 @@ public class AdminLoginActivity extends AppCompatActivity {
         btnAdminLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                adminLogin();
-                rememberMe();
+                if(isEmailValid(edtAdminLoginEmail)) {
+                    adminLogin();
+                    rememberMe();
+                }
+                else {
+                    edtAdminLoginEmail.setError("Email address not valid");
+                }
             }
         });
+    }
+
+    public static boolean isEmailValid(EditText editText) {
+        String email = editText.getText().toString();
+        if(email.equals("")) return true;
+        String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]+$";
+        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
     }
 
     private void rememberMe() {
@@ -135,7 +151,7 @@ public class AdminLoginActivity extends AppCompatActivity {
                         intent.putExtra("ADMIN_DATA_FROM_LOGIN_TO_MENU", adminArr);
                         startActivity(intent);
                         finish();
-                        Toast.makeText(AdminLoginActivity.this, "Welcome " + adminArr.get(0).getAdName(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(AdminLoginActivity.this, "Welcome " + adminArr.get(0).getAdName(), Toast.LENGTH_SHORT).show();
                     }
                 }
 

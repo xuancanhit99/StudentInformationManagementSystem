@@ -15,6 +15,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -40,6 +41,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -184,31 +187,55 @@ public class StudentUpdateActivity extends AppCompatActivity {
         btnStuUpdateSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                studentNo = edtStuUpdateNo.getText().toString();
-                studentName = edtStuUpdateName.getText().toString();
-                studentDOB = edtStuUpdateDOB.getText().toString();
-                studentClass = edtStuUpdateClass.getText().toString();
-                studentPhone = edtStuUpdatePhone.getText().toString();
-                studentEmail = edtStuUpdateEmail.getText().toString();
-                if (studentNo.length() > 0 && studentName.length() > 0 && studentDOB.length() > 0 && studentClass.length() > 0 &&
-                        studentPhone.length() > 0 && studentEmail.length() > 0) {
-                    //Toast.makeText(StudentUpdateActivity.this, realPath, Toast.LENGTH_SHORT).show();
-                    if (!realPath.equals("")) {
-                        Toast.makeText(StudentUpdateActivity.this, "empty", Toast.LENGTH_SHORT).show();
-                        uploadInfoWithPhoto();
-
-                        //Log.d("uploadInfoWithPhoto", "1");
-                    } else {
-                        //Log.d("uploadInfo", "1");
-                        uploadInfo();
-                    }
-                } else {
-                    Toast.makeText(StudentUpdateActivity.this, "All fields cannot be empty", Toast.LENGTH_SHORT).show();
+                if(isEmptyEditText(edtStuUpdateName)) {
+                    edtStuUpdateName.setError("Please enter student's name");
+                }
+                if(isEmptyEditText(edtStuUpdateEmail)) {
+                    edtStuUpdateEmail.setError("Please enter student's email");
                 }
 
+                if(isEmailValid(edtStuUpdateEmail))  {
+                    studentNo = edtStuUpdateNo.getText().toString();
+                    studentName = edtStuUpdateName.getText().toString();
+                    studentDOB = edtStuUpdateDOB.getText().toString();
+                    studentClass = edtStuUpdateClass.getText().toString();
+                    studentPhone = edtStuUpdatePhone.getText().toString();
+                    studentEmail = edtStuUpdateEmail.getText().toString();
+                    if (studentName.length() > 0 && studentEmail.length() > 0) {
+                        //Toast.makeText(StudentUpdateActivity.this, realPath, Toast.LENGTH_SHORT).show();
+                        if (!realPath.equals("")) {
+                            Toast.makeText(StudentUpdateActivity.this, "empty", Toast.LENGTH_SHORT).show();
+                            uploadInfoWithPhoto();
 
+                            //Log.d("uploadInfoWithPhoto", "1");
+                        } else {
+                            //Log.d("uploadInfo", "1");
+                            uploadInfo();
+                        }
+                    }
+                }
+                else {
+                    edtStuUpdateEmail.setError("Email address not valid");
+                }
             }
         });
+    }
+
+    public static boolean isEmailValid(EditText editText) {
+        String email = editText.getText().toString();
+        if(email.equals("")) return true;
+        String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]+$";
+        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
+    private boolean isEmptyEditText(EditText editText) {
+        String str = editText.getText().toString();
+        if(TextUtils.isEmpty(str)) {
+            return true;
+        }
+        return false;
     }
 
     private void deleteAccStudent() {
@@ -279,7 +306,7 @@ public class StudentUpdateActivity extends AppCompatActivity {
                 String result = response.body();
                 Log.d("Updated Stu Info", result);
                 if (result.trim().equals("STUDENT_UPDATE_SUCCESSFUL")) {
-                    Toast.makeText(StudentUpdateActivity.this, "Successfully Updated Student Information", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(StudentUpdateActivity.this, "Successfully Updated Student Information " + studentName, Toast.LENGTH_SHORT).show();
                     backToMenu();
                 }
             }

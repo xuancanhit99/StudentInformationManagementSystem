@@ -97,14 +97,14 @@ public class AdminChangePasswordActivity extends AppCompatActivity {
                         Toast.makeText(AdminChangePasswordActivity.this, "New passwords and retype new passwords are not the same", Toast.LENGTH_SHORT).show();
                     }
                     else if(!currentPassword.equals(adminArr.get(0).getAdPassword()) && newPassword.equals(retypeNewPassword)) {
-                        Toast.makeText(AdminChangePasswordActivity.this, "The current password is not correct", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AdminChangePasswordActivity.this, "The current password Incorrect", Toast.LENGTH_SHORT).show();
                     }
                     else {
-                        Toast.makeText(AdminChangePasswordActivity.this, "Please type your current password and new password correctly", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AdminChangePasswordActivity.this, "Something wrong", Toast.LENGTH_SHORT).show();
                     }
                 }
                 else {
-                    Toast.makeText(AdminChangePasswordActivity.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AdminChangePasswordActivity.this, "Please enter complete information!", Toast.LENGTH_SHORT).show();
                 }
             }
         });

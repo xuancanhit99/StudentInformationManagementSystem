@@ -95,14 +95,14 @@ public class StudentChangePasswordActivity extends AppCompatActivity {
                         Toast.makeText(StudentChangePasswordActivity.this, "New passwords and retype new passwords are not the same", Toast.LENGTH_SHORT).show();
                     }
                     else if(!currentPassword.equals(studentArr.get(0).getStuPassword()) && newPassword.equals(retypeNewPassword)) {
-                        Toast.makeText(StudentChangePasswordActivity.this, "The current password is not correct", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(StudentChangePasswordActivity.this, "The current password Incorrect", Toast.LENGTH_SHORT).show();
                     }
                     else {
-                        Toast.makeText(StudentChangePasswordActivity.this, "Please type your current password and new password correctly", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(StudentChangePasswordActivity.this, "Something wrong", Toast.LENGTH_SHORT).show();
                     }
                 }
                 else {
-                    Toast.makeText(StudentChangePasswordActivity.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(StudentChangePasswordActivity.this, "Please enter complete information!", Toast.LENGTH_SHORT).show();
                 }
             }
         });

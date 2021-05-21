@@ -14,6 +14,9 @@ import android.widget.Toast;
 import com.xuancanh.studentinformationmanagementsystem.retrofit.APIUtils;
 import com.xuancanh.studentinformationmanagementsystem.retrofit.DataClient;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -64,35 +67,52 @@ public class AdminForgotPassword extends AppCompatActivity {
                         Toast.makeText(AdminForgotPassword.this, "New passwords and retype new passwords are not the same", Toast.LENGTH_SHORT).show();
                     }
                     else {
-                        DataClient checkData = APIUtils.getData();
-                        Call<String> callback = checkData.ForgotPasswordAdminData(adminId, adminEmail, adminNewPassword);
-                        callback.enqueue(new Callback<String>() {
-                            @Override
-                            public void onResponse(Call<String> call, Response<String> response) {
-                                String res = response.body();
-                                Log.d("Info Ok: ", res);
-                                if(res.trim().equals("ADMIN_CHANGE_PASSWORD_SUCCESSFUL")){
-                                    Toast.makeText(AdminForgotPassword.this, "Password Changed Successfully", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(AdminForgotPassword.this, AdminLoginActivity.class);
-                                    startActivity(intent);
-                                    finish();
+                        if(isEmailValid(edtAdminForgotPasswordEmail)) {
+                            DataClient checkData = APIUtils.getData();
+                            Call<String> callback = checkData.ForgotPasswordAdminData(adminId, adminEmail, adminNewPassword);
+                            callback.enqueue(new Callback<String>() {
+                                @Override
+                                public void onResponse(Call<String> call, Response<String> response) {
+                                    String res = response.body();
+                                    Log.d("Info Ok: ", res);
+                                    if(res.trim().equals("ADMIN_CHANGE_PASSWORD_SUCCESSFUL")){
+                                        Toast.makeText(AdminForgotPassword.this, "Password Changed Successfully", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(AdminForgotPassword.this, AdminLoginActivity.class);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                    else if(res.trim().equals("ADMIN_CHANGE_PASSWORD_FAILED")){
+                                        Toast.makeText(AdminForgotPassword.this, "Admin Email Or ID Incorrect", Toast.LENGTH_SHORT).show();
+                                    }
+                                    else {
+                                        Toast.makeText(AdminForgotPassword.this, "Something wrong", Toast.LENGTH_SHORT).show();
+                                    }
                                 }
-                                else if(res.trim().equals("ADMIN_CHANGE_PASSWORD_FAILED")){
-                                    Toast.makeText(AdminForgotPassword.this, "Admin Email Or ID Is Incorrect", Toast.LENGTH_SHORT).show();
+                                @Override
+                                public void onFailure(Call<String> call, Throwable t) {
+                                    Log.d("Wrong:", t.getMessage());
                                 }
-                                else {
-                                    Toast.makeText(AdminForgotPassword.this, "Something wrong", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                            @Override
-                            public void onFailure(Call<String> call, Throwable t) {
-                                Log.d("Wrong:", t.getMessage());
-                            }
-                        });
+                            });
+                        }
+                        else {
+                            edtAdminForgotPasswordEmail.setError("Email address not valid");
+                        }
                     }
+                }
+                else {
+                    Toast.makeText(AdminForgotPassword.this, "Please enter complete information!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+    }
+
+    public static boolean isEmailValid(EditText editText) {
+        String email = editText.getText().toString();
+        if(email.equals("")) return true;
+        String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]+$";
+        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
     }
 
     private void initUI() {

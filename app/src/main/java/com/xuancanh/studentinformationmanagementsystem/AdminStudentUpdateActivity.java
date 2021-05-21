@@ -15,6 +15,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -40,6 +41,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -198,26 +201,54 @@ public class AdminStudentUpdateActivity extends AppCompatActivity {
         btnAdStuUpdateSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                studentName = edtAdStuUpdateName.getText().toString();
-                studentEmail = edtAdStuUpdateEmail.getText().toString();
-                studentPassword = edtAdStuUpdatePassword.getText().toString();
-                studentNo = edtAdStuUpdateNo.getText().toString();
-                studentDOB = edtAdStuUpdateDOB.getText().toString();
-                studentClass = edtAdStuUpdateClass.getText().toString();
-                studentPhone = edtAdStuUpdatePhone.getText().toString();
-
-                if (studentName.length() > 0 && studentEmail.length() > 0 && studentPassword.length() > 0) {
-                    if (!realPath.equals("")) {
-                        uploadInfoWithPhoto();
-                    } else {
-                        uploadInfo();
-                    }
-                } else {
-                    Toast.makeText(AdminStudentUpdateActivity.this, "Enter email, name and password in the fields", Toast.LENGTH_SHORT).show();
+                if(isEmptyEditText(edtAdStuUpdateName)) {
+                    edtAdStuUpdateName.setError("Please enter student's name");
+                }
+                if(isEmptyEditText(edtAdStuUpdatePassword)) {
+                    edtAdStuUpdatePassword.setError("Please enter student's password");
+                }
+                if(isEmptyEditText(edtAdStuUpdateEmail)) {
+                    edtAdStuUpdateEmail.setError("Please enter student's email");
                 }
 
+                if(isEmailValid(edtAdStuUpdateEmail))  {
+                    studentName = edtAdStuUpdateName.getText().toString();
+                    studentEmail = edtAdStuUpdateEmail.getText().toString();
+                    studentPassword = edtAdStuUpdatePassword.getText().toString();
+                    studentNo = edtAdStuUpdateNo.getText().toString();
+                    studentDOB = edtAdStuUpdateDOB.getText().toString();
+                    studentClass = edtAdStuUpdateClass.getText().toString();
+                    studentPhone = edtAdStuUpdatePhone.getText().toString();
+                    if (studentName.length() > 0 && studentEmail.length() > 0 && studentPassword.length() > 0) {
+                        if (!realPath.equals("")) {
+                            uploadInfoWithPhoto();
+                        } else {
+                            uploadInfo();
+                        }
+                    }
+                }
+                else {
+                    edtAdStuUpdateEmail.setError("Email address not valid");
+                }
             }
         });
+    }
+
+    public static boolean isEmailValid(EditText editText) {
+        String email = editText.getText().toString();
+        if(email.equals("")) return true;
+        String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]+$";
+        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
+    private boolean isEmptyEditText(EditText editText) {
+        String str = editText.getText().toString();
+        if(TextUtils.isEmpty(str)) {
+            return true;
+        }
+        return false;
     }
 
     private void deleteAccStudent() {
@@ -327,7 +358,7 @@ public class AdminStudentUpdateActivity extends AppCompatActivity {
                 String result = response.body();
                 Log.d("Updated Stu Info", result);
                 if (result.trim().equals("STUDENT_UPDATE_SUCCESSFUL")) {
-                    Toast.makeText(AdminStudentUpdateActivity.this, "Successfully Updated Student Information", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AdminStudentUpdateActivity.this, "Successfully Updated Student Information " + studentName, Toast.LENGTH_SHORT).show();
                     backToMenu();
                 }
             }
