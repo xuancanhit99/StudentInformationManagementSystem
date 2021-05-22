@@ -5,13 +5,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.xuancanh.studentinformationmanagementsystem.adapter.StudentAdapter;
 import com.xuancanh.studentinformationmanagementsystem.model.Student;
@@ -29,6 +28,7 @@ public class AdminStudentViewAllActivity extends AppCompatActivity {
 
     private ArrayList<Student> studentArr;
     RecyclerView rvItems;
+    SwipeRefreshLayout srlAdStuViewAll;
     private StudentAdapter studentAdapter;
 
     ImageButton ibStuAdd;
@@ -38,13 +38,23 @@ public class AdminStudentViewAllActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_student_view_all);
 
+        //SwipeRefreshLayout
+        srlAdStuViewAll = findViewById(R.id.srl_ad_stu_view_all);
+        srlAdStuViewAll.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                readData();
+                studentAdapter.notifyDataSetChanged();
+                srlAdStuViewAll.setRefreshing(false);
+            }
+        });
+
         //Circle Button Add
         ibStuAdd = findViewById(R.id.ib_stu_add);
         ibStuAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(AdminStudentViewAllActivity.this, AdminStudentAddActivity.class));
-                //Co can dua lai du lieu
             }
         });
 
@@ -78,8 +88,8 @@ public class AdminStudentViewAllActivity extends AppCompatActivity {
     }
 
     private void addControls() {
-        studentArr = new ArrayList<Student>();
-        rvItems = findViewById(R.id.rv_items);
+        studentArr = new ArrayList<>();
+        rvItems = findViewById(R.id.rv_ad_stu_view_all_items);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         rvItems.setLayoutManager(layoutManager);
         rvItems.setHasFixedSize(true);

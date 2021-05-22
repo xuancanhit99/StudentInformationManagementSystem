@@ -3,10 +3,7 @@ package com.xuancanh.studentinformationmanagementsystem.adapter;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,15 +16,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 import com.xuancanh.studentinformationmanagementsystem.AdminStudentUpdateActivity;
+import com.xuancanh.studentinformationmanagementsystem.AdminStudentViewProfileActivity;
 import com.xuancanh.studentinformationmanagementsystem.ItemClickListener;
 import com.xuancanh.studentinformationmanagementsystem.R;
-import com.xuancanh.studentinformationmanagementsystem.StudentUpdateActivity;
 import com.xuancanh.studentinformationmanagementsystem.model.Student;
 
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Observable;
-import java.util.Observer;
 
 public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.DataViewHolder> {
     //Form for adapter
@@ -82,15 +76,15 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.DataView
             @Override
             public void onClick(View view, int position, boolean isLongClick) {
                 if (isLongClick) {
-                    Toast.makeText(context, "Student: " + student.getStuName(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Student " + student.getStuName(), Toast.LENGTH_SHORT).show();
                 } else {
-                    Intent intent = new Intent(view.getContext(), AdminStudentUpdateActivity.class);
+                    Intent intent = new Intent(view.getContext(), AdminStudentViewProfileActivity.class);
 
                     Bundle bundle = new Bundle();
 
                     bundle.putParcelableArrayList("STUDENT_DATA_ARRAY", studentArr);
                     bundle.putInt("STUDENT_DATA_POSITION", position);
-                    intent.putExtra("STUDENT_DATA_FROM_STUDENT_ADAPTER_TO_UPDATE", bundle);
+                    intent.putExtra("STUDENT_DATA_FROM_STUDENT_ADAPTER_TO_AD_STU_VIEW_PROFILE", bundle);
                     view.getContext().startActivity(intent);
                     ((Activity)view.getContext()).finish();
                     //Tao Update Student moi

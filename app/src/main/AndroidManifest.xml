@@ -17,7 +17,8 @@
         android:theme="@style/Theme.StudentInformationManagementSystem"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".AdminStudentUpdateActivity"></activity>
+        <activity android:name=".AdminStudentViewProfileActivity"></activity>
+        <activity android:name=".AdminStudentUpdateActivity" />
         <activity android:name=".AdminStudentViewAllActivity" />
         <activity android:name=".AdminStudentAddActivity" />
         <activity android:name=".StudentViewProfileActivity" />

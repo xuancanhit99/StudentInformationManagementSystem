@@ -43,6 +43,15 @@ public class Student implements Parcelable {
     @SerializedName("StuActive")
     @Expose
     private String stuActive;
+    @SerializedName("StuNotice")
+    @Expose
+    private String stuNotice;
+    @SerializedName("StuReport")
+    @Expose
+    private String stuReport;
+    @SerializedName("StuReply")
+    @Expose
+    private String stuReply;
 
     protected Student(Parcel in) {
         stuId = in.readString();
@@ -56,6 +65,9 @@ public class Student implements Parcelable {
         stuPhone = in.readString();
         stuGender = in.readString();
         stuActive = in.readString();
+        stuNotice = in.readString();
+        stuReport = in.readString();
+        stuReply = in.readString();
     }
 
     public static final Creator<Student> CREATOR = new Creator<Student>() {
@@ -158,6 +170,30 @@ public class Student implements Parcelable {
         this.stuActive = stuActive;
     }
 
+    public String getStuNotice() {
+        return stuNotice;
+    }
+
+    public void setStuNotice(String stuNotice) {
+        this.stuNotice = stuNotice;
+    }
+
+    public String getStuReport() {
+        return stuReport;
+    }
+
+    public void setStuReport(String stuReport) {
+        this.stuReport = stuReport;
+    }
+
+    public String getStuReply() {
+        return stuReply;
+    }
+
+    public void setStuReply(String stuReply) {
+        this.stuReply = stuReply;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -176,5 +212,8 @@ public class Student implements Parcelable {
         dest.writeString(stuPhone);
         dest.writeString(stuGender);
         dest.writeString(stuActive);
+        dest.writeString(stuNotice);
+        dest.writeString(stuReport);
+        dest.writeString(stuReply);
     }
 }

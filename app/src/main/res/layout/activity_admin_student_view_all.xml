@@ -4,10 +4,20 @@
     android:layout_height="match_parent"
     android:orientation="horizontal">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_items"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+
+        android:id="@+id/srl_ad_stu_view_all"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_ad_stu_view_all_items"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
 
     <ImageButton
         android:id="@+id/ib_stu_add"

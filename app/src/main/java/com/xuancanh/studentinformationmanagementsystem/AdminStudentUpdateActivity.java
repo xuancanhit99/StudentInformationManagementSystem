@@ -81,8 +81,8 @@ public class AdminStudentUpdateActivity extends AppCompatActivity {
         //Connect layout
         initUI();
 
-        //Receive Data from View All
-        receiveDataFromStudentAdapter();
+        //Receive Data from AdStuViewProfile
+        receiveDataFromAdStuViewProfile();
 
         //Set on View
         initView();
@@ -283,9 +283,9 @@ public class AdminStudentUpdateActivity extends AppCompatActivity {
     }
 
 
-    private void receiveDataFromStudentAdapter() {
+    private void receiveDataFromAdStuViewProfile() {
         Intent intent = getIntent();
-        Bundle bundle = intent.getBundleExtra("STUDENT_DATA_FROM_STUDENT_ADAPTER_TO_UPDATE");
+        Bundle bundle = intent.getBundleExtra("STUDENT_DATA_FROM_AD_STU_VIEW_PROFILE_TO_UPDATE");
         if(bundle != null) {
             studentArr = bundle.getParcelableArrayList("STUDENT_DATA_ARRAY");
             position = bundle.getInt("STUDENT_DATA_POSITION");
@@ -371,11 +371,12 @@ public class AdminStudentUpdateActivity extends AppCompatActivity {
     }
     //Send data to menu and end activity current
     private void backToMenu() {
-//        Intent intent = getIntent();
-//        intent.putExtra("STUDENT_DATA_FROM_UPDATE_TO_VIEW_ALL", studentArr);
-//        setResult(AdminStudentViewAllActivity.RESULT_AD_STU_UPDATE_OK , intent);
-        //finish();
-        Intent intent = new Intent(AdminStudentUpdateActivity.this, AdminStudentViewAllActivity.class);
+        Intent intent = new Intent(AdminStudentUpdateActivity.this, AdminStudentViewProfileActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putParcelableArrayList("STUDENT_DATA_ARRAY", studentArr);
+        bundle.putInt("STUDENT_DATA_POSITION", position);
+        // Data resend to AdStuViewProfile STUDENT_DATA_FROM_STUDENT_ADAPTER_TO_AD_STU_VIEW_PROFILE - just receiver 1 time
+        intent.putExtra("STUDENT_DATA_FROM_STUDENT_ADAPTER_TO_AD_STU_VIEW_PROFILE", bundle);
         startActivity(intent);
         finish();
     }

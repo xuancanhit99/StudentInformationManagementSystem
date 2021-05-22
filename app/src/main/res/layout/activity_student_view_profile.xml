@@ -71,7 +71,7 @@ tools:context=".StudentViewProfileActivity">
                             android:layout_height="wrap_content"
                             android:layout_weight="3"
                             android:textColor="@color/myColor8"
-                            android:text="Student №  " />
+                            android:text="Student №        " />
 
                         <TextView
                             android:id="@+id/tv_stu_view_profile_no"
@@ -93,7 +93,7 @@ tools:context=".StudentViewProfileActivity">
                             android:layout_height="wrap_content"
                             android:layout_weight="3"
                             android:textColor="@color/myColor8"
-                            android:text="Full Name  " />
+                            android:text="Full Name         " />
 
                         <TextView
                             android:id="@+id/tv_stu_view_profile_name"
@@ -114,7 +114,7 @@ tools:context=".StudentViewProfileActivity">
                             android:layout_height="wrap_content"
                             android:layout_weight="3"
                             android:textColor="@color/myColor8"
-                            android:text="Date of birth" />
+                            android:text="Date of birth     " />
 
                         <TextView
                             android:id="@+id/tv_stu_view_profile_dob"
@@ -135,7 +135,7 @@ tools:context=".StudentViewProfileActivity">
                             android:layout_height="wrap_content"
                             android:layout_weight="3"
                             android:textColor="@color/myColor8"
-                            android:text="Class Name " />
+                            android:text="Class Name     " />
 
                         <TextView
                             android:id="@+id/tv_stu_view_profile_class"
@@ -156,7 +156,7 @@ tools:context=".StudentViewProfileActivity">
                             android:layout_height="wrap_content"
                             android:layout_weight="3"
                             android:textColor="@color/myColor8"
-                            android:text="Gender        " />
+                            android:text="Gender                " />
                         <TextView
                             android:id="@+id/tv_stu_view_profile_gender"
                             android:layout_width="wrap_content"
@@ -178,7 +178,7 @@ tools:context=".StudentViewProfileActivity">
                             android:layout_height="wrap_content"
                             android:layout_weight="3"
                             android:textColor="@color/myColor8"
-                            android:text="Phone Number" />
+                            android:text="Phone Number " />
 
                         <TextView
                             android:id="@+id/tv_stu_view_profile_phone"
@@ -200,7 +200,7 @@ tools:context=".StudentViewProfileActivity">
                             android:layout_height="wrap_content"
                             android:layout_weight="3"
                             android:textColor="@color/myColor8"
-                            android:text="Email       " />
+                            android:text="Email                  " />
 
                         <TextView
                             android:id="@+id/tv_stu_view_profile_email"
