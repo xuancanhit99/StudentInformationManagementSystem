@@ -121,4 +121,9 @@ public interface DataClient {
                                         @Field("StudentPassword") String StudentPassword,
                                         @Field("StudentActive") String StudentActive,
                                         @Field("StudentCurrentAvatar") String StudentCurrentAvatar);
+
+    //Send Notice
+    @FormUrlEncoded
+    @POST("admin/sendNotice.php")
+    Call<String> AdminNoticeToStudentData(@Field("StudentNotice") String StudentNotice);
 }
