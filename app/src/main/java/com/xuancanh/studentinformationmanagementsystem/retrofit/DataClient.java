@@ -126,4 +126,10 @@ public interface DataClient {
     @FormUrlEncoded
     @POST("admin/sendNotice.php")
     Call<String> AdminNoticeToStudentData(@Field("StudentNotice") String StudentNotice);
+
+    //Reply
+    @FormUrlEncoded
+    @POST("admin/replyStudent.php")
+    Call<String> AdminReplyStudentData(@Field("StudentId") String StudentId,
+                                       @Field("StudentReply") String StudentReply);
 }

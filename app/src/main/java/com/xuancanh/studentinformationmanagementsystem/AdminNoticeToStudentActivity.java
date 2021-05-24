@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.xuancanh.studentinformationmanagementsystem.adapter.StudentAdapter;
@@ -27,6 +28,7 @@ public class AdminNoticeToStudentActivity extends AppCompatActivity {
 
     private Button btnAdNoticeToStuSend, btnAdNoticeToStuBack;
     private EditText edtAdNoticeToStuContent;
+    private ImageView ivAdNoticeToStuBack;
 
     ArrayList<Student> studentArr;
     String notice;
@@ -74,6 +76,14 @@ public class AdminNoticeToStudentActivity extends AppCompatActivity {
                 backToMenu();
             }
         });
+
+        //Image View Back
+        ivAdNoticeToStuBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                backToMenu();
+            }
+        });
     }
     private void hideKeyboard(View v) {
         InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
@@ -107,6 +117,7 @@ public class AdminNoticeToStudentActivity extends AppCompatActivity {
         btnAdNoticeToStuBack = findViewById(R.id.btn_ad_notice_to_stu_back);
         btnAdNoticeToStuSend = findViewById(R.id.btn_ad_notice_to_stu_send);
         edtAdNoticeToStuContent = findViewById(R.id.edt_ad_notice_to_stu_content);
+        ivAdNoticeToStuBack = findViewById(R.id.iv_ad_notice_to_stu_back);
     }
 
     @Override

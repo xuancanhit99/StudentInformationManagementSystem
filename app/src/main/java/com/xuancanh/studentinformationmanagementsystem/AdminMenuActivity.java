@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class AdminMenuActivity extends AppCompatActivity {
 
-    Button addStudent, viewStudent, noticeStudent, btnHomeMenuLogout, btnAdminEdit;
+    Button addStudent, viewStudent, noticeStudent, reportStudent, btnHomeMenuLogout, btnAdminEdit;
     ImageView ivAdminAvt;
     TextView tvAdminName, tvAdminEmail;
     ArrayList<Admin> adminArr;
@@ -73,6 +73,15 @@ public class AdminMenuActivity extends AppCompatActivity {
             }
         });
 
+        //Button Report
+        reportStudent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminMenuActivity.this, AdminStudentReportActivity.class);
+                startActivity(intent);
+            }
+        });
+
         //Button Edit
         btnAdminEdit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,6 +109,7 @@ public class AdminMenuActivity extends AppCompatActivity {
         addStudent = findViewById(R.id.btn_student_add);
         viewStudent = findViewById(R.id.btn_student_view_all);
         noticeStudent = findViewById(R.id.btn_student_notice);
+        reportStudent = findViewById(R.id.btn_student_report);
     }
 
     //Set on View

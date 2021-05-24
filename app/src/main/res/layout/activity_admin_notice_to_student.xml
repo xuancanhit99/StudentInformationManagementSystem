@@ -13,7 +13,7 @@ tools:context=".AdminNoticeToStudentActivity">
     android:layout_height="50dp"
     android:background="@color/colorPrimaryDark2">
     <ImageView
-        android:id="@+id/iv_admin_forgot_password_exit"
+        android:id="@+id/iv_ad_notice_to_stu_back"
         android:layout_width="65dp"
         android:layout_height="75dp"
         android:padding="7dp"

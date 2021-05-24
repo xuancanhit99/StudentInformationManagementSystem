@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sv_ad_stu_report"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminStudentReportActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp"
+        tools:context=".AdminStudentReportActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimaryDark2">
+
+            <ImageView
+                android:id="@+id/iv_ad_stu_report_back"
+                android:layout_width="65dp"
+                android:layout_height="75dp"
+                android:padding="7dp"
+                android:src="@drawable/ic_baseline_arrow_back_ios_24" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Report from students "
+                android:textColor="@color/colorWhite"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_ad_stu_report_num_of_notification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:drawableStart="@drawable/ic_baseline_circle_notifications_24"
+                    android:drawableTint="?attr/colorControlNormal"
+                    android:textColor="@color/myColor8" />
+
+                <TextView
+                    android:id="@+id/tv_ad_stu_report_from_students"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/myColor8" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Choose student: "
+                        android:textColor="@color/myColor8" />
+
+                    <Spinner
+                        android:id="@+id/sn_ad_stu_report_list_stu"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableStart="@drawable/ic_baseline_report_24"
+                    android:drawableTint="?attr/colorControlNormal"
+                    android:text=" Report content"
+                    android:textColor="@color/myColor8" />
+
+                <TextView
+                    android:id="@+id/tv_ad_stu_report_content"
+                    style="@style/modifiedEditText"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/border_image_view"
+                    android:backgroundTint="?attr/colorControlNormal"
+                    android:lines="10"
+                    android:maxLines="10"
+                    android:padding="8dp"
+                    android:scrollbars="vertical" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableStart="@drawable/ic_baseline_message_24"
+                    android:drawableTint="?attr/colorControlNormal"
+                    android:text=" Reply"
+                    android:textColor="@color/myColor8" />
+
+                <com.google.android.material.textfield.TextInputLayout style="@style/parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_ad_stu_report_reply_content"
+                        style="@style/modifiedEditText"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/border_image_view"
+                        android:backgroundTint="?attr/colorControlNormal"
+                        android:gravity="top|left"
+                        android:inputType="textMultiLine"
+                        android:lines="10"
+                        android:maxLines="10"
+                        android:padding="8dp"
+                        android:scrollbars="vertical" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_ad_stu_report_reply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:text="Reply"
+                android:theme="@style/AppTheme.MyButton1" />
+
+            <Button
+                android:id="@+id/btn_ad_stu_report_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:text="Back"
+                android:theme="@style/AppTheme.MyButton3" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>
