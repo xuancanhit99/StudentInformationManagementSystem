@@ -1,11 +1,8 @@
 package com.xuancanh.studentinformationmanagementsystem;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -15,6 +12,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.xuancanh.studentinformationmanagementsystem.model.Student;
 import com.xuancanh.studentinformationmanagementsystem.retrofit.APIUtils;
@@ -53,7 +52,7 @@ public class StudentLoginActivity extends AppCompatActivity {
         edtStuLoginPassword.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if(actionId == EditorInfo.IME_ACTION_DONE){
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
                     studentLogin();
                     rememberMe();
                 }
@@ -103,20 +102,20 @@ public class StudentLoginActivity extends AppCompatActivity {
         btnStuLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isEmailValid(edtStuLoginEmail)) {
+                if (isEmailValid(edtStuLoginEmail)) {
                     studentLogin();
                     rememberMe();
-                }
-                else {
+                } else {
                     edtStuLoginEmail.setError("Email address not valid");
                 }
             }
         });
 
     }
+
     public static boolean isEmailValid(EditText editText) {
         String email = editText.getText().toString();
-        if(email.equals("")) return true;
+        if (email.equals("")) return true;
         String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]+$";
         Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(email);
@@ -126,14 +125,14 @@ public class StudentLoginActivity extends AppCompatActivity {
     private void studentLogin() {
         studentEmail = edtStuLoginEmail.getText().toString();
         studentPassword = edtStuLoginPassword.getText().toString();
-        if(studentEmail.length() > 0 && studentPassword.length() > 0) {
+        if (studentEmail.length() > 0 && studentPassword.length() > 0) {
             DataClient dataClient = APIUtils.getData();
             retrofit2.Call<List<Student>> callback = dataClient.LoginStudentData(studentEmail, studentPassword);
             callback.enqueue(new Callback<List<Student>>() {
                 @Override
                 public void onResponse(Call<List<Student>> call, Response<List<Student>> response) {
-                    studentArr = (ArrayList<Student>)response.body();
-                    if(studentArr.size() > 0) {
+                    studentArr = (ArrayList<Student>) response.body();
+                    if (studentArr.size() > 0) {
                         //Send Data and finish
                         Intent intent = new Intent(StudentLoginActivity.this, StudentMenuActivity.class);
                         intent.putExtra("STUDENT_DATA_FROM_LOGIN_TO_MENU", studentArr);

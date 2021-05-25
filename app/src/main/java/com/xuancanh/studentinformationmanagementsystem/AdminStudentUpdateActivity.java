@@ -171,7 +171,7 @@ public class AdminStudentUpdateActivity extends AppCompatActivity {
                 //Check xem co can gui data
             }
         });
-        
+
         //Button Delete
         btnAdStuUpdateDelete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -201,17 +201,17 @@ public class AdminStudentUpdateActivity extends AppCompatActivity {
         btnAdStuUpdateSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isEmptyEditText(edtAdStuUpdateName)) {
+                if (isEmptyEditText(edtAdStuUpdateName)) {
                     edtAdStuUpdateName.setError("Please enter student's name");
                 }
-                if(isEmptyEditText(edtAdStuUpdatePassword)) {
+                if (isEmptyEditText(edtAdStuUpdatePassword)) {
                     edtAdStuUpdatePassword.setError("Please enter student's password");
                 }
-                if(isEmptyEditText(edtAdStuUpdateEmail)) {
+                if (isEmptyEditText(edtAdStuUpdateEmail)) {
                     edtAdStuUpdateEmail.setError("Please enter student's email");
                 }
 
-                if(isEmailValid(edtAdStuUpdateEmail))  {
+                if (isEmailValid(edtAdStuUpdateEmail)) {
                     studentName = edtAdStuUpdateName.getText().toString();
                     studentEmail = edtAdStuUpdateEmail.getText().toString();
                     studentPassword = edtAdStuUpdatePassword.getText().toString();
@@ -226,8 +226,7 @@ public class AdminStudentUpdateActivity extends AppCompatActivity {
                             uploadInfo();
                         }
                     }
-                }
-                else {
+                } else {
                     edtAdStuUpdateEmail.setError("Email address not valid");
                 }
             }
@@ -236,7 +235,7 @@ public class AdminStudentUpdateActivity extends AppCompatActivity {
 
     public static boolean isEmailValid(EditText editText) {
         String email = editText.getText().toString();
-        if(email.equals("")) return true;
+        if (email.equals("")) return true;
         String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]+$";
         Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(email);
@@ -245,7 +244,7 @@ public class AdminStudentUpdateActivity extends AppCompatActivity {
 
     private boolean isEmptyEditText(EditText editText) {
         String str = editText.getText().toString();
-        if(TextUtils.isEmpty(str)) {
+        if (TextUtils.isEmpty(str)) {
             return true;
         }
         return false;
@@ -286,7 +285,7 @@ public class AdminStudentUpdateActivity extends AppCompatActivity {
     private void receiveDataFromAdStuViewProfile() {
         Intent intent = getIntent();
         Bundle bundle = intent.getBundleExtra("STUDENT_DATA_FROM_AD_STU_VIEW_PROFILE_TO_UPDATE");
-        if(bundle != null) {
+        if (bundle != null) {
             studentArr = bundle.getParcelableArrayList("STUDENT_DATA_ARRAY");
             position = bundle.getInt("STUDENT_DATA_POSITION");
         }
@@ -318,7 +317,7 @@ public class AdminStudentUpdateActivity extends AppCompatActivity {
             }
         });
     }
-    
+
     private void uploadInfo() {
         String currentAvatar, newAvatar;
         if (studentArr.get(position).getStuAvatar().equals("")) {
@@ -369,6 +368,7 @@ public class AdminStudentUpdateActivity extends AppCompatActivity {
             }
         });
     }
+
     //Send data to menu and end activity current
     private void backToMenu() {
         Intent intent = new Intent(AdminStudentUpdateActivity.this, AdminStudentViewProfileActivity.class);
@@ -449,16 +449,16 @@ public class AdminStudentUpdateActivity extends AppCompatActivity {
             outstream = getContentResolver().openOutputStream(imageUri);
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outstream);
             outstream.close();
-            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
             e.printStackTrace();
-            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 
     private void initUI() {
         ivAdStuUpdateAvt = findViewById(R.id.iv_ad_stu_update_avt);
-        ivAdStuUpdateExit =findViewById(R.id.iv_ad_stu_update_exit);
+        ivAdStuUpdateExit = findViewById(R.id.iv_ad_stu_update_exit);
 
         edtAdStuUpdateName = findViewById(R.id.edt_ad_stu_update_name);
         edtAdStuUpdateNo = findViewById(R.id.edt_ad_stu_update_no);
@@ -466,7 +466,7 @@ public class AdminStudentUpdateActivity extends AppCompatActivity {
         edtAdStuUpdatePhone = findViewById(R.id.edt_ad_stu_update_phone);
         edtAdStuUpdateEmail = findViewById(R.id.edt_ad_stu_update_email);
         edtAdStuUpdateClass = findViewById(R.id.edt_ad_stu_update_class);
-        edtAdStuUpdatePassword= findViewById(R.id.edt_ad_stu_update_password);
+        edtAdStuUpdatePassword = findViewById(R.id.edt_ad_stu_update_password);
 
         rgAdStuUpdateGender = findViewById(R.id.rg_ad_stu_update_gender);
         rgAdStuUpdateStatus = findViewById(R.id.rg_ad_stu_update_status);
@@ -532,6 +532,7 @@ public class AdminStudentUpdateActivity extends AppCompatActivity {
         }
 
     }
+
     @Override
     public void onBackPressed() {
         backToMenu();

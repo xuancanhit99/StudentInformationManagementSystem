@@ -54,7 +54,14 @@ public interface DataClient {
     @FormUrlEncoded
     @POST("changePassword.php")
     Call<String> ChangePasswordStudentData(@Field("StudentId") String StudentId,
-                                         @Field("StudentNewPassword") String StudentNewPassword);
+                                           @Field("StudentNewPassword") String StudentNewPassword);
+
+    //Report
+    @FormUrlEncoded
+    @POST("report.php")
+    Call<String> ReportStudentData(@Field("StudentId") String StudentId,
+                                   @Field("StudentReport") String StudentReport);
+
     //Admin
     @FormUrlEncoded
     @POST("admin/login.php")
@@ -68,16 +75,16 @@ public interface DataClient {
     @FormUrlEncoded
     @POST("admin/update.php")
     Call<String> UpdateAdminData(@Field("AdminId") String AdminId,
-                                   @Field("AdminEmail") String AdminEmail,
-                                   @Field("AdminName") String AdminName,
-                                   @Field("AdminAvatar") String AdminAvatar,
-                                   @Field("AdminCurrentAvatar") String AdminCurrentAvatar);
+                                 @Field("AdminEmail") String AdminEmail,
+                                 @Field("AdminName") String AdminName,
+                                 @Field("AdminAvatar") String AdminAvatar,
+                                 @Field("AdminCurrentAvatar") String AdminCurrentAvatar);
 
     @FormUrlEncoded
     @POST("admin/forgotPassword.php")
     Call<String> ForgotPasswordAdminData(@Field("AdminId") String AdminId,
-                                              @Field("AdminEmail") String AdminEmail,
-                                              @Field("AdminNewPassword") String AdminNewPassword);
+                                         @Field("AdminEmail") String AdminEmail,
+                                         @Field("AdminNewPassword") String AdminNewPassword);
 
     @GET("admin/delete.php")
     Call<String> DeleteAdminData(@Query("AdminId") String AdminId, @Query("AdminAvatar") String AdminAvatar);

@@ -5,6 +5,7 @@
     android:id="@+id/sv_ad_stu_report"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
     tools:context=".AdminStudentReportActivity">
 
     <LinearLayout
@@ -17,7 +18,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@color/colorPrimaryDark2">
+            android:background="#fff">
 
             <ImageView
                 android:id="@+id/iv_ad_stu_report_back"
@@ -30,8 +31,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="Report from students "
-                android:textColor="@color/colorWhite"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Report From Students "
+                android:textColor="?attr/colorControlNormal"
                 android:textSize="25sp"
                 android:textStyle="bold" />
         </RelativeLayout>
@@ -94,9 +96,9 @@
 
                     <Spinner
                         android:id="@+id/sn_ad_stu_report_list_stu"
-                        android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp" />
                 </LinearLayout>
 
                 <TextView

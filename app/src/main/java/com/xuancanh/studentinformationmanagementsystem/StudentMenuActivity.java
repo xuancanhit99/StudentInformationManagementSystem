@@ -1,23 +1,32 @@
 package com.xuancanh.studentinformationmanagementsystem;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.android.material.navigation.NavigationView;
 import com.squareup.picasso.Picasso;
 import com.xuancanh.studentinformationmanagementsystem.model.Student;
 
 import java.util.ArrayList;
 
 public class StudentMenuActivity extends AppCompatActivity {
+
     // Activity need back home menu
     public static final int STUDENT_UPDATE_ACTIVITY = 1;
     public static final int STUDENT_CHANGE_PASSWORD_ACTIVITY = 2;
@@ -25,11 +34,14 @@ public class StudentMenuActivity extends AppCompatActivity {
     public static final int RESULT_STUDENT_CHANGE_PASSWORD_OK = 10;
     public static final int RESULT_STUDENT_VIEW_PROFILE_OK = 10;
 
-    final String ACTIVE = "Active";
-    final String NO_ACTIVE = "InActive";
-    ImageView ivStuAvatar;
-    TextView tvStuName, tvStuNo, tvStuActive;
-    Button btnStuViewProfile, btnUpdateProfile, btnStuChangePassword, btnStuLogout;
+    DrawerLayout drawerLayout;
+    ActionBarDrawerToggle toggle;
+    Toolbar toolbar;
+    NavigationView navigationView;
+
+    ImageView ivStuAvatar, ivStuNavHeader;
+    TextView tvStuName, tvStuClass, tvStuNavHeaderName, tvStuNavHeaderEmail, tvStuNavHeaderClass;
+    Button btnStuViewProfile, btnUpdateProfile, btnStuChangePassword, btnStuLogout, btnStuNotice, btnStuReport;
     ArrayList<Student> studentArr;
 
     @Override
@@ -43,6 +55,9 @@ public class StudentMenuActivity extends AppCompatActivity {
         receiveDataFromLogin();
         //Set on View
         initView();
+
+        //Navigation Drawer
+        navigationDrawer();
 
         //Logout Button
         btnStuLogout.setOnClickListener(new View.OnClickListener() {
@@ -81,6 +96,86 @@ public class StudentMenuActivity extends AppCompatActivity {
                 startActivityForResult(intent, STUDENT_VIEW_PROFILE_ACTIVITY);
             }
         });
+
+        //Button Notice
+        btnStuNotice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(StudentMenuActivity.this, StudentNoticeFromAdminActivity.class);
+                intent.putExtra("STUDENT_DATA_FROM_MENU_TO_NOTICE", studentArr);
+                startActivity(intent);
+            }
+        });
+
+        //Button Report
+        btnStuReport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(StudentMenuActivity.this, StudentReportActivity.class);
+                intent.putExtra("STUDENT_DATA_FROM_MENU_TO_REPORT", studentArr);
+                startActivity(intent);
+            }
+        });
+
+        //Nav
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @SuppressLint("NonConstantResourceId")
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+                //Fragment fragment = null;
+                switch (id) {
+                    case R.id.it_stu_nav_dra_menu_dashboard:
+//                        fragment = new DashBoardFragment();
+//                        loadFragment(fragment);
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.it_stu_nav_dra_menu_update_profile:
+                        Intent intent = new Intent(StudentMenuActivity.this, StudentUpdateActivity.class);
+                        intent.putExtra("STUDENT_DATA_FROM_MENU_TO_UPDATE", studentArr);
+                        startActivityForResult(intent, STUDENT_CHANGE_PASSWORD_ACTIVITY);
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.it_stu_nav_dra_menu_notice:
+                        Intent intent1 = new Intent(StudentMenuActivity.this, StudentNoticeFromAdminActivity.class);
+                        intent1.putExtra("STUDENT_DATA_FROM_MENU_TO_NOTICE", studentArr);
+                        startActivity(intent1);
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.it_stu_nav_dra_menu_report:
+                        Intent intent2 = new Intent(StudentMenuActivity.this, StudentReportActivity.class);
+                        intent2.putExtra("STUDENT_DATA_FROM_MENU_TO_REPORT", studentArr);
+                        startActivity(intent2);
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.it_stu_nav_dra_menu_stu_profile:
+                        Intent intent3 = new Intent(StudentMenuActivity.this, StudentViewProfileActivity.class);
+                        intent3.putExtra("STUDENT_DATA_FROM_MENU_TO_VIEW_PROFILE", studentArr);
+                        startActivityForResult(intent3, STUDENT_VIEW_PROFILE_ACTIVITY);
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.it_stu_nav_dra_menu_change_password:
+                        Intent intent4 = new Intent(StudentMenuActivity.this, StudentChangePasswordActivity.class);
+                        intent4.putExtra("STUDENT_DATA_FROM_MENU_TO_CHANGE_PASSWORD", studentArr);
+                        startActivityForResult(intent4, STUDENT_CHANGE_PASSWORD_ACTIVITY);
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.it_stu_nav_dra_menu_logout:
+                        logout();
+                        break;
+                    default:
+                        return true;
+                }
+                return true;
+            }
+        });
+    }
+
+    private void navigationDrawer() {
+        setSupportActionBar(toolbar);
+        toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
     }
 
     private void logout() {
@@ -107,31 +202,43 @@ public class StudentMenuActivity extends AppCompatActivity {
     }
 
     private void initView() {
+        tvStuNavHeaderName.setText(studentArr.get(0).getStuName());
+        tvStuNavHeaderEmail.setText(studentArr.get(0).getStuEmail());
+        tvStuNavHeaderClass.setText(studentArr.get(0).getStuClass());
         tvStuName.setText(studentArr.get(0).getStuName());
-        tvStuNo.setText(studentArr.get(0).getStuNo());
-        if (studentArr.get(0).getStuActive().equals("1")) {
-            tvStuActive.setText(ACTIVE);
-        } else {
-            tvStuActive.setText(NO_ACTIVE);
-        }
+        tvStuClass.setText(studentArr.get(0).getStuClass());
         if (!studentArr.get(0).getStuAvatar().equals("")) {
             Picasso.get()
                     .load(studentArr.get(0).getStuAvatar())
                     .placeholder(R.drawable.graduated)
                     .error(R.drawable.graduated)
                     .into(ivStuAvatar);
+            Picasso.get()
+                    .load(studentArr.get(0).getStuAvatar())
+                    .placeholder(R.drawable.graduated)
+                    .error(R.drawable.graduated)
+                    .into(ivStuNavHeader);
         } else {
             if (!studentArr.get(0).getStuGender().equals("-1")) {
                 if (studentArr.get(0).getStuGender().equals("1")) {
                     ivStuAvatar.setImageResource(R.drawable.male);
+                    ivStuNavHeader.setImageResource(R.drawable.male);
                 } else {
                     ivStuAvatar.setImageResource(R.drawable.female);
+                    ivStuNavHeader.setImageResource(R.drawable.female);
                 }
             } else {
                 ivStuAvatar.setImageResource(R.drawable.graduated);
+                ivStuNavHeader.setImageResource(R.drawable.graduated);
             }
         }
 
+    }
+
+    @Override
+    protected void onResume() {
+        navigationView.getMenu().findItem(R.id.it_stu_nav_dra_menu_dashboard).setChecked(true);
+        super.onResume();
     }
 
     private void receiveDataFromLogin() {
@@ -142,12 +249,22 @@ public class StudentMenuActivity extends AppCompatActivity {
     private void initUI() {
         ivStuAvatar = findViewById(R.id.iv_stu_avt);
         tvStuName = findViewById(R.id.tv_stu_name);
-        tvStuNo = findViewById(R.id.tv_stu_no);
-        tvStuActive = findViewById(R.id.tv_stu_active);
+        tvStuClass = findViewById(R.id.tv_stu_home_class);
         btnStuLogout = findViewById(R.id.btn_stu_logout);
         btnStuViewProfile = findViewById(R.id.btn_stu_view_profile);
         btnUpdateProfile = findViewById(R.id.btn_stu_update_profile);
         btnStuChangePassword = findViewById(R.id.btn_stu_change_password);
+        btnStuNotice = findViewById(R.id.btn_stu_menu_notice);
+        btnStuReport = findViewById(R.id.btn_stu_menu_report);
+
+        drawerLayout = findViewById(R.id.dl_student_drawer);
+        toolbar = findViewById(R.id.tb_student_toolBar);
+        navigationView = findViewById(R.id.nv_student);
+        View hView = navigationView.getHeaderView(0);
+        tvStuNavHeaderEmail = hView.findViewById(R.id.tv_stu_nav_header_email);
+        tvStuNavHeaderName = hView.findViewById(R.id.tv_stu_nav_header_name);
+        tvStuNavHeaderClass = hView.findViewById(R.id.tv_stu_nav_header_class);
+        ivStuNavHeader = hView.findViewById(R.id.iv_stu_nav_header);
     }
 
     @Override
@@ -163,14 +280,14 @@ public class StudentMenuActivity extends AppCompatActivity {
             }
         }
         //Change password
-        if(resultCode == RESULT_STUDENT_CHANGE_PASSWORD_OK) {
-            if (requestCode == STUDENT_CHANGE_PASSWORD_ACTIVITY){
+        if (resultCode == RESULT_STUDENT_CHANGE_PASSWORD_OK) {
+            if (requestCode == STUDENT_CHANGE_PASSWORD_ACTIVITY) {
                 studentArr = data.getParcelableArrayListExtra("STUDENT_DATA_FROM_CHANGE_PASSWORD_TO_MENU");
             }
         }
         //View Profile(maybe don't need)
-        if(resultCode == RESULT_STUDENT_VIEW_PROFILE_OK) {
-            if (requestCode == STUDENT_VIEW_PROFILE_ACTIVITY){
+        if (resultCode == RESULT_STUDENT_VIEW_PROFILE_OK) {
+            if (requestCode == STUDENT_VIEW_PROFILE_ACTIVITY) {
                 studentArr = data.getParcelableArrayListExtra("STUDENT_DATA_FROM_VIEW_PROFILE_TO_MENU");
                 initView();
             }
@@ -179,6 +296,11 @@ public class StudentMenuActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        logout();
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            logout();
+        }
+
     }
 }

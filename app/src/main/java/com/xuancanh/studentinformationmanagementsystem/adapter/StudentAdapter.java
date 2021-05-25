@@ -15,7 +15,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
-import com.xuancanh.studentinformationmanagementsystem.AdminStudentUpdateActivity;
 import com.xuancanh.studentinformationmanagementsystem.AdminStudentViewProfileActivity;
 import com.xuancanh.studentinformationmanagementsystem.ItemClickListener;
 import com.xuancanh.studentinformationmanagementsystem.R;
@@ -86,7 +85,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.DataView
                     bundle.putInt("STUDENT_DATA_POSITION", position);
                     intent.putExtra("STUDENT_DATA_FROM_STUDENT_ADAPTER_TO_AD_STU_VIEW_PROFILE", bundle);
                     view.getContext().startActivity(intent);
-                    ((Activity)view.getContext()).finish();
+                    ((Activity) view.getContext()).finish();
                     //Tao Update Student moi
 
                     //replace STUDENT_DATA_FROM_MENU_TO_UPDATE instead of STUDENT_DATA_FROM_ADAPTER UpdateStudentActivity just receiver 1 key
@@ -101,12 +100,10 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.DataView
     }
 
 
-
     @Override
     public int getItemCount() {
         return studentArr == null ? 0 : studentArr.size();
     }
-
 
 
     //Data ViewHolder class

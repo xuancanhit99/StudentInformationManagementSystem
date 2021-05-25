@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
     android:orientation="vertical"
     android:padding="5dp"
     tools:context=".AdminUpdateActivity">
@@ -11,7 +11,9 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/colorPrimaryDark2">
+
+        android:background="#fff">
+
         <ImageView
             android:id="@+id/iv_admin_update_exit"
             android:layout_width="65dp"
@@ -22,9 +24,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Update Admin"
             android:layout_centerInParent="true"
-            android:textColor="@color/colorWhite"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Update Admin"
+            android:textColor="?attr/colorControlNormal"
             android:textSize="25sp"
             android:textStyle="bold" />
     </RelativeLayout>
@@ -37,13 +40,11 @@
         android:orientation="horizontal"
         android:paddingTop="20dp">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv_admin_update_avt"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_marginStart="35dp"
-            android:padding="1dp"
-            android:background="@drawable/border_image_view"
             android:src="@drawable/admin" />
 
         <LinearLayout
@@ -55,18 +56,18 @@
             <Button
                 android:id="@+id/btn_admin_update_take_photo"
                 android:layout_width="wrap_content"
-                android:theme="@style/AppTheme.MyButton2"
-                android:drawableStart="@drawable/ic_baseline_photo_camera_24"
                 android:layout_height="wrap_content"
-                android:text="   Take Photo   " />
+                android:drawableStart="@drawable/ic_baseline_photo_camera_24"
+                android:text="   Take Photo   "
+                android:theme="@style/AppTheme.MyButton2" />
 
             <Button
                 android:id="@+id/btn_admin_update_choose_photo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:theme="@style/AppTheme.MyButton6"
                 android:drawableStart="@drawable/ic_baseline_insert_photo_24"
-                android:text="Choose Photo" />
+                android:text="Choose Photo"
+                android:theme="@style/AppTheme.MyButton6" />
         </LinearLayout>
     </LinearLayout>
 
@@ -77,10 +78,10 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_admin_update_email"
             style="@style/modifiedEditText"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
             android:drawableStart="@drawable/round_mail_outline_24"
             android:drawableTint="?attr/colorControlNormal"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -106,41 +107,47 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <Button android:theme="@style/AppTheme.MyButton1"
+        <Button
             android:id="@+id/btn_admin_update_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:text="Save" />
+            android:text="Save"
+            android:theme="@style/AppTheme.MyButton1" />
 
-        <Button android:theme="@style/AppTheme.MyButton7"
+        <Button
             android:id="@+id/btn_admin_update_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:text="Delete" />
+            android:text="Delete"
+            android:theme="@style/AppTheme.MyButton7" />
 
-        <Button android:theme="@style/AppTheme.MyButton3"
+        <Button
             android:id="@+id/btn_admin_update_exit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:text="back" />
+            android:text="back"
+            android:theme="@style/AppTheme.MyButton3" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="10dp"
         android:gravity="center"
         android:orientation="horizontal">
-        <Button android:theme="@style/AppTheme.MyButton5"
+
+        <Button
             android:id="@+id/btn_admin_update_change_password"
-            android:drawableStart="@drawable/ic_baseline_password_24"
-            android:drawableTint="?attr/colorControlNormal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:text=" Change Password" />
+            android:drawableStart="@drawable/ic_baseline_password_24"
+            android:drawableTint="?attr/colorControlNormal"
+            android:text=" Change Password"
+            android:theme="@style/AppTheme.MyButton5" />
     </LinearLayout>
 
 </LinearLayout>

@@ -70,9 +70,9 @@ public class AdminStudentViewAllActivity extends AppCompatActivity {
         callback.enqueue(new Callback<List<Student>>() {
             @Override
             public void onResponse(Call<List<Student>> call, Response<List<Student>> response) {
-                studentArr = (ArrayList<Student>)response.body();
+                studentArr = (ArrayList<Student>) response.body();
 
-                if(studentArr.size() > 0) {
+                if (studentArr.size() > 0) {
                     studentAdapter = new StudentAdapter(getApplicationContext(), studentArr);
                     //studentAdapter.notifyDataSetChanged();
                     rvItems.setAdapter(studentAdapter);

@@ -187,14 +187,14 @@ public class StudentUpdateActivity extends AppCompatActivity {
         btnStuUpdateSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isEmptyEditText(edtStuUpdateName)) {
+                if (isEmptyEditText(edtStuUpdateName)) {
                     edtStuUpdateName.setError("Please enter student's name");
                 }
-                if(isEmptyEditText(edtStuUpdateEmail)) {
+                if (isEmptyEditText(edtStuUpdateEmail)) {
                     edtStuUpdateEmail.setError("Please enter student's email");
                 }
 
-                if(isEmailValid(edtStuUpdateEmail))  {
+                if (isEmailValid(edtStuUpdateEmail)) {
                     studentNo = edtStuUpdateNo.getText().toString();
                     studentName = edtStuUpdateName.getText().toString();
                     studentDOB = edtStuUpdateDOB.getText().toString();
@@ -204,7 +204,7 @@ public class StudentUpdateActivity extends AppCompatActivity {
                     if (studentName.length() > 0 && studentEmail.length() > 0) {
                         //Toast.makeText(StudentUpdateActivity.this, realPath, Toast.LENGTH_SHORT).show();
                         if (!realPath.equals("")) {
-                            Toast.makeText(StudentUpdateActivity.this, "empty", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(StudentUpdateActivity.this, "empty", Toast.LENGTH_SHORT).show();
                             uploadInfoWithPhoto();
 
                             //Log.d("uploadInfoWithPhoto", "1");
@@ -213,8 +213,7 @@ public class StudentUpdateActivity extends AppCompatActivity {
                             uploadInfo();
                         }
                     }
-                }
-                else {
+                } else {
                     edtStuUpdateEmail.setError("Email address not valid");
                 }
             }
@@ -223,7 +222,7 @@ public class StudentUpdateActivity extends AppCompatActivity {
 
     public static boolean isEmailValid(EditText editText) {
         String email = editText.getText().toString();
-        if(email.equals("")) return true;
+        if (email.equals("")) return true;
         String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]+$";
         Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(email);
@@ -232,7 +231,7 @@ public class StudentUpdateActivity extends AppCompatActivity {
 
     private boolean isEmptyEditText(EditText editText) {
         String str = editText.getText().toString();
-        if(TextUtils.isEmpty(str)) {
+        if (TextUtils.isEmpty(str)) {
             return true;
         }
         return false;
@@ -464,10 +463,10 @@ public class StudentUpdateActivity extends AppCompatActivity {
             outstream = getContentResolver().openOutputStream(imageUri);
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outstream);
             outstream.close();
-            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
             e.printStackTrace();
-            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -482,7 +481,7 @@ public class StudentUpdateActivity extends AppCompatActivity {
         edtStuUpdateClass = findViewById(R.id.edt_stu_update_class);
         rgStuUpdateGender = findViewById(R.id.rg_stu_update_gender);
         rbStuUpdateFemale = findViewById(R.id.rb_stu_update_female);
-        rbStuUpdateMale =  findViewById(R.id.rb_stu_update_male);
+        rbStuUpdateMale = findViewById(R.id.rb_stu_update_male);
         btnStuUpdateSave = findViewById(R.id.btn_stu_update_save);
         btnStuUpdateExit = findViewById(R.id.btn_stu_update_exit);
         btnStuUpdateDelete = findViewById(R.id.btn_stu_update_delete);

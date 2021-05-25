@@ -1,15 +1,14 @@
 package com.xuancanh.studentinformationmanagementsystem;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.squareup.picasso.Picasso;
 import com.xuancanh.studentinformationmanagementsystem.model.Student;
@@ -38,7 +37,7 @@ public class AdminStudentViewProfileActivity extends AppCompatActivity {
 
         //Set on View
         initView();
-        
+
         //Button Exit
         btnAdStuViewProfileExit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,17 +77,15 @@ public class AdminStudentViewProfileActivity extends AppCompatActivity {
         tvAdStuViewProfilePhone.setText(studentArr.get(position).getStuPhone());
         tvAdStuViewProfileEmail.setText(studentArr.get(position).getStuEmail());
         tvAdStuViewProfileClass.setText(studentArr.get(position).getStuClass());
-        if(studentArr.get(position).getStuGender().equals("1")) {
+        if (studentArr.get(position).getStuGender().equals("1")) {
             tvAdStuViewProfileGender.setText("Male");
-        }
-        else if(studentArr.get(position).getStuGender().equals("0")) {
+        } else if (studentArr.get(position).getStuGender().equals("0")) {
             tvAdStuViewProfileGender.setText("Female");
         }
 
-        if(studentArr.get(position).getStuActive().equals("1")) {
+        if (studentArr.get(position).getStuActive().equals("1")) {
             tvAdStuViewProfileActive.setText("Status: Active");
-        }
-        else if(studentArr.get(position).getStuActive().equals("0")) {
+        } else if (studentArr.get(position).getStuActive().equals("0")) {
             tvAdStuViewProfileActive.setText("Status: InActive");
         }
 
@@ -114,7 +111,7 @@ public class AdminStudentViewProfileActivity extends AppCompatActivity {
     private void receiveDataFromStudentAdapter() {
         Intent intent = getIntent();
         Bundle bundle = intent.getBundleExtra("STUDENT_DATA_FROM_STUDENT_ADAPTER_TO_AD_STU_VIEW_PROFILE");
-        if(bundle != null) {
+        if (bundle != null) {
             studentArr = bundle.getParcelableArrayList("STUDENT_DATA_ARRAY");
             position = bundle.getInt("STUDENT_DATA_POSITION");
         }
@@ -140,6 +137,7 @@ public class AdminStudentViewProfileActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
     @Override
     public void onBackPressed() {
         backToMenu();

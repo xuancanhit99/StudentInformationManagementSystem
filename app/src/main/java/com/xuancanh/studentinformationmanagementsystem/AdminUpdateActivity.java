@@ -76,7 +76,7 @@ public class AdminUpdateActivity extends AppCompatActivity {
                 AlertDialog.Builder builder = new AlertDialog.Builder(AdminUpdateActivity.this);
                 builder.setIcon(R.drawable.ic_baseline_delete_24);
                 builder.setTitle("Delete this admin account");
-                builder.setMessage("Are you sure want to delete account admin "+adminArr.get(0).getAdName()+"?");
+                builder.setMessage("Are you sure want to delete account admin " + adminArr.get(0).getAdName() + "?");
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -108,14 +108,14 @@ public class AdminUpdateActivity extends AppCompatActivity {
         btnAdminUpdateSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isEmptyEditText(edtAdminUpdateName)) {
+                if (isEmptyEditText(edtAdminUpdateName)) {
                     edtAdminUpdateName.setError("Please enter student's name");
                 }
-                if(isEmptyEditText(edtAdminUpdateEmail)) {
+                if (isEmptyEditText(edtAdminUpdateEmail)) {
                     edtAdminUpdateEmail.setError("Please enter student's email");
                 }
 
-                if(isEmailValid(edtAdminUpdateEmail))  {
+                if (isEmailValid(edtAdminUpdateEmail)) {
                     adminName = edtAdminUpdateName.getText().toString();
                     adminEmail = edtAdminUpdateEmail.getText().toString();
                     if (adminName.length() > 0 && adminEmail.length() > 0) {
@@ -124,8 +124,7 @@ public class AdminUpdateActivity extends AppCompatActivity {
                         } else {
                             uploadInfo();
                         }
-                    }
-                    else {
+                    } else {
                         edtAdminUpdateEmail.setError("Email address not valid");
                     }
                 }
@@ -169,7 +168,7 @@ public class AdminUpdateActivity extends AppCompatActivity {
 
     public static boolean isEmailValid(EditText editText) {
         String email = editText.getText().toString();
-        if(email.equals("")) return true;
+        if (email.equals("")) return true;
         String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]+$";
         Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(email);
@@ -178,7 +177,7 @@ public class AdminUpdateActivity extends AppCompatActivity {
 
     private boolean isEmptyEditText(EditText editText) {
         String str = editText.getText().toString();
-        if(TextUtils.isEmpty(str)) {
+        if (TextUtils.isEmpty(str)) {
             return true;
         }
         return false;
@@ -186,11 +185,10 @@ public class AdminUpdateActivity extends AppCompatActivity {
 
     private void deleteAccAdmin() {
         String currentAvatar;
-        if(!adminArr.get(0).getAdAvatar().equals("")) {
+        if (!adminArr.get(0).getAdAvatar().equals("")) {
             currentAvatar = adminArr.get(0).getAdAvatar();
             currentAvatar = currentAvatar.substring(currentAvatar.lastIndexOf("/"));
-        }
-        else {
+        } else {
             currentAvatar = "NO_IMAGE_ADMIN_UPDATE";
         }
         DataClient dataClient = APIUtils.getData();
@@ -246,15 +244,14 @@ public class AdminUpdateActivity extends AppCompatActivity {
 
     private void uploadInfo() {
         String currentAvatar, newAvatar;
-        if(adminArr.get(0).getAdAvatar().equals("")) {
+        if (adminArr.get(0).getAdAvatar().equals("")) {
             currentAvatar = "NO_DELETE_CURRENT_IMAGE";
             if (realPath.equals("")) {
                 newAvatar = "";
             } else {
                 newAvatar = APIUtils.BASE_URL + "admin/images/" + adminAvatar;
             }
-        }
-        else {
+        } else {
 
             if (realPath.equals("")) {
                 currentAvatar = "NO_DELETE_CURRENT_IMAGE";
@@ -301,7 +298,7 @@ public class AdminUpdateActivity extends AppCompatActivity {
         adminArr = intent.getParcelableArrayListExtra("ADMIN_DATA_FROM_MENU_TO_UPDATE");
         edtAdminUpdateName.setText(adminArr.get(0).getAdName());
         edtAdminUpdateEmail.setText(adminArr.get(0).getAdEmail());
-        if(!adminArr.get(0).getAdAvatar().equals("")) {
+        if (!adminArr.get(0).getAdAvatar().equals("")) {
             Picasso.get()
                     .load(adminArr.get(0).getAdAvatar())
                     .placeholder(R.drawable.admin)
@@ -344,8 +341,8 @@ public class AdminUpdateActivity extends AppCompatActivity {
         }
 
         //Change password
-        else if(resultCode == RESULT_CHANGE_PASSWORD_OK) {
-            if (requestCode == ADMIN_CHANGE_PASSWORD_ACTIVITY){
+        else if (resultCode == RESULT_CHANGE_PASSWORD_OK) {
+            if (requestCode == ADMIN_CHANGE_PASSWORD_ACTIVITY) {
                 adminArr = data.getParcelableArrayListExtra("ADMIN_DATA_FROM_CHANGE_PASSWORD_TO_UPDATE");
             }
         }
@@ -365,10 +362,10 @@ public class AdminUpdateActivity extends AppCompatActivity {
             outstream = getContentResolver().openOutputStream(imageUri);
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outstream);
             outstream.close();
-            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
             e.printStackTrace();
-            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 

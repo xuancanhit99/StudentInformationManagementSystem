@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/loginCard"
-    app:cardCornerRadius="@dimen/loginCardRadius"
-    android:elevation="5dp"
     android:layout_gravity="center"
     android:layout_marginTop="@dimen/loginViewsMargin"
     android:layout_marginBottom="@dimen/loginViewsMargin"
-    android:background="@color/whiteCardColor">
+    android:background="@color/whiteCardColor"
+    android:elevation="5dp"
+    app:cardCornerRadius="@dimen/loginCardRadius">
 
     <LinearLayout
         style="@style/linearParent"
@@ -17,49 +16,53 @@
 
         <TextView
             style="@style/headerTextPrimary"
-            android:text="@string/student_login"
-            android:layout_marginTop="@dimen/loginViewsMargin"/>
+            android:layout_marginTop="@dimen/loginViewsMargin"
+            android:text="@string/student_login" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputEmail"
             style="@style/parent"
             android:layout_marginTop="@dimen/loginViewsMargin">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_stu_login_email"
                 style="@style/modifiedEditText"
-                android:inputType="textEmailAddress"
                 android:drawableStart="@drawable/round_mail_outline_24"
-                android:maxLines="1"
-                android:hint="@string/login_email_hint"/>
+                android:hint="@string/login_email_hint"
+                android:inputType="textEmailAddress"
+                android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputPassword"
             style="@style/parent"
-            app:passwordToggleEnabled="true"
-            android:layout_marginTop="@dimen/loginViewsMargin">
+            android:layout_marginTop="@dimen/loginViewsMargin"
+            app:passwordToggleEnabled="true">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_stu_login_password"
                 style="@style/modifiedEditText"
-                android:hint="@string/login_password_hint"
-                android:maxLines="1"
                 android:drawableStart="@drawable/round_lock_24"
-                android:inputType="textPassword"/>
+                android:hint="@string/login_password_hint"
+                android:inputType="textPassword"
+                android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
+            android:layout_marginRight="5dp"
+            android:orientation="horizontal">
+
             <CheckBox
                 android:id="@+id/cb_stu_login_remember_me"
                 style="@style/viewParent"
+                android:layout_gravity="start"
                 android:text="Remember me"
                 android:textColor="@color/primaryTextColor"
-                android:textSize="15sp"
-                android:layout_gravity="start" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/tv_stu_login_forgot_password"
@@ -78,28 +81,29 @@
         <Button
             android:id="@+id/btn_stu_login"
             style="@style/loginButton"
-            android:text="Login"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/loginViewsMargin"/>
+            android:layout_marginTop="@dimen/loginViewsMargin"
+            android:text="Login" />
 
         <TextView
             android:id="@+id/tv_stu_login_to_login_admin"
             style="@style/parent"
-            android:textSize="16sp"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            android:textColor="@color/primaryTextColor"
+            android:layout_marginTop="@dimen/loginViewsMargin"
             android:text="Are you an admin? Login here"
-            android:layout_marginTop="@dimen/loginViewsMargin"/>
+            android:textAlignment="center"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/tv_stu_login_to_register"
             style="@style/parent"
-            android:textSize="16sp"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            android:textColor="@color/primaryTextColor"
             android:layout_marginTop="3dp"
-            android:text="Don't have an account? Sign Up"/>
+            android:text="Don't have an account? Sign Up"
+            android:textAlignment="center"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
 
     </LinearLayout>

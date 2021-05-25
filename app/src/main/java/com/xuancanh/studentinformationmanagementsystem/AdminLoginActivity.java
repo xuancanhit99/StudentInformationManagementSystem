@@ -53,7 +53,7 @@ public class AdminLoginActivity extends AppCompatActivity {
         edtAdminLoginPassword.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if(actionId == EditorInfo.IME_ACTION_DONE){
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
                     adminLogin();
                     rememberMe();
                 }
@@ -71,7 +71,7 @@ public class AdminLoginActivity extends AppCompatActivity {
             edtAdminLoginPassword.setText(loginPreferences.getString("ADMIN_PASSWORD", ""));
             cbAdminLoginRememberMe.setChecked(true);
         }
-        
+
         // TView Forgot Password
         tvAdminLoginForgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,11 +105,10 @@ public class AdminLoginActivity extends AppCompatActivity {
         btnAdminLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isEmailValid(edtAdminLoginEmail)) {
+                if (isEmailValid(edtAdminLoginEmail)) {
                     adminLogin();
                     rememberMe();
-                }
-                else {
+                } else {
                     edtAdminLoginEmail.setError("Email address not valid");
                 }
             }
@@ -118,7 +117,7 @@ public class AdminLoginActivity extends AppCompatActivity {
 
     public static boolean isEmailValid(EditText editText) {
         String email = editText.getText().toString();
-        if(email.equals("")) return true;
+        if (email.equals("")) return true;
         String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]+$";
         Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(email);

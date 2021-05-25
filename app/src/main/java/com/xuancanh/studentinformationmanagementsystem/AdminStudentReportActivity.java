@@ -90,7 +90,7 @@ public class AdminStudentReportActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
                         String res = response.body();
-                        if(res.trim().equals("STUDENT_REPLY_UPDATE_SUCCESSFUL")) {
+                        if (res.trim().equals("STUDENT_REPLY_UPDATE_SUCCESSFUL")) {
                             hideKeyboard(v);
                             Toast.makeText(AdminStudentReportActivity.this, "Report answered", Toast.LENGTH_SHORT).show();
                         }
@@ -164,13 +164,13 @@ public class AdminStudentReportActivity extends AppCompatActivity {
         });
     }
 
-    private void backToMenu(){
+    private void backToMenu() {
         finish();
     }
 
     private void hideKeyboard(View v) {
-        InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
-        inputMethodManager.hideSoftInputFromWindow(v.getApplicationWindowToken(),0);
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(v.getApplicationWindowToken(), 0);
     }
 
     private void initUI() {

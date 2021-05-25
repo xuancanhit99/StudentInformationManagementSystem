@@ -1,8 +1,5 @@
 package com.xuancanh.studentinformationmanagementsystem;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
 import android.content.ContentValues;
 import android.content.Intent;
@@ -23,10 +20,11 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.squareup.picasso.Picasso;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.xuancanh.studentinformationmanagementsystem.model.Student;
 import com.xuancanh.studentinformationmanagementsystem.retrofit.APIUtils;
 import com.xuancanh.studentinformationmanagementsystem.retrofit.DataClient;
@@ -67,10 +65,10 @@ public class AdminStudentAddActivity extends AppCompatActivity {
     private RadioGroup rgAdStuAddGender, rgAdStuAddStatus;
     private RadioButton rbAdStuAddMale, rbAdStuAddFemale, rbAdStuAddActive, rbAdStuAddInactive;
     String updateGender = "1", status = "0";
-    
+
     //for date of birth
     final Calendar calendar = Calendar.getInstance();
-    
+
     ArrayList<Student> studentArr;
 
     @Override
@@ -168,17 +166,17 @@ public class AdminStudentAddActivity extends AppCompatActivity {
         btnAdStuAddSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isEmptyEditText(edtAdStuAddName)) {
+                if (isEmptyEditText(edtAdStuAddName)) {
                     edtAdStuAddName.setError("Please enter student's name");
                 }
-                if(isEmptyEditText(edtAdStuAddPassword)) {
+                if (isEmptyEditText(edtAdStuAddPassword)) {
                     edtAdStuAddPassword.setError("Please enter student's password");
                 }
-                if(isEmptyEditText(edtAdStuAddEmail)) {
+                if (isEmptyEditText(edtAdStuAddEmail)) {
                     edtAdStuAddEmail.setError("Please enter student's email");
                 }
 
-                if(isEmailValid(edtAdStuAddEmail)) {
+                if (isEmailValid(edtAdStuAddEmail)) {
                     studentName = edtAdStuAddName.getText().toString();
                     studentEmail = edtAdStuAddEmail.getText().toString();
                     studentPassword = edtAdStuAddPassword.getText().toString();
@@ -193,8 +191,7 @@ public class AdminStudentAddActivity extends AppCompatActivity {
                             uploadInfo();
                         }
                     }
-                }
-                else {
+                } else {
                     edtAdStuAddEmail.setError("Email address not valid");
                 }
 
@@ -204,7 +201,7 @@ public class AdminStudentAddActivity extends AppCompatActivity {
 
     public static boolean isEmailValid(EditText editText) {
         String email = editText.getText().toString();
-        if(email.equals("")) return true;
+        if (email.equals("")) return true;
         String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]+$";
         Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(email);
@@ -213,7 +210,7 @@ public class AdminStudentAddActivity extends AppCompatActivity {
 
     private boolean isEmptyEditText(EditText editText) {
         String str = editText.getText().toString();
-        if(TextUtils.isEmpty(str)) {
+        if (TextUtils.isEmpty(str)) {
             return true;
         }
         return false;
@@ -237,6 +234,7 @@ public class AdminStudentAddActivity extends AppCompatActivity {
                     finish();
                 }
             }
+
             @Override
             public void onFailure(Call<String> call, Throwable t) {
                 Log.d("Error Ad Stu Add Info", t.getMessage());
@@ -277,7 +275,7 @@ public class AdminStudentAddActivity extends AppCompatActivity {
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
         edtAdStuAddDOB.setText(sdf.format(calendar.getTime()));
     }
-    
+
     private void takePhoto() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent, REQUEST_TAKE_PHOTO);
@@ -339,10 +337,10 @@ public class AdminStudentAddActivity extends AppCompatActivity {
             outstream = getContentResolver().openOutputStream(imageUri);
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outstream);
             outstream.close();
-            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
             e.printStackTrace();
-            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -356,16 +354,16 @@ public class AdminStudentAddActivity extends AppCompatActivity {
         edtAdStuAddPhone = findViewById(R.id.edt_ad_stu_add_phone);
         edtAdStuAddEmail = findViewById(R.id.edt_ad_stu_add_email);
         edtAdStuAddClass = findViewById(R.id.edt_ad_stu_add_class);
-        edtAdStuAddPassword= findViewById(R.id.edt_ad_stu_add_password);
-        
+        edtAdStuAddPassword = findViewById(R.id.edt_ad_stu_add_password);
+
         rgAdStuAddGender = findViewById(R.id.rg_ad_stu_add_gender);
         rgAdStuAddStatus = findViewById(R.id.rg_ad_stu_add_status);
-        
+
         rbAdStuAddFemale = findViewById(R.id.rb_ad_stu_add_female);
         rbAdStuAddMale = findViewById(R.id.rb_ad_stu_add_male);
         rbAdStuAddActive = findViewById(R.id.rb_ad_stu_add_active);
         rbAdStuAddInactive = findViewById(R.id.rb_ad_stu_add_inactive);
-        
+
         btnAdStuAddSave = findViewById(R.id.btn_ad_stu_add_save);
         btnAdStuAddExit = findViewById(R.id.btn_ad_stu_add_exit);
         btnAdStuAddTakePhoto = findViewById(R.id.btn_ad_stu_add_take_photo);

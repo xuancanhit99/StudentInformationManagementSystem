@@ -5,20 +5,23 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.StudentInformationManagementSystem"
+        android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".AdminStudentReportActivity"></activity>
+        <activity android:name=".StudentReportActivity"></activity>
+        <activity android:name=".StudentNoticeFromAdminActivity" />
+        <activity android:name=".AdminStudentReportActivity" />
         <activity android:name=".AdminNoticeToStudentActivity" />
         <activity android:name=".AdminStudentViewProfileActivity" />
         <activity android:name=".AdminStudentUpdateActivity" />

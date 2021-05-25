@@ -1,39 +1,30 @@
 package com.xuancanh.studentinformationmanagementsystem;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
-import android.app.DatePickerDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.squareup.picasso.Picasso;
 import com.xuancanh.studentinformationmanagementsystem.model.Student;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
 public class StudentViewProfileActivity extends AppCompatActivity {
 
     public static final int STUDENT_UPDATE = 1;
     public static final int RESULT_UPDATE_OK = 2;
-    
+
     private ImageView ivStuViewProfileAvatar, ivStuViewProfileExit;
     private TextView tvStuViewProfileNo, tvStuViewProfileName, tvStuViewProfileDOB, tvStuViewProfileClass, tvStuViewProfilePhone, tvStuViewProfileEmail, tvStuViewProfileActive, tvStuViewProfileGender;
     private Button btnStuViewProfileUpdate, btnStuViewProfileExit;
-    
+
     ArrayList<Student> studentArr;
 
     @Override
@@ -78,6 +69,7 @@ public class StudentViewProfileActivity extends AppCompatActivity {
             }
         });
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -109,17 +101,15 @@ public class StudentViewProfileActivity extends AppCompatActivity {
         tvStuViewProfilePhone.setText(studentArr.get(0).getStuPhone());
         tvStuViewProfileEmail.setText(studentArr.get(0).getStuEmail());
         tvStuViewProfileClass.setText(studentArr.get(0).getStuClass());
-        if(studentArr.get(0).getStuGender().equals("1")) {
+        if (studentArr.get(0).getStuGender().equals("1")) {
             tvStuViewProfileGender.setText("Male");
-        }
-        else if(studentArr.get(0).getStuGender().equals("0")) {
+        } else if (studentArr.get(0).getStuGender().equals("0")) {
             tvStuViewProfileGender.setText("Female");
         }
 
-        if(studentArr.get(0).getStuActive().equals("1")) {
+        if (studentArr.get(0).getStuActive().equals("1")) {
             tvStuViewProfileActive.setText("Status: Active");
-        }
-        else if(studentArr.get(0).getStuActive().equals("0")) {
+        } else if (studentArr.get(0).getStuActive().equals("0")) {
             tvStuViewProfileActive.setText("Status: InActive");
         }
 

@@ -63,8 +63,8 @@ public class StudentChangePasswordActivity extends AppCompatActivity {
                 currentPassword = edtStuChangePasswordCurrentPassword.getText().toString();
                 newPassword = edtStuChangePasswordNewPassword.getText().toString();
                 retypeNewPassword = edtStuChangePasswordRetypeNewPassword.getText().toString();
-                if(currentPassword.length() > 0 && newPassword.length() > 0 && retypeNewPassword.length() > 0 ) {
-                    if(currentPassword.equals(studentArr.get(0).getStuPassword()) && newPassword.equals(retypeNewPassword)) {
+                if (currentPassword.length() > 0 && newPassword.length() > 0 && retypeNewPassword.length() > 0) {
+                    if (currentPassword.equals(studentArr.get(0).getStuPassword()) && newPassword.equals(retypeNewPassword)) {
 
                         DataClient checkData = APIUtils.getData();
                         Call<String> callback = checkData.ChangePasswordStudentData(studentArr.get(0).getStuId(), newPassword);
@@ -72,36 +72,31 @@ public class StudentChangePasswordActivity extends AppCompatActivity {
                             @Override
                             public void onResponse(Call<String> call, Response<String> response) {
                                 String res = response.body();
-                                if(res.trim().equals("STUDENT_CHANGE_PASSWORD_SUCCESSFUL")){
+                                if (res.trim().equals("STUDENT_CHANGE_PASSWORD_SUCCESSFUL")) {
                                     Toast.makeText(StudentChangePasswordActivity.this, "Password Changed Successfully", Toast.LENGTH_SHORT).show();
                                     //Update password and Sent Data to Update
                                     studentArr.get(0).setStuPassword(newPassword);
                                     backToMenu();
-                                }
-                                else if(res.trim().equals("STUDENT_CHANGE_PASSWORD_FAILED")){
+                                } else if (res.trim().equals("STUDENT_CHANGE_PASSWORD_FAILED")) {
                                     Toast.makeText(StudentChangePasswordActivity.this, "Student Email Or ID Is Incorrect", Toast.LENGTH_SHORT).show();
-                                }
-                                else {
+                                } else {
                                     Toast.makeText(StudentChangePasswordActivity.this, "Something wrong", Toast.LENGTH_SHORT).show();
                                 }
                             }
+
                             @Override
                             public void onFailure(Call<String> call, Throwable t) {
                                 Log.d("Wrong:", t.getMessage());
                             }
                         });
-                    }
-                    else if(currentPassword.equals(studentArr.get(0).getStuPassword()) && !newPassword.equals(retypeNewPassword)) {
+                    } else if (currentPassword.equals(studentArr.get(0).getStuPassword()) && !newPassword.equals(retypeNewPassword)) {
                         Toast.makeText(StudentChangePasswordActivity.this, "New passwords and retype new passwords are not the same", Toast.LENGTH_SHORT).show();
-                    }
-                    else if(!currentPassword.equals(studentArr.get(0).getStuPassword()) && newPassword.equals(retypeNewPassword)) {
+                    } else if (!currentPassword.equals(studentArr.get(0).getStuPassword()) && newPassword.equals(retypeNewPassword)) {
                         Toast.makeText(StudentChangePasswordActivity.this, "The current password Incorrect", Toast.LENGTH_SHORT).show();
-                    }
-                    else {
+                    } else {
                         Toast.makeText(StudentChangePasswordActivity.this, "Something wrong", Toast.LENGTH_SHORT).show();
                     }
-                }
-                else {
+                } else {
                     Toast.makeText(StudentChangePasswordActivity.this, "Please enter complete information!", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -122,6 +117,7 @@ public class StudentChangePasswordActivity extends AppCompatActivity {
         btnStuChangePasswordExit = findViewById(R.id.btn_stu_change_password_exit);
         ivStuChangePasswordExit = findViewById(R.id.iv_stu_change_password_exit);
     }
+
     @Override
     public void onBackPressed() {
         backToMenu();

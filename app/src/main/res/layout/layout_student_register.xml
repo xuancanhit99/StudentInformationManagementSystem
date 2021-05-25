@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/loginCard"
-    app:cardCornerRadius="@dimen/loginCardRadius"
-    android:elevation="5dp"
     android:layout_gravity="center"
     android:layout_marginTop="@dimen/loginViewsMargin"
     android:layout_marginBottom="@dimen/loginViewsMargin"
-    android:background="@color/whiteCardColor">
+    android:background="@color/whiteCardColor"
+    android:elevation="5dp"
+    app:cardCornerRadius="@dimen/loginCardRadius">
 
     <LinearLayout
         style="@style/linearParent"
@@ -17,9 +16,9 @@
 
         <TextView
             style="@style/headerTextPrimary"
-            android:text="@string/register"
+            android:layout_marginTop="@dimen/loginViewsMargin"
             android:paddingBottom="10dp"
-            android:layout_marginTop="@dimen/loginViewsMargin"/>
+            android:text="@string/register" />
 
 
         <LinearLayout
@@ -30,13 +29,14 @@
             android:orientation="horizontal"
             android:paddingTop="20dp">
 
-            <ImageView
+
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_stu_register_avt"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:padding="1dp"
-                android:background="@drawable/border_image_view"
+                android:layout_marginStart="30dp"
                 android:src="@drawable/graduated" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -48,59 +48,61 @@
                     android:id="@+id/btn_stu_register_take_photo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:theme="@style/AppTheme.MyButton2"
                     android:drawableStart="@drawable/ic_baseline_photo_camera_24"
-                    android:text="   Take Photo   " />
+                    android:text="   Take Photo   "
+                    android:theme="@style/AppTheme.MyButton2" />
 
                 <Button
                     android:id="@+id/btn_stu_register_choose_photo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:theme="@style/AppTheme.MyButton6"
                     android:drawableStart="@drawable/ic_baseline_insert_photo_24"
-                    android:text="Choose Photo" />
+                    android:text="Choose Photo"
+                    android:theme="@style/AppTheme.MyButton6" />
             </LinearLayout>
         </LinearLayout>
 
 
-
         <com.google.android.material.textfield.TextInputLayout
             style="@style/parent"
             android:layout_marginTop="@dimen/signup_text_margin_top">
+
             <EditText
                 android:id="@+id/edt_stu_register_name"
                 style="@style/modifiedEditText"
-                android:inputType="text"
                 android:drawableStart="@drawable/ic_baseline_person_pin_24"
                 android:drawableTint="?attr/colorControlNormal"
-                android:maxLines="1"
-                android:hint="Name"/>
+                android:hint="Name"
+                android:inputType="text"
+                android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/parent"
             android:layout_marginTop="@dimen/signup_text_margin_top">
+
             <EditText
                 android:id="@+id/edt_stu_register_email"
                 style="@style/modifiedEditText"
                 android:drawableStart="@drawable/round_mail_outline_24"
+                android:hint="@string/login_email_hint"
                 android:inputType="textEmailAddress"
-                android:maxLines="1"
-                android:hint="@string/login_email_hint"/>
+                android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/parent"
-            app:passwordToggleEnabled="true"
-            android:layout_marginTop="@dimen/signup_text_margin_top">
+            android:layout_marginTop="@dimen/signup_text_margin_top"
+            app:passwordToggleEnabled="true">
+
             <EditText
                 android:id="@+id/edt_stu_register_password"
                 style="@style/modifiedEditText"
-                android:hint="@string/login_password_hint"
                 android:drawableStart="@drawable/round_lock_24"
-                android:maxLines="1"
-                android:inputType="textPassword"/>
+                android:hint="@string/login_password_hint"
+                android:inputType="textPassword"
+                android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -112,12 +114,12 @@
         <TextView
             android:id="@+id/tv_stu_register_to_login"
             style="@style/parent"
-            android:textAlignment="center"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="@color/primaryTextColor"
+            android:layout_marginTop="@dimen/loginViewsMargin"
             android:text="@string/signup_login_hint"
-            android:layout_marginTop="@dimen/loginViewsMargin"/>
+            android:textAlignment="center"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

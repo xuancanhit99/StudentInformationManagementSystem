@@ -1,7 +1,5 @@
 package com.xuancanh.studentinformationmanagementsystem;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,7 +9,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.squareup.picasso.Picasso;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.xuancanh.studentinformationmanagementsystem.model.Admin;
 import com.xuancanh.studentinformationmanagementsystem.retrofit.APIUtils;
 import com.xuancanh.studentinformationmanagementsystem.retrofit.DataClient;
@@ -65,8 +64,8 @@ public class AdminChangePasswordActivity extends AppCompatActivity {
                 currentPassword = edtAdminChangePasswordCurrentPassword.getText().toString();
                 newPassword = edtAdminChangePasswordNewPassword.getText().toString();
                 retypeNewPassword = edtAdminChangePasswordRetypeNewPassword.getText().toString();
-                if(currentPassword.length() > 0 && newPassword.length() > 0 && retypeNewPassword.length() > 0 ) {
-                    if(currentPassword.equals(adminArr.get(0).getAdPassword()) && newPassword.equals(retypeNewPassword)) {
+                if (currentPassword.length() > 0 && newPassword.length() > 0 && retypeNewPassword.length() > 0) {
+                    if (currentPassword.equals(adminArr.get(0).getAdPassword()) && newPassword.equals(retypeNewPassword)) {
 
                         DataClient checkData = APIUtils.getData();
                         Call<String> callback = checkData.ChangePasswordAdminData(adminArr.get(0).getAdId(), newPassword);
@@ -74,36 +73,31 @@ public class AdminChangePasswordActivity extends AppCompatActivity {
                             @Override
                             public void onResponse(Call<String> call, Response<String> response) {
                                 String res = response.body();
-                                if(res.trim().equals("ADMIN_CHANGE_PASSWORD_SUCCESSFUL")){
+                                if (res.trim().equals("ADMIN_CHANGE_PASSWORD_SUCCESSFUL")) {
                                     Toast.makeText(AdminChangePasswordActivity.this, "Password Changed Successfully", Toast.LENGTH_SHORT).show();
                                     //Update password and Sent Data to Update
                                     adminArr.get(0).setAdPassword(newPassword);
                                     backToUpdate();
-                                }
-                                else if(res.trim().equals("ADMIN_CHANGE_PASSWORD_FAILED")){
+                                } else if (res.trim().equals("ADMIN_CHANGE_PASSWORD_FAILED")) {
                                     Toast.makeText(AdminChangePasswordActivity.this, "Admin Email Or ID Is Incorrect", Toast.LENGTH_SHORT).show();
-                                }
-                                else {
+                                } else {
                                     Toast.makeText(AdminChangePasswordActivity.this, "Something wrong", Toast.LENGTH_SHORT).show();
                                 }
                             }
+
                             @Override
                             public void onFailure(Call<String> call, Throwable t) {
                                 Log.d("Wrong:", t.getMessage());
                             }
                         });
-                    }
-                    else if(currentPassword.equals(adminArr.get(0).getAdPassword()) && !newPassword.equals(retypeNewPassword)) {
+                    } else if (currentPassword.equals(adminArr.get(0).getAdPassword()) && !newPassword.equals(retypeNewPassword)) {
                         Toast.makeText(AdminChangePasswordActivity.this, "New passwords and retype new passwords are not the same", Toast.LENGTH_SHORT).show();
-                    }
-                    else if(!currentPassword.equals(adminArr.get(0).getAdPassword()) && newPassword.equals(retypeNewPassword)) {
+                    } else if (!currentPassword.equals(adminArr.get(0).getAdPassword()) && newPassword.equals(retypeNewPassword)) {
                         Toast.makeText(AdminChangePasswordActivity.this, "The current password Incorrect", Toast.LENGTH_SHORT).show();
-                    }
-                    else {
+                    } else {
                         Toast.makeText(AdminChangePasswordActivity.this, "Something wrong", Toast.LENGTH_SHORT).show();
                     }
-                }
-                else {
+                } else {
                     Toast.makeText(AdminChangePasswordActivity.this, "Please enter complete information!", Toast.LENGTH_SHORT).show();
                 }
             }

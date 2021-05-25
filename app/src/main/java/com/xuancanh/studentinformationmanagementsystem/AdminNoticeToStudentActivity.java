@@ -1,8 +1,5 @@
 package com.xuancanh.studentinformationmanagementsystem;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,7 +9,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.xuancanh.studentinformationmanagementsystem.adapter.StudentAdapter;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.xuancanh.studentinformationmanagementsystem.model.Student;
 import com.xuancanh.studentinformationmanagementsystem.retrofit.APIUtils;
 import com.xuancanh.studentinformationmanagementsystem.retrofit.DataClient;
@@ -55,7 +53,7 @@ public class AdminNoticeToStudentActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
                         String res = response.body();
-                        if(res.trim().equals("NOTICE_UPDATE_SUCCESSFUL")) {
+                        if (res.trim().equals("NOTICE_UPDATE_SUCCESSFUL")) {
                             hideKeyboard(v);
                             Toast.makeText(AdminNoticeToStudentActivity.this, "Successfully sent notification to all students", Toast.LENGTH_SHORT).show();
                         }
@@ -85,9 +83,10 @@ public class AdminNoticeToStudentActivity extends AppCompatActivity {
             }
         });
     }
+
     private void hideKeyboard(View v) {
-        InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
-        inputMethodManager.hideSoftInputFromWindow(v.getApplicationWindowToken(),0);
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(v.getApplicationWindowToken(), 0);
     }
 
     private void backToMenu() {
@@ -100,8 +99,8 @@ public class AdminNoticeToStudentActivity extends AppCompatActivity {
         callback.enqueue(new Callback<List<Student>>() {
             @Override
             public void onResponse(Call<List<Student>> call, Response<List<Student>> response) {
-                studentArr = (ArrayList<Student>)response.body();
-                if(studentArr.size() > 0) {
+                studentArr = (ArrayList<Student>) response.body();
+                if (studentArr.size() > 0) {
                     //Set on View
                     edtAdNoticeToStuContent.setText(studentArr.get(0).getStuNotice());
                 }
@@ -113,6 +112,7 @@ public class AdminNoticeToStudentActivity extends AppCompatActivity {
             }
         });
     }
+
     private void initUI() {
         btnAdNoticeToStuBack = findViewById(R.id.btn_ad_notice_to_stu_back);
         btnAdNoticeToStuSend = findViewById(R.id.btn_ad_notice_to_stu_send);

@@ -99,17 +99,17 @@ public class StudentRegisterActivity extends AppCompatActivity {
         btnStuRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isEmptyEditText(edtStuRegisterName)) {
+                if (isEmptyEditText(edtStuRegisterName)) {
                     edtStuRegisterName.setError("Please enter student's name");
                 }
-                if(isEmptyEditText(edtStuRegisterPassword)) {
+                if (isEmptyEditText(edtStuRegisterPassword)) {
                     edtStuRegisterPassword.setError("Please enter student's password");
                 }
-                if(isEmptyEditText(edtStuRegisterEmail)) {
+                if (isEmptyEditText(edtStuRegisterEmail)) {
                     edtStuRegisterEmail.setError("Please enter student's email");
                 }
 
-                if(isEmailValid(edtStuRegisterEmail))  {
+                if (isEmailValid(edtStuRegisterEmail)) {
                     studentName = edtStuRegisterName.getText().toString();
                     studentEmail = edtStuRegisterEmail.getText().toString();
                     studentPassword = edtStuRegisterPassword.getText().toString();
@@ -120,8 +120,7 @@ public class StudentRegisterActivity extends AppCompatActivity {
                             uploadInfo();
                         }
                     }
-                }
-                else {
+                } else {
                     edtStuRegisterEmail.setError("Email address not valid");
                 }
             }
@@ -130,7 +129,7 @@ public class StudentRegisterActivity extends AppCompatActivity {
 
     public static boolean isEmailValid(EditText editText) {
         String email = editText.getText().toString();
-        if(email.equals("")) return true;
+        if (email.equals("")) return true;
         String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]+$";
         Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(email);
@@ -139,7 +138,7 @@ public class StudentRegisterActivity extends AppCompatActivity {
 
     private boolean isEmptyEditText(EditText editText) {
         String str = editText.getText().toString();
-        if(TextUtils.isEmpty(str)) {
+        if (TextUtils.isEmpty(str)) {
             return true;
         }
         return false;
@@ -163,6 +162,7 @@ public class StudentRegisterActivity extends AppCompatActivity {
                     backToLogin();
                 }
             }
+
             @Override
             public void onFailure(Call<String> call, Throwable t) {
                 Log.d("Error Stu Info", t.getMessage());
@@ -214,10 +214,10 @@ public class StudentRegisterActivity extends AppCompatActivity {
             outstream = getContentResolver().openOutputStream(imageUri);
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outstream);
             outstream.close();
-            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
             e.printStackTrace();
-            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -280,6 +280,7 @@ public class StudentRegisterActivity extends AppCompatActivity {
         cursor.close();
         return path;
     }
+
     @Override
     public void onBackPressed() {
         backToLogin();
