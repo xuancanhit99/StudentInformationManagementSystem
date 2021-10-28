@@ -6,7 +6,7 @@
     android:background="@drawable/background"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".ui.activities.MainActivity">
 
     <TextView
         style="@style/AudioFileInfoOverlayText"

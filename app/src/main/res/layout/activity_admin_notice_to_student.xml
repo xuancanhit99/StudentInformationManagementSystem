@@ -7,7 +7,7 @@
     android:background="#fff"
     android:orientation="vertical"
     android:padding="5dp"
-    tools:context=".AdminNoticeToStudentActivity">
+    tools:context=".ui.activities.admin.AdminNoticeToStudentActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

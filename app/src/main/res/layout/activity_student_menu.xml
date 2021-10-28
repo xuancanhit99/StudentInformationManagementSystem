@@ -10,7 +10,7 @@
     android:layout_height="match_parent"
     android:background="#fff"
     android:fitsSystemWindows="true"
-    tools:context=".StudentMenuActivity"
+    tools:context=".ui.activities.student.StudentMenuActivity"
 
     tools:openDrawer="start">
 

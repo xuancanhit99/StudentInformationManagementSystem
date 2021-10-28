@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_student_view_all.xml" value="0.4148550724637681" />
+        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_student_view_profile.xml" value="0.1697061803444782" />
+        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_update.xml" value="0.1697061803444782" />
+        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_home_menu.xml" value="0.1697061803444782" />
+        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_main.xml" value="0.1697061803444782" />
+        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_change_password.xml" value="0.1697061803444782" />
+        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_login.xml" value="0.1697061803444782" />
+        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_update.xml" value="0.5322916666666667" />
+        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/student_app_bar_main.xml" value="0.1697061803444782" />
+        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/student_home.xml" value="0.1697061803444782" />
+        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/student_nav_header.xml" value="0.1697061803444782" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

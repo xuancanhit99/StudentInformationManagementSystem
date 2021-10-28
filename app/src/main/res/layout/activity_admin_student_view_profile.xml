@@ -7,7 +7,7 @@
     android:background="#fff"
     android:orientation="vertical"
     android:padding="5dp"
-    tools:context=".AdminStudentViewProfileActivity">
+    tools:context=".ui.activities.admin.AdminStudentViewProfileActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
