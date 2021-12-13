@@ -36,6 +36,10 @@ public interface DataClient {
                                          @Field("StudentPassword") String StudentPassword);
 
     @FormUrlEncoded
+    @POST("loginWithGoogleAcc.php")
+    Call<List<Student>> LoginStudentGoogleAccData(@Field("StudentEmail") String StudentEmail);
+
+    @FormUrlEncoded
     @POST("update.php")
     Call<String> UpdateStudentData(@Field("StudentId") String StudentId,
                                    @Field("StudentNo") String StudentNo,

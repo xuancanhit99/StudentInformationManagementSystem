@@ -85,6 +85,13 @@
             android:layout_marginTop="@dimen/loginViewsMargin"
             android:text="Login" />
 
+            <com.google.android.gms.common.SignInButton
+                android:layout_marginTop="15dp"
+                android:id="@+id/sign_in_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
         <TextView
             android:id="@+id/tv_stu_login_to_login_admin"
             style="@style/parent"

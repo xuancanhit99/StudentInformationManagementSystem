@@ -14,6 +14,26 @@
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/student_app_bar_main.xml" value="0.1697061803444782" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/student_home.xml" value="0.1697061803444782" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/student_nav_header.xml" value="0.1697061803444782" />
+        <entry key="..\:/Users/daota/Desktop/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_change_password.xml" value="0.5572916666666666" />
+        <entry key="..\:/Users/daota/Desktop/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_forgot_password.xml" value="0.5572916666666666" />
+        <entry key="..\:/Users/daota/Desktop/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_login.xml" value="0.490036231884058" />
+        <entry key="..\:/Users/daota/Desktop/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_notice_to_student.xml" value="0.5572916666666666" />
+        <entry key="..\:/Users/daota/Desktop/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_student_add.xml" value="0.25104166666666666" />
+        <entry key="..\:/Users/daota/Desktop/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_student_update.xml" value="0.5572916666666666" />
+        <entry key="..\:/Users/daota/Desktop/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_student_view_all.xml" value="0.5572916666666666" />
+        <entry key="..\:/Users/daota/Desktop/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_student_view_profile.xml" value="0.5572916666666666" />
+        <entry key="..\:/Users/daota/Desktop/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_update.xml" value="0.5572916666666666" />
+        <entry key="..\:/Users/daota/Desktop/StudentInformationManagementSystem/app/src/main/res/layout/activity_home_menu.xml" value="0.490036231884058" />
+        <entry key="..\:/Users/daota/Desktop/StudentInformationManagementSystem/app/src/main/res/layout/activity_main.xml" value="0.25861195542046606" />
+        <entry key="..\:/Users/daota/Desktop/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_change_password.xml" value="0.5572916666666666" />
+        <entry key="..\:/Users/daota/Desktop/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_login.xml" value="0.5322916666666667" />
+        <entry key="..\:/Users/daota/Desktop/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_menu.xml" value="0.3411458333333333" />
+        <entry key="..\:/Users/daota/Desktop/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_update.xml" value="0.5322916666666667" />
+        <entry key="..\:/Users/daota/Desktop/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_view_profile.xml" value="0.3411458333333333" />
+        <entry key="..\:/Users/daota/Desktop/StudentInformationManagementSystem/app/src/main/res/layout/admin_home.xml" value="0.490036231884058" />
+        <entry key="..\:/Users/daota/Desktop/StudentInformationManagementSystem/app/src/main/res/layout/layout_student_login.xml" value="0.6428571428571429" />
+        <entry key="..\:/Users/daota/Desktop/StudentInformationManagementSystem/app/src/main/res/layout/student_nav_header.xml" value="0.5572916666666666" />
+        <entry key="..\:/Users/daota/Desktop/StudentInformationManagementSystem/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3234375" />
       </map>
     </option>
   </component>

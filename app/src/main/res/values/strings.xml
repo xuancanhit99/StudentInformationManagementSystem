@@ -9,5 +9,6 @@
     <string name="admin_login">ADMIN LOGIN</string>
     <string name="student_login">STUDENT LOGIN</string>
     <string name="open">Open</string>
+    <string name="title_activity_maps">MapsActivity</string>
 
 </resources>
