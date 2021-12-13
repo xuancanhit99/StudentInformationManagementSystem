@@ -51,7 +51,7 @@ public class StudentLoginActivity extends AppCompatActivity {
     ArrayList<Student> studentArr;
     String studentName = "", studentEmail = "", studentIdGoogleIsPassword = "";
     Uri personPhoto = null;
-    
+
 
     final int RC_SIGN_IN = 0;
     SignInButton btnStuGoogleSignIn;
@@ -68,6 +68,7 @@ public class StudentLoginActivity extends AppCompatActivity {
 
         //Google SignIn
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.server_client_id))
                 .requestEmail()
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
@@ -247,8 +248,6 @@ public class StudentLoginActivity extends AppCompatActivity {
 
     //Create new Student from Google acc
     private void createAccStudentFromGoogleAcc(){
-
-
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
         if (acct != null) {
             studentName = acct.getDisplayName();
@@ -256,7 +255,6 @@ public class StudentLoginActivity extends AppCompatActivity {
             studentIdGoogleIsPassword = acct.getId();
             personPhoto = acct.getPhotoUrl();
         }
-
         uploadInfo();
 
     }
@@ -276,12 +274,9 @@ public class StudentLoginActivity extends AppCompatActivity {
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-
+            String idToken = account.getIdToken();
             createAccStudentFromGoogleAcc();
-
-
-//            Toast.makeText(StudentLoginActivity.this, "Student " + studentName + studentArr.size(), Toast.LENGTH_SHORT).show();
-
+            Toast.makeText(StudentLoginActivity.this, idToken, Toast.LENGTH_SHORT).show();
 //            updateUI(account);
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
@@ -294,8 +289,6 @@ public class StudentLoginActivity extends AppCompatActivity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
-
         // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             // The Task returned from this call is always completed, no need to attach

@@ -9,6 +9,5 @@
     <string name="admin_login">ADMIN LOGIN</string>
     <string name="student_login">STUDENT LOGIN</string>
     <string name="open">Open</string>
-    <string name="title_activity_maps">MapsActivity</string>
-
+    <string name="server_client_id">586946856215-qcutv5gukcognlbg72iedlhg00765qlm.apps.googleusercontent.com</string>
 </resources>
