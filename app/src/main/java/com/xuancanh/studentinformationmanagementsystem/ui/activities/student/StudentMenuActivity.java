@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,6 +20,11 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.squareup.picasso.Picasso;
 import com.xuancanh.studentinformationmanagementsystem.R;
@@ -45,6 +51,9 @@ public class StudentMenuActivity extends AppCompatActivity {
     Button btnStuViewProfile, btnUpdateProfile, btnStuChangePassword, btnStuLogout, btnStuNotice, btnStuReport;
     ArrayList<Student> studentArr;
 
+
+    GoogleSignInClient mGoogleSignInClient;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +61,14 @@ public class StudentMenuActivity extends AppCompatActivity {
 
         //Connect layout
         initUI();
+
+        //Google SignIn
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
+
         //Receive Data From Login
         receiveDataFromLogin();
         //Set on View
@@ -65,6 +82,13 @@ public class StudentMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 logout();
+
+                //Sign Out google
+                switch (v.getId()) {
+                    case R.id.btn_stu_logout:
+                        signOut();
+                        break;
+                }
             }
         });
 
@@ -179,6 +203,16 @@ public class StudentMenuActivity extends AppCompatActivity {
         toggle.syncState();
     }
 
+    //Sign Out Google
+    private void signOut() {
+        mGoogleSignInClient.signOut()
+                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                    }
+                });
+    }
+
     private void logout() {
         AlertDialog.Builder builder = new AlertDialog.Builder(StudentMenuActivity.this);
         builder.setIcon(R.drawable.ic_baseline_logout_24);
@@ -189,6 +223,7 @@ public class StudentMenuActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 Intent intent = new Intent(StudentMenuActivity.this, StudentLoginActivity.class);
                 startActivity(intent);
+                Toast.makeText(StudentMenuActivity.this, "Signed out successfully", Toast.LENGTH_LONG).show();
                 finish();
             }
         });

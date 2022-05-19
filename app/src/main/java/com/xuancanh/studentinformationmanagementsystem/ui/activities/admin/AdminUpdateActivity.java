@@ -125,9 +125,10 @@ public class AdminUpdateActivity extends AppCompatActivity {
                         } else {
                             uploadInfo();
                         }
-                    } else {
-                        edtAdminUpdateEmail.setError("Email address not valid");
                     }
+                }
+                else {
+                    edtAdminUpdateEmail.setError("Email address not valid");
                 }
 
             }

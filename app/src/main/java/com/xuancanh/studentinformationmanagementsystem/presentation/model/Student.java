@@ -51,7 +51,7 @@ public class Student implements Parcelable {
     @Expose
     private String stuReply;
 
-    protected Student(Parcel in) {
+    public Student(Parcel in) {
         stuId = in.readString();
         stuEmail = in.readString();
         stuPassword = in.readString();
@@ -79,6 +79,10 @@ public class Student implements Parcelable {
             return new Student[size];
         }
     };
+
+    public Student() {
+
+    }
 
     public String getStuId() {
         return stuId;
