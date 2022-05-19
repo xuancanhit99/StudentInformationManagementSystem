@@ -216,7 +216,6 @@ public class AdminMenuActivity extends AppCompatActivity {
                     .error(R.drawable.admin)
                     .into(ivAdNavHeader);
         }
-
     }
 
     @Override
