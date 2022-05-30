@@ -18,9 +18,10 @@
             style="@style/modifiedEditText"
             android:drawableStart="@drawable/ic_baseline_search_24"
             android:drawableTint="?attr/colorControlNormal"
-            android:hint="Search Name or Class"
+            android:hint="Имя или группа"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
+
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 
@@ -35,7 +36,6 @@
             android:layout_height="match_parent"
             android:scrollbars="vertical" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
 
     <ImageButton
         android:id="@+id/ib_stu_add"

@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Система Управления\nСтудентами"
+        android:text="Система Управления\nИнформацией Обучения"
         android:textColor="@color/white"
         android:textSize="25dp" />
 
@@ -27,7 +27,7 @@
         style="@style/AudioFileInfoOverlayText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="© Xuan Canh IKBO-07-19"
+        android:text="© ИНБО-04-19"
         android:textColor="@color/white"
         android:textSize="13dp" />
 

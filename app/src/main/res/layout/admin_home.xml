@@ -18,7 +18,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="24dp"
-            android:text="Welcome back"
+            android:text="Добро пожаловать "
             android:textSize="25sp"
             app:fontFamily="@font/roboto_regular"
             app:layout_constraintEnd_toStartOf="@+id/iv_admin_avt"
@@ -74,7 +74,7 @@
                     android:drawableTint="@color/white"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="Admin\nProfile"
+                    android:text="Админис-тратор\nПрофиль"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -99,7 +99,7 @@
                     android:drawableTint="#fff"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="View List\nStudent"
+                    android:text="список\nСтудент"
                     android:textColor="#fff"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -136,7 +136,7 @@
                     android:drawableTint="#fff"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="Add\nStudent"
+                    android:text="Добавить\n студента"
                     android:textColor="#fff"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -161,7 +161,7 @@
                     android:drawableTint="#fff"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="Notice To\nStudent"
+                    android:text="Уведомл-ение\n для студента"
                     android:textColor="#fff"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -197,9 +197,9 @@
                     android:drawableTint="#fff"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="Report"
+                    android:text="Сообщение"
                     android:textColor="#fff"
-                    android:textSize="18sp"
+                    android:textSize="17dpsp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
@@ -222,7 +222,7 @@
                     android:drawableTint="#fff"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="Logout"
+                    android:text="Выйти"
                     android:textColor="#fff"
                     android:textSize="18sp"
                     android:textStyle="bold" />

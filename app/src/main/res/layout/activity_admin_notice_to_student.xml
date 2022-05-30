@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:fontFamily="@font/roboto_regular"
-            android:text="Notice To All Student "
+            android:text="Уведомление для всех студентов"
             android:textColor="?attr/colorControlNormal"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -53,7 +53,7 @@
                 android:layout_marginTop="10dp"
                 android:drawableStart="@drawable/ic_baseline_edit_notifications_24"
                 android:drawableTint="?attr/colorControlNormal"
-                android:text="Message content"
+                android:text="Содержание сообщенияcontent"
 
                 android:textColor="@color/myColor8" />
 
@@ -88,7 +88,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:text="Send"
+            android:text="Отправлять"
             android:theme="@style/AppTheme.MyButton1" />
 
         <Button
@@ -96,7 +96,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:text="Back"
+            android:text="Назад"
             android:theme="@style/AppTheme.MyButton3" />
     </LinearLayout>
 

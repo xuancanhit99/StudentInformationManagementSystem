@@ -4,38 +4,38 @@
         <item
             android:id="@+id/it_ad_nav_dra_menu_dashboard"
             android:icon="@drawable/ic_baseline_space_dashboard_24"
-            android:title="Dashboard" />
+            android:title="Приборная доска" />
         <item
             android:id="@+id/it_ad_nav_dra_menu_add_student"
             android:icon="@drawable/ic_baseline_person_add_24"
-            android:title="Add Student" />
+            android:title="Добавить студента" />
         <item
             android:id="@+id/it_ad_nav_dra_menu_view_all"
             android:icon="@drawable/ic_baseline_format_list_bulleted_24"
-            android:title="View List Student" />
+            android:title="Просмотр списка студентов" />
         <item
             android:id="@+id/it_ad_nav_dra_menu_notice"
             android:icon="@drawable/ic_baseline_notification_add_24"
-            android:title="Create Notice" />
+            android:title="Создать уведомление" />
         <item
             android:id="@+id/it_ad_nav_dra_menu_report"
             android:icon="@drawable/ic_baseline_message_24"
-            android:title="Report From Student" />
+            android:title="Сообщение от студента" />
     </group>
     <item android:title="">
         <menu>
             <item
                 android:id="@+id/it_ad_nav_dra_menu_admin_profile"
                 android:icon="@drawable/ic_baseline_admin_panel_settings_24"
-                android:title="Admin Profile" />
+                android:title="Профиль администратора" />
             <item
                 android:id="@+id/it_ad_nav_dra_menu_change_password"
                 android:icon="@drawable/ic_baseline_password_24"
-                android:title="Change Password" />
+                android:title="Изменить пароль" />
             <item
                 android:id="@+id/it_ad_nav_dra_menu_logout"
                 android:icon="@drawable/ic_baseline_logout_24"
-                android:title="Logout" />
+                android:title="Выйти" />
         </menu>
     </item>
 </menu>

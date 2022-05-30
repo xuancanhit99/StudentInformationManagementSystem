@@ -18,7 +18,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="24dp"
-            android:text="Welcome back"
+            android:text="Добро пожаловат"
             android:textSize="25sp"
             app:fontFamily="@font/roboto_regular"
             app:layout_constraintEnd_toStartOf="@+id/iv_stu_avt"
@@ -83,7 +83,7 @@
                     android:drawableTint="#fff"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="Student\nProfile"
+                    android:text="Студенче-ский профиль"
                     android:textColor="#fff"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -108,7 +108,7 @@
                     android:drawableTint="#fff"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="Change\nPassword"
+                    android:text="Изменить пароль"
                     android:textColor="#fff"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -145,7 +145,7 @@
                     android:drawableTint="#fff"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="Update\nProfile"
+                    android:text="Обновить профиль"
                     android:textColor="#fff"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -170,7 +170,7 @@
                     android:drawableTint="#fff"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="Notice"
+                    android:text="Сообщение"
                     android:textColor="#fff"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -207,7 +207,7 @@
                     android:drawableTint="#fff"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="Learning results"
+                    android:text="Резуль-\nтаты обучения"
                     android:textColor="#fff"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -232,7 +232,7 @@
                     android:drawableTint="#fff"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="Re-exam schedule"
+                    android:text="График Пересдач"
                     android:textColor="#fff"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -268,7 +268,7 @@
                     android:drawableTint="#fff"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="Report"
+                    android:text="Рапорт"
                     android:textColor="#fff"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -293,7 +293,7 @@
                     android:drawableTint="#fff"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="Logout"
+                    android:text="Выйти"
                     android:textColor="#fff"
                     android:textSize="18sp"
                     android:textStyle="bold" />

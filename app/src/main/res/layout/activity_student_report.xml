@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:fontFamily="@font/roboto_regular"
-                android:text="Report To Admin"
+                android:text="ообщить администратору"
                 android:textColor="?attr/colorControlNormal"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -57,7 +57,7 @@
                     android:layout_marginTop="10dp"
                     android:drawableStart="@drawable/ic_baseline_report_24"
                     android:drawableTint="?attr/colorControlNormal"
-                    android:text=" Report content"
+                    android:text="Содержание сообщения"
                     android:textColor="@color/myColor8" />
 
 
@@ -93,7 +93,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:text="Report"
+                android:text="Сообщение"
                 android:theme="@style/AppTheme.MyButton1" />
 
             <Button
@@ -101,7 +101,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:text="Back"
+                android:text="Назад"
                 android:theme="@style/AppTheme.MyButton3" />
         </LinearLayout>
 
@@ -124,7 +124,7 @@
                     android:layout_marginTop="10dp"
                     android:drawableStart="@drawable/ic_baseline_message_24"
                     android:drawableTint="?attr/colorControlNormal"
-                    android:text=" Reply"
+                    android:text="Отвечать"
                     android:textColor="@color/myColor8" />
 
                 <TextView

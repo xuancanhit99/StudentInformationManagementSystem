@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:fontFamily="@font/roboto_regular"
-                android:text="Add Student"
+                android:text="Добавить студента"
                 android:textColor="?attr/colorControlNormal"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -67,7 +67,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_baseline_photo_camera_24"
-                    android:text="   Take Photo   "
+                    android:text="  Сфотографировать   "
                     android:theme="@style/AppTheme.MyButton2" />
 
                 <Button
@@ -75,7 +75,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_baseline_insert_photo_24"
-                    android:text="Choose Photo"
+                    android:text="Выбрать фото"
                     android:theme="@style/AppTheme.MyButton6" />
             </LinearLayout>
         </LinearLayout>
@@ -89,7 +89,7 @@
                 style="@style/modifiedEditText"
                 android:drawableStart="@drawable/ic_baseline_confirmation_number_24"
                 android:drawableTint="?attr/colorControlNormal"
-                android:hint="Student №"
+                android:hint="№ Студент"
                 android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -102,7 +102,7 @@
                 style="@style/modifiedEditText"
                 android:drawableStart="@drawable/ic_baseline_person_pin_24"
                 android:drawableTint="?attr/colorControlNormal"
-                android:hint="Full Name"
+                android:hint="ФИО"
                 android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -129,7 +129,7 @@
                     android:focusable="false"
 
                     android:focusableInTouchMode="false"
-                    android:hint="Date of birth"
+                    android:hint="Дата рождения"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -157,7 +157,7 @@
                 style="@style/modifiedEditText"
                 android:drawableStart="@drawable/ic_baseline_class_24"
                 android:drawableTint="?attr/colorControlNormal"
-                android:hint="Class Name"
+                android:hint="Группа"
                 android:maxLines="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -172,7 +172,7 @@
                 style="@style/modifiedEditText"
                 android:drawableStart="@drawable/ic_baseline_phone_iphone_24"
                 android:drawableTint="?attr/colorControlNormal"
-                android:hint="Phone Number"
+                android:hint="Номер телефона"
                 android:inputType="phone"
                 android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -186,7 +186,7 @@
                 style="@style/modifiedEditText"
                 android:drawableStart="@drawable/round_mail_outline_24"
                 android:drawableTint="?attr/colorControlNormal"
-                android:hint="Email"
+                android:hint="Эл. адрес"
                 android:inputType="textEmailAddress"
                 android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -201,7 +201,7 @@
                 style="@style/modifiedEditText"
                 android:drawableStart="@drawable/round_lock_24"
                 android:drawableTint="?attr/colorControlNormal"
-                android:hint="Password"
+                android:hint="Пароль"
                 android:inputType="textPassword"
                 android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -222,7 +222,7 @@
                 android:layout_weight="3"
                 android:drawableStart="@drawable/ic_baseline_person_24"
                 android:drawableTint="?attr/colorControlNormal"
-                android:text="Gender" />
+                android:text="Пол" />
 
             <RadioGroup
                 android:id="@+id/rg_ad_stu_add_gender"
@@ -237,14 +237,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:checked="true"
-                    android:text="Male" />
+                    android:text="М" />
 
                 <RadioButton
                     android:id="@+id/rb_ad_stu_add_female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:text="Female" />
+                    android:text="ж" />
 
             </RadioGroup>
         </LinearLayout>
@@ -266,7 +266,7 @@
                 android:layout_weight="3"
                 android:drawableStart="@drawable/ic_baseline_verified_user_24"
                 android:drawableTint="?attr/colorControlNormal"
-                android:text="Status" />
+                android:text="Статус" />
 
             <RadioGroup
                 android:id="@+id/rg_ad_stu_add_status"
@@ -281,14 +281,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:checked="true"
-                    android:text="InActive" />
+                    android:text="Неактивный" />
 
                 <RadioButton
                     android:id="@+id/rb_ad_stu_add_active"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:text="Active" />
+                    android:text="Активный" />
 
             </RadioGroup>
         </LinearLayout>
@@ -305,7 +305,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:text="Save"
+                android:text="Сохранять"
                 android:theme="@style/AppTheme.MyButton1" />
 
             <Button
@@ -313,7 +313,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:text="Back"
+                android:text="Назад"
                 android:theme="@style/AppTheme.MyButton3" />
         </LinearLayout>
     </LinearLayout>

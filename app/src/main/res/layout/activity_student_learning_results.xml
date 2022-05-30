@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:fontFamily="@font/roboto_regular"
-            android:text="Learning Results"
+            android:text="Результаты обучения"
             android:textColor="?attr/colorControlNormal"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -78,7 +78,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:text="Math"
+                        android:text="Математика"
                         android:textColor="@color/myColor8" />
 
                     <TextView
@@ -100,7 +100,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:text="English"
+                        android:text="Английский"
                         android:textColor="@color/myColor8" />
 
                     <TextView
@@ -122,7 +122,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:text="Physical"
+                        android:text="Физический"
                         android:textColor="@color/myColor8" />
 
                     <TextView
@@ -144,7 +144,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:text="Informatics"
+                        android:text="информатика"
                         android:textColor="@color/myColor8" />
 
                     <TextView
@@ -166,7 +166,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:text="Programming"
+                        android:text="Программирование"
                         android:textColor="@color/myColor8" />
 
                     <TextView
@@ -189,7 +189,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:text="Economy"
+                        android:text="Эконом"
                         android:textColor="@color/myColor8" />
 
                     <TextView
@@ -211,7 +211,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:text="Philosophy"
+                        android:text="Философия"
                         android:textColor="@color/myColor8" />
 
                     <TextView
@@ -241,7 +241,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:text="Re-exam schedule"
+            android:text="График пересдач"
             android:theme="@style/AppTheme.MyButton1" />
 
         <Button
@@ -249,7 +249,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:text="Back"
+            android:text="Назад"
             android:theme="@style/AppTheme.MyButton3" />
     </LinearLayout>
 </LinearLayout>

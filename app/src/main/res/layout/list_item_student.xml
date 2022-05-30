@@ -26,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_regular"
-            android:text="Full Name"
+            android:text="ФИО"
             android:textSize="25dp"
             android:textStyle="bold" />
 
@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_light"
-            android:text="Class"
+            android:text="Группа"
             android:textSize="20dp"
             android:textStyle="bold" />
     </LinearLayout>

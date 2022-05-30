@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:fontFamily="@font/roboto_regular"
-            android:text="Update Admin"
+            android:text="Обновить администратора"
             android:textColor="?attr/colorControlNormal"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -58,7 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_baseline_photo_camera_24"
-                android:text="   Take Photo   "
+                android:text="   Сфотографировать   "
                 android:theme="@style/AppTheme.MyButton2" />
 
             <Button
@@ -66,7 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_baseline_insert_photo_24"
-                android:text="Choose Photo"
+                android:text="Выбрать фото"
                 android:theme="@style/AppTheme.MyButton6" />
         </LinearLayout>
     </LinearLayout>
@@ -80,7 +80,7 @@
             style="@style/modifiedEditText"
             android:drawableStart="@drawable/round_mail_outline_24"
             android:drawableTint="?attr/colorControlNormal"
-            android:hint="Email"
+            android:hint="Эл. адрес"
             android:inputType="textEmailAddress"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -96,7 +96,7 @@
             style="@style/modifiedEditText"
             android:drawableStart="@drawable/ic_baseline_person_pin_24"
             android:drawableTint="?attr/colorControlNormal"
-            android:hint="Name"
+            android:hint="ФИО"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -112,7 +112,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:text="Save"
+            android:text="Сохранять"
             android:theme="@style/AppTheme.MyButton1" />
 
         <Button
@@ -120,7 +120,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:text="Delete"
+            android:text="Удалить"
             android:theme="@style/AppTheme.MyButton7" />
 
         <Button
@@ -128,7 +128,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:text="back"
+            android:text="Назад"
             android:theme="@style/AppTheme.MyButton3" />
     </LinearLayout>
 
@@ -146,7 +146,7 @@
             android:layout_marginHorizontal="10dp"
             android:drawableStart="@drawable/ic_baseline_password_24"
             android:drawableTint="?attr/colorControlNormal"
-            android:text=" Change Password"
+            android:text=" Изменить паро"
             android:theme="@style/AppTheme.MyButton5" />
     </LinearLayout>
 
