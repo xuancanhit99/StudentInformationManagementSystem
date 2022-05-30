@@ -18,7 +18,7 @@
             style="@style/headerTextPrimary"
             android:layout_marginTop="@dimen/loginViewsMargin"
             android:paddingBottom="10dp"
-            android:text="@string/register" />
+            android:text="Студенческий Регистр" />
 
 
         <LinearLayout
@@ -86,7 +86,7 @@
                 android:id="@+id/edt_stu_register_email"
                 style="@style/modifiedEditText"
                 android:drawableStart="@drawable/round_mail_outline_24"
-                android:hint="@string/login_email_hint"
+                android:hint="Эл. адрес"
                 android:inputType="textEmailAddress"
                 android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -100,7 +100,7 @@
                 android:id="@+id/edt_stu_register_password"
                 style="@style/modifiedEditText"
                 android:drawableStart="@drawable/round_lock_24"
-                android:hint="@string/login_password_hint"
+                android:hint="Пароль"
                 android:inputType="textPassword"
                 android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -115,7 +115,7 @@
             android:id="@+id/tv_stu_register_to_login"
             style="@style/parent"
             android:layout_marginTop="@dimen/loginViewsMargin"
-            android:text="@string/signup_login_hint"
+            android:text="Нет Аккаунта? Зарегистрироваться"
             android:textAlignment="center"
             android:textColor="@color/primaryTextColor"
             android:textSize="16sp"

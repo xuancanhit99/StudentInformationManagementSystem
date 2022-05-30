@@ -18,7 +18,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="24dp"
-            android:text="Добро пожаловат"
+            android:text="Добро Пожаловат"
             android:textSize="25sp"
             app:fontFamily="@font/roboto_regular"
             app:layout_constraintEnd_toStartOf="@+id/iv_stu_avt"
@@ -81,11 +81,11 @@
                     android:drawableStart="@drawable/ic_baseline_person_pin_24"
                     android:drawablePadding="10dp"
                     android:drawableTint="#fff"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:text="Студенче-ский профиль"
+                    android:paddingLeft="9dp"
+                    android:paddingRight="7dp"
+                    android:text="Студенческий Профиль"
                     android:textColor="#fff"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
@@ -108,7 +108,7 @@
                     android:drawableTint="#fff"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="Изменить пароль"
+                    android:text="Изменить Пароль"
                     android:textColor="#fff"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -145,7 +145,7 @@
                     android:drawableTint="#fff"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="Обновить профиль"
+                    android:text="Обновить Профиль"
                     android:textColor="#fff"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -168,11 +168,11 @@
                     android:drawableStart="@drawable/ic_baseline_circle_notifications_24"
                     android:drawablePadding="10dp"
                     android:drawableTint="#fff"
-                    android:paddingLeft="20dp"
+                    android:paddingLeft="17dp"
                     android:paddingRight="20dp"
                     android:text="Сообщение"
                     android:textColor="#fff"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
         </LinearLayout>
@@ -205,11 +205,11 @@
                     android:drawableStart="@drawable/ic_baseline_text_snippet_24"
                     android:drawablePadding="10dp"
                     android:drawableTint="#fff"
-                    android:paddingLeft="20dp"
+                    android:paddingLeft="19dp"
                     android:paddingRight="20dp"
-                    android:text="Резуль-\nтаты обучения"
+                    android:text="Результаты Обучения"
                     android:textColor="#fff"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 

@@ -4,30 +4,30 @@
         <item
             android:id="@+id/it_stu_nav_dra_menu_dashboard"
             android:icon="@drawable/ic_baseline_space_dashboard_24"
-            android:title="Приборная доска" />
+            android:title="Приборная Доска" />
         <item
             android:id="@+id/it_stu_nav_dra_menu_update_profile"
             android:icon="@drawable/ic_baseline_edit_note_24"
-            android:title="Обновить информацию" />
+            android:title="Обновить Информацию" />
         <item
             android:id="@+id/it_stu_nav_dra_menu_notice"
             android:icon="@drawable/ic_baseline_circle_notifications_24"
-            android:title="Уведомление от администратора" />
+            android:title="Уведомление От Администратора" />
         <item
             android:id="@+id/it_stu_nav_dra_menu_report"
             android:icon="@drawable/ic_baseline_message_24"
-            android:title="Сообщить администратору" />
+            android:title="Сообщить Администратору" />
     </group>
     <item android:title="">
         <menu>
             <item
                 android:id="@+id/it_stu_nav_dra_menu_stu_profile"
                 android:icon="@drawable/ic_baseline_admin_panel_settings_24"
-                android:title="Мой профиль" />
+                android:title="Мой Профиль" />
             <item
                 android:id="@+id/it_stu_nav_dra_menu_change_password"
                 android:icon="@drawable/ic_baseline_password_24"
-                android:title="Изменить пароль" />
+                android:title="Изменить Пароль" />
             <item
                 android:id="@+id/it_stu_nav_dra_menu_logout"
                 android:icon="@drawable/ic_baseline_logout_24"

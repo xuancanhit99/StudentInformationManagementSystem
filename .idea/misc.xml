@@ -3,6 +3,39 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_change_password.xml" value="0.4" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_forgot_password.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_notice_to_student.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_student_add.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_student_report.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_student_update.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_student_view_all.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_student_view_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_update.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/activity_home_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_change_password.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_learning_results.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_notice_from_admin.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_register.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_report.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_update.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_view_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/admin_app_bar_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/admin_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/admin_nav_header.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/layout_admin_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/layout_student_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/layout_student_register.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/list_item_student.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/student_app_bar_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/student_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/student_nav_header.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/menu/admin_nav_drawer_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/menu/student_nav_drawer_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/drawable-v24/login_button_bk.xml" value="0.4065" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/drawable-v24/round_button.xml" value="0.5265" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/drawable-v24/round_mail_outline_24.xml" value="0.2755" />
@@ -17,17 +50,17 @@
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_student_report.xml" value="0.32916666666666666" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_student_update.xml" value="0.30885416666666665" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_student_view_all.xml" value="0.4148550724637681" />
-        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_student_view_profile.xml" value="0.33" />
+        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_student_view_profile.xml" value="0.1697061803444782" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_update.xml" value="0.33" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_home_menu.xml" value="0.25" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_main.xml" value="0.5" />
-        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_change_password.xml" value="0.33" />
+        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_change_password.xml" value="0.1697061803444782" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_learning_results.xml" value="0.41893115942028986" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_login.xml" value="0.5" />
-        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_menu.xml" value="0.33" />
-        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_notice_from_admin.xml" value="0.33" />
+        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_menu.xml" value="0.5322916666666667" />
+        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_notice_from_admin.xml" value="0.5322916666666667" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_register.xml" value="0.5322916666666667" />
-        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_report.xml" value="0.33" />
+        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_report.xml" value="0.5322916666666667" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_update.xml" value="0.33" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_view_profile.xml" value="0.5322916666666667" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/admin_app_bar_main.xml" value="0.30885416666666665" />
@@ -37,13 +70,11 @@
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/layout_student_login.xml" value="0.5322916666666667" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/layout_student_register.xml" value="0.5" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/list_item_student.xml" value="0.30885416666666665" />
-        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/student_app_bar_main.xml" value="0.33" />
+        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/student_app_bar_main.xml" value="0.1697061803444782" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/student_home.xml" value="0.33" />
-        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/student_nav_header.xml" value="0.33" />
-        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/menu/admin_nav_drawer_menu.xml" value="0.33" />
+        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/student_nav_header.xml" value="0.1697061803444782" />
+        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/menu/admin_nav_drawer_menu.xml" value="0.5322916666666667" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/menu/student_nav_drawer_menu.xml" value="0.5322916666666667" />
-        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.5265" />
-        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.5265" />
       </map>
     </option>
   </component>

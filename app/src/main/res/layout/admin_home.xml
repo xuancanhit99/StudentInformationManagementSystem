@@ -18,8 +18,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="24dp"
-            android:text="Добро пожаловать "
-            android:textSize="25sp"
+            android:text="Добро Пожаловать "
+            android:textSize="20sp"
             app:fontFamily="@font/roboto_regular"
             app:layout_constraintEnd_toStartOf="@+id/iv_admin_avt"
             app:layout_constraintStart_toStartOf="parent"
@@ -74,9 +74,9 @@
                     android:drawableTint="@color/white"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="Админис-тратор\nПрофиль"
+                    android:text="Админи-\nстратор Профиль"
                     android:textColor="@color/white"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
@@ -99,7 +99,7 @@
                     android:drawableTint="#fff"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="список\nСтудент"
+                    android:text="Список\nСтудент"
                     android:textColor="#fff"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -136,7 +136,7 @@
                     android:drawableTint="#fff"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="Добавить\n студента"
+                    android:text="Добавить\n Студента"
                     android:textColor="#fff"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -159,11 +159,11 @@
                     android:drawableStart="@drawable/ic_baseline_notification_add_24"
                     android:drawablePadding="10dp"
                     android:drawableTint="#fff"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:text="Уведомл-ение\n для студента"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="6dp"
+                    android:text="Уведомление\n Для Студента"
                     android:textColor="#fff"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
         </LinearLayout>
@@ -189,7 +189,7 @@
 
                 <Button
                     android:id="@+id/btn_student_report"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="?attr/selectableItemBackground"
                     android:drawableStart="@drawable/ic_baseline_message_24"
@@ -199,7 +199,7 @@
                     android:paddingRight="20dp"
                     android:text="Сообщение"
                     android:textColor="#fff"
-                    android:textSize="17sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
