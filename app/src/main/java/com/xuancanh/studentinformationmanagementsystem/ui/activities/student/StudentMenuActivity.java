@@ -38,6 +38,7 @@ public class StudentMenuActivity extends AppCompatActivity {
     public static final int STUDENT_UPDATE_ACTIVITY = 1;
     public static final int STUDENT_CHANGE_PASSWORD_ACTIVITY = 2;
     public static final int STUDENT_VIEW_PROFILE_ACTIVITY = 7;
+    public static final int STUDENT_VIEW_LEARNING_RESULTS = 9;
     public static final int RESULT_STUDENT_CHANGE_PASSWORD_OK = 10;
     public static final int RESULT_STUDENT_VIEW_PROFILE_OK = 10;
 
@@ -48,7 +49,7 @@ public class StudentMenuActivity extends AppCompatActivity {
 
     ImageView ivStuAvatar, ivStuNavHeader;
     TextView tvStuName, tvStuClass, tvStuNavHeaderName, tvStuNavHeaderEmail, tvStuNavHeaderClass;
-    Button btnStuViewProfile, btnUpdateProfile, btnStuChangePassword, btnStuLogout, btnStuNotice, btnStuReport;
+    Button btnStuViewProfile, btnUpdateProfile, btnStuChangePassword, btnStuLogout, btnStuNotice, btnStuReport, btnStuLearningResults;
     ArrayList<Student> studentArr;
 
 
@@ -89,6 +90,15 @@ public class StudentMenuActivity extends AppCompatActivity {
                         signOut();
                         break;
                 }
+            }
+        });
+
+        btnStuLearningResults.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(StudentMenuActivity.this, StudentLearningResultsActivity.class);
+                intent.putExtra("STUDENT_DATA_FROM_MENU_TO_LEARNING_RESULTS", studentArr);
+                startActivityForResult(intent, STUDENT_VIEW_LEARNING_RESULTS);
             }
         });
 
@@ -292,6 +302,7 @@ public class StudentMenuActivity extends AppCompatActivity {
         btnStuChangePassword = findViewById(R.id.btn_stu_change_password);
         btnStuNotice = findViewById(R.id.btn_stu_menu_notice);
         btnStuReport = findViewById(R.id.btn_stu_menu_report);
+        btnStuLearningResults = findViewById(R.id.btn_stu_learning_results);
 
         drawerLayout = findViewById(R.id.dl_student_drawer);
         toolbar = findViewById(R.id.tb_student_toolBar);
