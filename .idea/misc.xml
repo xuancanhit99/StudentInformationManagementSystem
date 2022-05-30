@@ -49,8 +49,9 @@
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_student_add.xml" value="0.315625" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_student_report.xml" value="0.32916666666666666" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_student_update.xml" value="0.30885416666666665" />
+        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_student_update_learning_results.xml" value="0.5" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_student_view_all.xml" value="0.4148550724637681" />
-        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_student_view_profile.xml" value="0.1697061803444782" />
+        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_student_view_profile.xml" value="0.33" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_update.xml" value="0.33" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_home_menu.xml" value="0.25" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_main.xml" value="0.5" />

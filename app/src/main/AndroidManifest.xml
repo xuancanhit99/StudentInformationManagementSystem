@@ -19,6 +19,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity
+            android:name=".AdminStudentUpdateLearningResultsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activities.student.StudentLearningResultsActivity"
             android:exported="false" />
         <activity android:name=".ui.activities.student.StudentReportActivity" />
