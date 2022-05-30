@@ -27,7 +27,8 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:fontFamily="@font/roboto_regular"
-            android:text="Результаты обучения"
+            android:text="Результаты Обучения"
+            android:textAllCaps="true"
             android:textColor="?attr/colorControlNormal"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -145,7 +146,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:text="информатика"
+                        android:text="Информатика"
                         android:textColor="@color/myColor8" />
 
                     <TextView

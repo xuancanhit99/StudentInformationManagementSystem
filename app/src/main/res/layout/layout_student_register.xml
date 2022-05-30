@@ -18,7 +18,8 @@
             style="@style/headerTextPrimary"
             android:layout_marginTop="@dimen/loginViewsMargin"
             android:paddingBottom="10dp"
-            android:text="Студенческий Регистр" />
+            android:text="Студенческий Регистр"
+            android:textAllCaps="true"/>
 
 
         <LinearLayout
@@ -49,7 +50,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_baseline_photo_camera_24"
-                    android:text="   Сфотографировать "
+                    android:text="Сфотографировать"
+                    android:textSize="12sp"
                     android:theme="@style/AppTheme.MyButton2" />
 
                 <Button
@@ -58,6 +60,7 @@
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_baseline_insert_photo_24"
                     android:text="Выбрать фото"
+                    android:textSize="12sp"
                     android:theme="@style/AppTheme.MyButton6" />
             </LinearLayout>
         </LinearLayout>
@@ -115,7 +118,7 @@
             android:id="@+id/tv_stu_register_to_login"
             style="@style/parent"
             android:layout_marginTop="@dimen/loginViewsMargin"
-            android:text="Нет Аккаунта? Зарегистрироваться"
+            android:text="Есть Аккаунт? Логин "
             android:textAlignment="center"
             android:textColor="@color/primaryTextColor"
             android:textSize="16sp"

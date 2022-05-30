@@ -27,8 +27,9 @@
             android:layout_centerInParent="true"
             android:fontFamily="@font/roboto_regular"
             android:text="Информация Для Студентов"
+            android:textAllCaps="true"
             android:textColor="?attr/colorControlNormal"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
     </RelativeLayout>
@@ -74,9 +75,8 @@
                     android:weightSum="10">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="3"
                         android:text="№ Студент"
                         android:textColor="@color/myColor8" />
 
@@ -84,7 +84,7 @@
                         android:id="@+id/tv_ad_stu_view_profile_no"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="7"
+                        android:layout_weight="9"
                         android:textColor="@color/myColor8" />
                 </LinearLayout>
 
@@ -96,9 +96,8 @@
                     android:weightSum="10">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="3"
                         android:text="ФИО   "
                         android:textColor="@color/myColor8" />
 
@@ -106,7 +105,7 @@
                         android:id="@+id/tv_ad_stu_view_profile_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="7"
+                        android:layout_weight="9"
                         android:textColor="@color/myColor8" />
                 </LinearLayout>
 
@@ -118,17 +117,16 @@
                     android:weightSum="10">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:text="Дата рождения  "
+                        android:text="Дата рождения"
                         android:textColor="@color/myColor8" />
 
                     <TextView
                         android:id="@+id/tv_ad_stu_view_profile_dob"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="7"
+                        android:layout_weight="9"
                         android:textColor="@color/myColor8" />
                 </LinearLayout>
 
@@ -140,9 +138,8 @@
                     android:weightSum="10">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="3"
                         android:text="Группа   "
                         android:textColor="@color/myColor8" />
 
@@ -150,7 +147,7 @@
                         android:id="@+id/tv_ad_stu_view_profile_class"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="7"
+                        android:layout_weight="9"
                         android:textColor="@color/myColor8" />
                 </LinearLayout>
 
@@ -162,9 +159,8 @@
                     android:weightSum="10">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="3"
                         android:text="Пол              "
                         android:textColor="@color/myColor8" />
 
@@ -172,7 +168,7 @@
                         android:id="@+id/tv_ad_stu_view_profile_gender"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="7"
+                        android:layout_weight="9"
                         android:textColor="@color/myColor8" />
 
                 </LinearLayout>
@@ -185,9 +181,8 @@
                     android:weightSum="10">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="3"
                         android:text="Номер телефона"
                         android:textColor="@color/myColor8" />
 
@@ -195,7 +190,7 @@
                         android:id="@+id/tv_ad_stu_view_profile_phone"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="7"
+                        android:layout_weight="9"
                         android:textColor="@color/myColor8" />
                 </LinearLayout>
 
@@ -207,9 +202,8 @@
                     android:weightSum="10">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="3"
                         android:text="Эл. адрес              "
                         android:textColor="@color/myColor8" />
 
@@ -217,7 +211,7 @@
                         android:id="@+id/tv_ad_stu_view_profile_email"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="7"
+                        android:layout_weight="9"
                         android:textColor="@color/myColor8" />
                 </LinearLayout>
 
