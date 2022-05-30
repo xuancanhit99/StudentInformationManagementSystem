@@ -19,7 +19,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="24dp"
-            android:text="Добро Пожаловат"
+            android:text="Добро Пожаловать"
             android:textAllCaps="true"
             android:textSize="25sp"
             app:fontFamily="@font/roboto_regular"
