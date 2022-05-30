@@ -51,6 +51,34 @@ public class Student implements Parcelable {
     @Expose
     private String stuReply;
 
+    @SerializedName("StuMath")
+    @Expose
+    private String stuMath;
+
+    @SerializedName("StuEng")
+    @Expose
+    private String stuEng;
+
+    @SerializedName("StuPhy")
+    @Expose
+    private String stuPhy;
+
+    @SerializedName("StuInfo")
+    @Expose
+    private String stuInfo;
+
+    @SerializedName("StuPro")
+    @Expose
+    private String stuPro;
+
+    @SerializedName("StuEco")
+    @Expose
+    private String stuEco;
+
+    @SerializedName("StuPhi")
+    @Expose
+    private String stuPhi;
+
     public Student(Parcel in) {
         stuId = in.readString();
         stuEmail = in.readString();
@@ -66,6 +94,14 @@ public class Student implements Parcelable {
         stuNotice = in.readString();
         stuReport = in.readString();
         stuReply = in.readString();
+
+        stuMath = in.readString();
+        stuEng = in.readString();
+        stuPhy = in.readString();
+        stuInfo = in.readString();
+        stuPro = in.readString();
+        stuEco = in.readString();
+        stuPhi = in.readString();
     }
 
     public static final Creator<Student> CREATOR = new Creator<Student>() {
@@ -196,6 +232,62 @@ public class Student implements Parcelable {
         this.stuReply = stuReply;
     }
 
+    public String getStuMath() {
+        return stuMath;
+    }
+
+    public void setStuMath(String stuMath) {
+        this.stuMath = stuMath;
+    }
+
+    public String getStuEng() {
+        return stuEng;
+    }
+
+    public void setStuEng(String stuEng) {
+        this.stuEng = stuEng;
+    }
+
+    public String getStuPhy() {
+        return stuPhy;
+    }
+
+    public void setStuPhy(String stuPhy) {
+        this.stuPhy = stuPhy;
+    }
+
+    public String getStuInfo() {
+        return stuInfo;
+    }
+
+    public void setStuInfo(String stuInfo) {
+        this.stuInfo = stuInfo;
+    }
+
+    public String getStuPro() {
+        return stuPro;
+    }
+
+    public void setStuPro(String stuPro) {
+        this.stuPro = stuPro;
+    }
+
+    public String getStuEco() {
+        return stuEco;
+    }
+
+    public void setStuEco(String stuEco) {
+        this.stuEco = stuEco;
+    }
+
+    public String getStuPhi() {
+        return stuPhi;
+    }
+
+    public void setStuPhi(String stuPhi) {
+        this.stuPhi = stuPhi;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -217,5 +309,13 @@ public class Student implements Parcelable {
         dest.writeString(stuNotice);
         dest.writeString(stuReport);
         dest.writeString(stuReply);
+
+        dest.writeString(stuMath);
+        dest.writeString(stuEng);
+        dest.writeString(stuPhy);
+        dest.writeString(stuInfo);
+        dest.writeString(stuPro);
+        dest.writeString(stuEco);
+        dest.writeString(stuPhi);
     }
 }

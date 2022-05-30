@@ -338,7 +338,13 @@ public class StudentMenuActivity extends AppCompatActivity {
                 studentArr = data.getParcelableArrayListExtra("STUDENT_DATA_FROM_VIEW_PROFILE_TO_MENU");
                 initView();
             }
+            if (requestCode == STUDENT_VIEW_PROFILE_ACTIVITY) {
+                studentArr = data.getParcelableArrayListExtra("STUDENT_DATA_FROM_LEARNING_RESULTS_TO_MENU");
+                initView();
+            }
         }
+
+
     }
 
     @Override

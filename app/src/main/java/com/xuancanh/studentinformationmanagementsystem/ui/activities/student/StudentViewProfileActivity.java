@@ -42,6 +42,7 @@ public class StudentViewProfileActivity extends AppCompatActivity {
         initView();
 
 
+
         //Button Exit
         btnStuViewProfileExit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,6 +132,7 @@ public class StudentViewProfileActivity extends AppCompatActivity {
                 ivStuViewProfileAvatar.setImageResource(R.drawable.graduated);
             }
         }
+
     }
 
     private void receiveDataFromMenu() {
