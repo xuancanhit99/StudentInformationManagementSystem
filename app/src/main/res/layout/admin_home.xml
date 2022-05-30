@@ -199,7 +199,7 @@
                     android:paddingRight="20dp"
                     android:text="Сообщение"
                     android:textColor="#fff"
-                    android:textSize="17dpsp"
+                    android:textSize="17sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
