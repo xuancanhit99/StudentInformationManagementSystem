@@ -3,7 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_change_password.xml" value="0.1840435176790571" />
+        <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_change_password.xml" value="0.4" />
         <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_forgot_password.xml" value="0.25416666666666665" />
         <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Desktop/New folder (2)/StudentInformationManagementSystem/app/src/main/res/layout/activity_admin_notice_to_student.xml" value="0.25416666666666665" />
@@ -65,7 +65,7 @@
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_update.xml" value="0.33" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/activity_student_view_profile.xml" value="0.5322916666666667" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/admin_app_bar_main.xml" value="0.30885416666666665" />
-        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/admin_home.xml" value="0.30885416666666665" />
+        <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/admin_home.xml" value="0.33" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/admin_nav_header.xml" value="0.30885416666666665" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/layout_admin_login.xml" value="0.5572916666666666" />
         <entry key="..\:/StudentInformationManagementSystem/app/src/main/res/layout/layout_student_login.xml" value="0.5322916666666667" />

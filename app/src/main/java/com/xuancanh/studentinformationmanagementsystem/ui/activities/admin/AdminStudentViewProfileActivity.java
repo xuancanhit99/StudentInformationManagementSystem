@@ -20,7 +20,7 @@ public class AdminStudentViewProfileActivity extends AppCompatActivity {
 
     private ImageView ivAdStuViewProfileAvatar, ivAdStuViewProfileExit;
     private TextView tvAdStuViewProfileNo, tvAdStuViewProfileName, tvAdStuViewProfileDOB, tvAdStuViewProfileClass, tvAdStuViewProfilePhone, tvAdStuViewProfileEmail, tvAdStuViewProfileActive, tvAdStuViewProfileGender;
-    private Button btnAdStuViewProfileUpdate, btnAdStuViewProfileExit;
+    private Button btnAdStuViewProfileUpdate, btnAdStuViewProfileExit, btnAdStuViewProfileResults;
 
     ArrayList<Student> studentArr;
     int position;
@@ -44,6 +44,20 @@ public class AdminStudentViewProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 backToMenu();
+            }
+        });
+
+        //Edit Result
+        btnAdStuViewProfileResults.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminStudentViewProfileActivity.this, AdminStudentUpdateLearningResultsActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putParcelableArrayList("STUDENT_DATA_ARRAY", studentArr);
+                bundle.putInt("STUDENT_DATA_POSITION", position);
+                intent.putExtra("STUDENT_DATA_FROM_AD_STU_VIEW_PROFILE_TO_RESULTS", bundle);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -131,6 +145,7 @@ public class AdminStudentViewProfileActivity extends AppCompatActivity {
         tvAdStuViewProfileGender = findViewById(R.id.tv_ad_stu_view_profile_gender);
         btnAdStuViewProfileExit = findViewById(R.id.btn_ad_stu_view_profile_exit);
         btnAdStuViewProfileUpdate = findViewById(R.id.btn_ad_stu_view_profile_update);
+        btnAdStuViewProfileResults = findViewById(R.id.btn_ad_stu_view_profile_result);
     }
 
     private void backToMenu() {

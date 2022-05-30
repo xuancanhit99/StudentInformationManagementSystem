@@ -133,6 +133,17 @@ public interface DataClient {
                                         @Field("StudentActive") String StudentActive,
                                         @Field("StudentCurrentAvatar") String StudentCurrentAvatar);
 
+    @FormUrlEncoded
+    @POST("admin/updateScores.php")
+    Call<String> AdminUpdateStudentScore(@Field("StudentId") String StudentId,
+                                    @Field("StudentMath") String StudentMath,
+                                    @Field("StudentEnglish") String StudentEnglish,
+                                    @Field("StudentPhysic") String StudentPhysic,
+                                    @Field("StudentInformatica") String StudentInformatica,
+                                    @Field("StudentProgramming") String StudentProgramming,
+                                    @Field("StudentEconomic") String StudentEconomic,
+                                    @Field("StudentPhilosophy") String StudentPhilosophy);
+
     //Send Notice
     @FormUrlEncoded
     @POST("admin/sendNotice.php")

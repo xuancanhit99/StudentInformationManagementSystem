@@ -3,6 +3,7 @@ package com.xuancanh.studentinformationmanagementsystem.ui.activities.student;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -49,7 +50,7 @@ public class StudentMenuActivity extends AppCompatActivity {
 
     ImageView ivStuAvatar, ivStuNavHeader;
     TextView tvStuName, tvStuClass, tvStuNavHeaderName, tvStuNavHeaderEmail, tvStuNavHeaderClass;
-    Button btnStuViewProfile, btnUpdateProfile, btnStuChangePassword, btnStuLogout, btnStuNotice, btnStuReport, btnStuLearningResults;
+    Button btnStuViewProfile, btnUpdateProfile, btnStuChangePassword, btnStuLogout, btnStuNotice, btnStuReport, btnStuLearningResults, btnStuReExam;
     ArrayList<Student> studentArr;
 
 
@@ -90,6 +91,14 @@ public class StudentMenuActivity extends AppCompatActivity {
                         signOut();
                         break;
                 }
+            }
+        });
+
+        btnStuReExam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.mirea.ru/schedule/"));
+                startActivity(intent);
             }
         });
 
@@ -303,6 +312,7 @@ public class StudentMenuActivity extends AppCompatActivity {
         btnStuNotice = findViewById(R.id.btn_stu_menu_notice);
         btnStuReport = findViewById(R.id.btn_stu_menu_report);
         btnStuLearningResults = findViewById(R.id.btn_stu_learning_results);
+        btnStuReExam = findViewById(R.id.btn_stu_re_exam);
 
         drawerLayout = findViewById(R.id.dl_student_drawer);
         toolbar = findViewById(R.id.tb_student_toolBar);
