@@ -32,9 +32,10 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:fontFamily="@font/roboto_regular"
-                android:text="Сообщил от студентов "
+                android:text="Сообщил От Студентов "
+                android:textAllCaps="true"
                 android:textColor="?attr/colorControlNormal"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
         </RelativeLayout>
 

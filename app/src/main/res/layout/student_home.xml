@@ -19,6 +19,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="24dp"
             android:text="Добро Пожаловат"
+            android:textAllCaps="true"
             android:textSize="25sp"
             app:fontFamily="@font/roboto_regular"
             app:layout_constraintEnd_toStartOf="@+id/iv_stu_avt"
@@ -85,7 +86,7 @@
                     android:paddingRight="7dp"
                     android:text="Студенческий Профиль"
                     android:textColor="#fff"
-                    android:textSize="16sp"
+                    android:textSize="12sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
@@ -110,7 +111,7 @@
                     android:paddingRight="20dp"
                     android:text="Изменить Пароль"
                     android:textColor="#fff"
-                    android:textSize="18sp"
+                    android:textSize="12sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
         </LinearLayout>
@@ -147,7 +148,7 @@
                     android:paddingRight="20dp"
                     android:text="Обновить Профиль"
                     android:textColor="#fff"
-                    android:textSize="18sp"
+                    android:textSize="12sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
@@ -172,7 +173,7 @@
                     android:paddingRight="20dp"
                     android:text="Сообщение"
                     android:textColor="#fff"
-                    android:textSize="16sp"
+                    android:textSize="12sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
         </LinearLayout>
@@ -209,7 +210,7 @@
                     android:paddingRight="20dp"
                     android:text="Результаты Обучения"
                     android:textColor="#fff"
-                    android:textSize="16sp"
+                    android:textSize="12sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
@@ -234,7 +235,7 @@
                     android:paddingRight="20dp"
                     android:text="График Пересдач"
                     android:textColor="#fff"
-                    android:textSize="18sp"
+                    android:textSize="12sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
         </LinearLayout>
@@ -270,7 +271,7 @@
                     android:paddingRight="20dp"
                     android:text="Рапорт"
                     android:textColor="#fff"
-                    android:textSize="18sp"
+                    android:textSize="12sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
@@ -295,7 +296,7 @@
                     android:paddingRight="20dp"
                     android:text="Выйти"
                     android:textColor="#fff"
-                    android:textSize="18sp"
+                    android:textSize="12sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
         </LinearLayout>

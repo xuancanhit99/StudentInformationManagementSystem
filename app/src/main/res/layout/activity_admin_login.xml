@@ -55,7 +55,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginVertical="20dp"
-                        android:text="Система Управления\nИнформацией Обучения" />
+                        android:text="Система Управления\nИнформацией Обучения"
+                        />
                 </LinearLayout>
 
                 <include layout="@layout/layout_admin_login" />

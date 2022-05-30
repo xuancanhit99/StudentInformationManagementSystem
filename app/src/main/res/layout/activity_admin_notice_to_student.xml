@@ -27,7 +27,8 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:fontFamily="@font/roboto_regular"
-            android:text="Уведомление для всех студентов"
+            android:text="Уведомление для \nвсех студентов"
+            android:textAllCaps="true"
             android:textColor="?attr/colorControlNormal"
             android:textSize="20sp"
             android:textStyle="bold" />
