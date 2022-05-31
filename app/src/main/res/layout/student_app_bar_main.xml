@@ -36,6 +36,8 @@
             layout="@layout/student_home"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:layout_anchor="@+id/stu_frame"
+            app:layout_anchorGravity="center"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </ScrollView>
