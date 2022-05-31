@@ -42,6 +42,7 @@ public class StudentMenuActivity extends AppCompatActivity {
     public static final int STUDENT_VIEW_LEARNING_RESULTS = 9;
     public static final int RESULT_STUDENT_CHANGE_PASSWORD_OK = 10;
     public static final int RESULT_STUDENT_VIEW_PROFILE_OK = 10;
+    public static final int RESULT_STUDENT_LEARNING_RESULT_OK = 30;
 
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle toggle;
@@ -348,7 +349,10 @@ public class StudentMenuActivity extends AppCompatActivity {
                 studentArr = data.getParcelableArrayListExtra("STUDENT_DATA_FROM_VIEW_PROFILE_TO_MENU");
                 initView();
             }
-            if (requestCode == STUDENT_VIEW_PROFILE_ACTIVITY) {
+        }
+
+        if (resultCode == RESULT_STUDENT_LEARNING_RESULT_OK) {
+            if (requestCode == STUDENT_VIEW_LEARNING_RESULTS) {
                 studentArr = data.getParcelableArrayListExtra("STUDENT_DATA_FROM_LEARNING_RESULTS_TO_MENU");
                 initView();
             }

@@ -125,7 +125,7 @@ public class StudentLearningResultsActivity extends AppCompatActivity {
     private void backToMenu() {
         Intent intent = getIntent();
         intent.putExtra("STUDENT_DATA_FROM_LEARNING_RESULTS_TO_MENU", studentArr);
-        setResult(StudentMenuActivity.RESULT_STUDENT_VIEW_PROFILE_OK, intent);
+        setResult(StudentMenuActivity.RESULT_STUDENT_LEARNING_RESULT_OK, intent);
         finish();
     }
 }
