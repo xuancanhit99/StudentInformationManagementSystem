@@ -104,9 +104,9 @@ public class StudentViewProfileActivity extends AppCompatActivity {
         tvStuViewProfileEmail.setText(studentArr.get(0).getStuEmail());
         tvStuViewProfileClass.setText(studentArr.get(0).getStuClass());
         if (studentArr.get(0).getStuGender().equals("1")) {
-            tvStuViewProfileGender.setText("Male");
+            tvStuViewProfileGender.setText("Мужской");
         } else if (studentArr.get(0).getStuGender().equals("0")) {
-            tvStuViewProfileGender.setText("Female");
+            tvStuViewProfileGender.setText("Женский");
         }
 
         if (studentArr.get(0).getStuActive().equals("1")) {

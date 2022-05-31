@@ -54,7 +54,7 @@
                 android:layout_marginTop="10dp"
                 android:drawableStart="@drawable/ic_baseline_edit_notifications_24"
                 android:drawableTint="?attr/colorControlNormal"
-                android:text="Содержание сообщенияcontent"
+                android:text="Содержание сообщения"
 
                 android:textColor="@color/myColor8" />
 
@@ -89,7 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:text="Отправлять"
+            android:text="Отправить"
             android:theme="@style/AppTheme.MyButton1" />
 
         <Button

@@ -100,7 +100,7 @@
                     android:drawableTint="#fff"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="Список\nСтудент"
+                    android:text="Список\nСтудентов"
                     android:textColor="#fff"
                     android:textSize="12sp"
                     android:textStyle="bold" />
@@ -162,7 +162,7 @@
                     android:drawableTint="#fff"
                     android:paddingLeft="15dp"
                     android:paddingRight="6dp"
-                    android:text="Уведомление\n Для Студента"
+                    android:text="Уведомления"
                     android:textColor="#fff"
                     android:textSize="12sp"
                     android:textStyle="bold" />
@@ -198,7 +198,7 @@
                     android:drawableTint="#fff"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="Сообщение"
+                    android:text="Сообщения"
                     android:textColor="#fff"
                     android:textSize="12sp"
                     android:textStyle="bold" />

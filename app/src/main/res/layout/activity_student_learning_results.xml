@@ -124,7 +124,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:text="Физический"
+                        android:text="Физика"
                         android:textColor="@color/myColor8" />
 
                     <TextView
@@ -191,7 +191,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:text="Эконом"
+                        android:text="Экономика"
                         android:textColor="@color/myColor8" />
 
                     <TextView

@@ -99,7 +99,7 @@ tools:context=".ui.activities.admin.AdminStudentUpdateLearningResultsActivity">
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_width="150dp"
-            android:text="Физический: "
+            android:text="Физика: "
             android:textColor="@color/myColor8" />
 
         <Spinner
@@ -168,7 +168,7 @@ tools:context=".ui.activities.admin.AdminStudentUpdateLearningResultsActivity">
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_width="150dp"
-            android:text="Эконом: "
+            android:text="Экономика: "
             android:textColor="@color/myColor8" />
 
         <Spinner
@@ -214,7 +214,7 @@ tools:context=".ui.activities.admin.AdminStudentUpdateLearningResultsActivity">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:text="Сохранять"
+            android:text="Сохранить"
             android:theme="@style/AppTheme.MyButton1" />
 
 

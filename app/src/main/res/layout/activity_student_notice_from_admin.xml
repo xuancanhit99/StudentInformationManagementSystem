@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:fontFamily="@font/roboto_regular"
-            android:text="Уведомление От\n Администратора"
+            android:text="Уведомления "
             android:textAllCaps="true"
             android:textColor="?attr/colorControlNormal"
             android:textSize="20sp"

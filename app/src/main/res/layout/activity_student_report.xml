@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:fontFamily="@font/roboto_regular"
-                android:text="Сообщить Администратору"
+                android:text="Сообщения"
                 android:textAllCaps="true"
                 android:textColor="?attr/colorControlNormal"
                 android:textSize="19sp"
@@ -94,7 +94,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:text="Сообщение"
+                android:text="Отправить"
                 android:theme="@style/AppTheme.MyButton1" />
 
             <Button
@@ -125,7 +125,7 @@
                     android:layout_marginTop="10dp"
                     android:drawableStart="@drawable/ic_baseline_message_24"
                     android:drawableTint="?attr/colorControlNormal"
-                    android:text="Отвечать"
+                    android:text="Ответ"
                     android:textColor="@color/myColor8" />
 
                 <TextView

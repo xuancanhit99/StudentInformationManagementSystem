@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:fontFamily="@font/roboto_regular"
-            android:text="Обновить Администратора"
+            android:text="Редактировать"
             android:textAllCaps="true"
             android:textColor="?attr/colorControlNormal"
             android:textSize="18sp"
@@ -81,7 +81,7 @@
             style="@style/modifiedEditText"
             android:drawableStart="@drawable/round_mail_outline_24"
             android:drawableTint="?attr/colorControlNormal"
-            android:hint="Эл. адрес"
+            android:hint="Почта"
             android:inputType="textEmailAddress"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -113,7 +113,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:text="Сохранять"
+            android:text="Сохранить"
             android:theme="@style/AppTheme.MyButton1" />
 
         <Button
@@ -147,7 +147,7 @@
             android:layout_marginHorizontal="10dp"
             android:drawableStart="@drawable/ic_baseline_password_24"
             android:drawableTint="?attr/colorControlNormal"
-            android:text=" Изменить Парол"
+            android:text=" Изменить Пароль"
             android:theme="@style/AppTheme.MyButton5" />
     </LinearLayout>
 

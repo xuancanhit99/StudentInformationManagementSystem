@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:fontFamily="@font/roboto_regular"
-                android:text="Информация Для Студентов"
+                android:text="Информация О Студенте"
                 android:textAllCaps="true"
                 android:textColor="?attr/colorControlNormal"
                 android:textSize="18sp"
@@ -82,7 +82,7 @@
                         <TextView
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
-                            android:text="№ Студент"
+                            android:text="№ Студента"
                             android:textColor="@color/myColor8" />
 
                         <TextView
@@ -209,7 +209,7 @@
                         <TextView
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
-                            android:text="Эл. адрес              "
+                            android:text="Почта              "
                             android:textColor="@color/myColor8" />
 
                         <TextView
@@ -247,7 +247,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
-                    android:text="Обновлять"
+                    android:text="Редактировать"
                     android:theme="@style/AppTheme.MyButton1" />
 
                 <Button

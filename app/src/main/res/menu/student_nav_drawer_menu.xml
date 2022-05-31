@@ -4,19 +4,19 @@
         <item
             android:id="@+id/it_stu_nav_dra_menu_dashboard"
             android:icon="@drawable/ic_baseline_space_dashboard_24"
-            android:title="Приборная Доска" />
+            android:title="Общее" />
         <item
             android:id="@+id/it_stu_nav_dra_menu_update_profile"
             android:icon="@drawable/ic_baseline_edit_note_24"
-            android:title="Обновить Информацию" />
+            android:title="Редактировать Информацию" />
         <item
             android:id="@+id/it_stu_nav_dra_menu_notice"
             android:icon="@drawable/ic_baseline_circle_notifications_24"
-            android:title="Уведомление От Администратора" />
+            android:title="Уведомления" />
         <item
             android:id="@+id/it_stu_nav_dra_menu_report"
             android:icon="@drawable/ic_baseline_message_24"
-            android:title="Сообщить Администратору" />
+            android:title="Сообщения" />
     </group>
     <item android:title="">
         <menu>

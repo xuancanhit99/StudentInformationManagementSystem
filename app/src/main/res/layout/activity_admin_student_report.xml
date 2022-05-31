@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:fontFamily="@font/roboto_regular"
-                android:text="Сообщил От Студентов "
+                android:text="Сообщения "
                 android:textAllCaps="true"
                 android:textColor="?attr/colorControlNormal"
                 android:textSize="18sp"
@@ -131,7 +131,7 @@
                     android:layout_marginTop="10dp"
                     android:drawableStart="@drawable/ic_baseline_message_24"
                     android:drawableTint="?attr/colorControlNormal"
-                    android:text=" Отвечать"
+                    android:text=" Ответ"
                     android:textColor="@color/myColor8" />
 
                 <com.google.android.material.textfield.TextInputLayout style="@style/parent">
@@ -165,7 +165,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:text="Отвечать"
+                android:text="Ответить"
                 android:theme="@style/AppTheme.MyButton1" />
 
             <Button

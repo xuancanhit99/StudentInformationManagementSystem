@@ -86,7 +86,7 @@
                     android:drawableTint="#fff"
                     android:paddingLeft="9dp"
                     android:paddingRight="7dp"
-                    android:text="Студенческий Профиль"
+                    android:text="Профиль Студента"
                     android:textColor="#fff"
                     android:textSize="12sp"
                     android:textStyle="bold" />
@@ -148,9 +148,9 @@
                     android:drawableTint="#fff"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="Обновить Профиль"
+                    android:text="Редактировать Информацию"
                     android:textColor="#fff"
-                    android:textSize="12sp"
+                    android:textSize="10sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
@@ -173,7 +173,7 @@
                     android:drawableTint="#fff"
                     android:paddingLeft="17dp"
                     android:paddingRight="20dp"
-                    android:text="Сообщение"
+                    android:text="Уведомления"
                     android:textColor="#fff"
                     android:textSize="12sp"
                     android:textStyle="bold" />
@@ -271,7 +271,7 @@
                     android:drawableTint="#fff"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="Сообщить \nАдминистратору"
+                    android:text="Сообщения"
                     android:textColor="#fff"
                     android:textSize="12sp"
                     android:textStyle="bold" />

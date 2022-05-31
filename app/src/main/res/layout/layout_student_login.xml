@@ -17,7 +17,7 @@
         <TextView
             style="@style/headerTextPrimary"
             android:layout_marginTop="@dimen/loginViewsMargin"
-            android:text="Студент Логин"
+            android:text="Вход для студента"
             android:textAllCaps="true"/>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -29,7 +29,7 @@
                 android:id="@+id/edt_stu_login_email"
                 style="@style/modifiedEditText"
                 android:drawableStart="@drawable/round_mail_outline_24"
-                android:hint="Эл. адрес"
+                android:hint="Почта"
                 android:inputType="textEmailAddress"
                 android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -61,7 +61,7 @@
                 android:id="@+id/cb_stu_login_remember_me"
                 style="@style/viewParent"
                 android:layout_gravity="start"
-                android:text="Запомните Меня"
+                android:text="Запомните"
                 android:textColor="@color/primaryTextColor"
                 android:textSize="13sp" />
 
@@ -74,7 +74,7 @@
                 android:layout_marginStart="150dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="2dp"
-                android:text="Забыл Пароль?"
+                android:text="Забыли Пароль?"
                 android:textColor="@color/primaryTextColor"
                 android:textSize="13sp" />
         </RelativeLayout>
@@ -84,20 +84,20 @@
             style="@style/loginButton"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/loginViewsMargin"
-            android:text="Логин" />
+            android:text="Войти" />
 
             <com.google.android.gms.common.SignInButton
-                android:layout_marginTop="15dp"
+              android:layout_marginTop="15dp"
                 android:id="@+id/sign_in_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content" />
 
 
         <TextView
             android:id="@+id/tv_stu_login_to_login_admin"
             style="@style/parent"
             android:layout_marginTop="@dimen/loginViewsMargin"
-            android:text="Вы Администратор? Войти Здесь"
+            android:text="Войти, если Вы Администратор"
             android:textAlignment="center"
             android:textColor="@color/primaryTextColor"
             android:textSize="16sp"
@@ -107,7 +107,7 @@
             android:id="@+id/tv_stu_login_to_register"
             style="@style/parent"
             android:layout_marginTop="3dp"
-            android:text="Нет Аккаунта? Зарегистрироваться"
+            android:text="Создать Аккаунт?"
             android:textAlignment="center"
             android:textColor="@color/primaryTextColor"
             android:textSize="16sp"

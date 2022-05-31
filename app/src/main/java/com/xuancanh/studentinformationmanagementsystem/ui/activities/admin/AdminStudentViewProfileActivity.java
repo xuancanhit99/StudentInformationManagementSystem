@@ -93,9 +93,9 @@ public class AdminStudentViewProfileActivity extends AppCompatActivity {
         tvAdStuViewProfileEmail.setText(studentArr.get(position).getStuEmail());
         tvAdStuViewProfileClass.setText(studentArr.get(position).getStuClass());
         if (studentArr.get(position).getStuGender().equals("1")) {
-            tvAdStuViewProfileGender.setText("Male");
+            tvAdStuViewProfileGender.setText("Мужской");
         } else if (studentArr.get(position).getStuGender().equals("0")) {
-            tvAdStuViewProfileGender.setText("Female");
+            tvAdStuViewProfileGender.setText("Женский");
         }
 
         if (studentArr.get(position).getStuActive().equals("1")) {
